@@ -1,0 +1,94 @@
+{
+  "theHeart:DefaultCommonAttack": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! Damage. NL [#0000ff]This[] [#ff0000]Is[] [#ffff00]How[] [#88888]color[] [#ff00ff]works.[]"
+  },
+  "theHeart:DefaultCommonSkill": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block. NL theHeart:Multiword_Keyword."
+  },
+  "theHeart:DefaultCommonPower": {
+    "NAME": "Hold Place",
+    "DESCRIPTION": "Gain !M! theHeart:Keyword.",
+    "UPGRADE_DESCRIPTION": "Gain !M! theHeart:Keywords."
+  },
+  "theHeart:DefaultUncommonAttack": {
+    "NAME": "Big slap",
+    "DESCRIPTION": "Deal !D! Damage."
+  },
+  "theHeart:DefaultUncommonSkill": {
+    "NAME": "A Better Defend",
+    "DESCRIPTION": "Gain !B! Plated Armor. Affected by Dexterity."
+  },
+  "theHeart:DefaultUncommonPower": {
+    "NAME": "Weirdness",
+    "DESCRIPTION": "Gain X theHeart:Keywords.",
+    "UPGRADE_DESCRIPTION": "Gain X +1 theHeart:Keywords."
+  },
+  "theHeart:DefaultRareAttack": {
+    "NAME": "TOUCH",
+    "DESCRIPTION": "Deal !D! Damage."
+  },
+  "theHeart:DefaultRareSkill": {
+    "NAME": "For Each Loop x2",
+    "DESCRIPTION": "Apply !M! vulnerable to all enemies, 2 times.",
+    "UPGRADE_DESCRIPTION": "Apply !M! vulnerable to all enemies, 3 times."
+  },
+  "theHeart:DefaultRarePower": {
+    "NAME": "In-Progress Form",
+    "DESCRIPTION": "At the start of your turn, play a TOUCH."
+  },
+  "theHeart:DefaultAttackWithVariable": {
+    "NAME": "Special Strike",
+    "DESCRIPTION": "Deal !D! Damage [E] times. NL (Deal !theHeart:ENERGY_DAMAGE! damage total.)"
+  },
+  "theHeart:DefaultSecondMagicNumberSkill": {
+    "NAME": "Cool 2 Number Card",
+    "DESCRIPTION": "Apply !M! vulnerable and !theHeart:SecondMagic! poison to an enemy."
+  },
+  "theHeart:OrbSkill": {
+    "NAME": "Get Orb",
+    "DESCRIPTION": "Channel 1 Default Orb."
+  },
+  "theHeart:Echo": {
+    "NAME": "Echo",
+    "DESCRIPTION": "Ethereal. Deal !D! Damage. "
+  },
+  "theHeart:PainfulStabs": {
+    "NAME": "Painful Stabs",
+    "DESCRIPTION": "Deal !D! damage, Attack one more time for each Status cards in hand."
+  },
+  "theHeart:Coagulation": {
+    "NAME": "Coagulation",
+    "DESCRIPTION": "Draw all Status cards in your draw pile."
+  },
+  "theHeart:HeartAttack": {
+    "NAME": "Heart Attack",
+    "DESCRIPTION": "Lose 20 hp, deal !D! to all enemies, Gain !M! energy, draw !M! cards."
+  },
+  "theHeart:BloodSpray": {
+    "NAME": "BloodSpray",
+    "DESCRIPTION": "Lose 4 HP. !D! damage to all enemies."
+  },
+  "theHeart:TentacleWhip": {
+  "NAME": "TentacleWhip",
+  "DESCRIPTION": "Deal !D! damage to all enemies, temporarily reduce !M! strength to all enemies."
+},
+  "theHeart:SpireGrowth": {
+  "NAME": "SpireGrowth",
+  "DESCRIPTION": "Gain !B! Block, draw !M! cards."
+},
+  "theHeart:HastyFortification": {
+    "NAME": "HastyFortification",
+    "DESCRIPTION": "Gain !B! Block, lose !M! Dexterity."
+  },
+  "theHeart:CapillaryExchange": {
+    "NAME": "CapillaryExchange",
+    "DESCRIPTION": "Draw the top and bottom card in your draw pile.",
+    "UPGRADE_DESCRIPTION":"Draw the top two cards and bottom card in your draw pile."
+  },
+    "theHeart:ChaoticEnergy": {
+      "NAME": "ChaoticEnergy",
+      "DESCRIPTION": "Give !B! Block to player and enemies. "
+    }
+}
