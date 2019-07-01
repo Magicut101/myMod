@@ -90,5 +90,9 @@
     "theHeart:ChaoticEnergy": {
       "NAME": "ChaoticEnergy",
       "DESCRIPTION": "Give !B! Block to player and enemies. "
-    }
+    },
+  "theHeart:Debilitate": {
+    "NAME": "Debilitate",
+    "DESCRIPTION": "Give !M! Weak,!M! Vulnerable, and reduce !M! strength to a single enemy. Exhaust "
+  }
 }

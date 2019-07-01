@@ -425,6 +425,7 @@ public class DefaultMod implements
         BaseMod.addCard(new HastyFortification());
         BaseMod.addCard(new ChaoticEnergy());
         BaseMod.addCard(new CapillaryExchange());
+        BaseMod.addCard(new Debilitate ());
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
         // This is so that they are all "seen" in the library, for people who like to look at the card list
@@ -451,6 +452,7 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(HastyFortification.ID);
         UnlockTracker.unlockCard(ChaoticEnergy.ID);
         UnlockTracker.unlockCard(CapillaryExchange.ID);
+        UnlockTracker.unlockCard(Debilitate.ID);
         logger.info("Done adding cards!");
     }
     
