@@ -76,7 +76,7 @@
 },
   "theHeart:SpireGrowth": {
   "NAME": "SpireGrowth",
-  "DESCRIPTION": "Gain !B! Block, draw !M! cards."
+  "DESCRIPTION": "Gain !B! Temporary Hp, draw !M! cards."
 },
   "theHeart:HastyFortification": {
     "NAME": "HastyFortification",
@@ -93,6 +93,6 @@
     },
   "theHeart:Debilitate": {
     "NAME": "Debilitate",
-    "DESCRIPTION": "Give !M! Weak,!M! Vulnerable, and reduce !M! strength to a single enemy. Exhaust "
+    "DESCRIPTION": "Give !M! Weak, !M! Vulnerable, and Stun the enemy. Exhaust "
   }
 }

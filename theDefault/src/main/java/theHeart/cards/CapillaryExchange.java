@@ -1,9 +1,11 @@
 
 package theHeart.cards;
 
+
         import com.megacrit.cardcrawl.actions.utility.ConditionalDrawAction;
         import com.megacrit.cardcrawl.actions.utility.DrawPileToHandAction;
         import com.megacrit.cardcrawl.cards.AbstractCard;
+        import com.megacrit.cardcrawl.actions.common.PutOnBottomOfDeckAction;
         import com.megacrit.cardcrawl.actions.common.DrawCardAction;
         import com.megacrit.cardcrawl.characters.AbstractPlayer;
         import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -14,7 +16,7 @@ package theHeart.cards;
 
 public class CapillaryExchange extends AbstractDynamicCard{
 
-    public static final String ID = DefaultMod.makeID(SpireGrowth.class.getSimpleName());
+    public static final String ID = DefaultMod.makeID(CapillaryExchange.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
 
     public static final CardRarity RARITY = CardRarity.COMMON;
@@ -24,17 +26,20 @@ public class CapillaryExchange extends AbstractDynamicCard{
 
     private static final int COST = 1;
     private static final int DRAW = 2;
+    private static final int UPGRADED_PLUS_DRAW = 1;
 
     public CapillaryExchange () {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
-        magicNumber = 1;
+        magicNumber = DRAW;
         baseMagicNumber = magicNumber;
     }
 
     @Override
     public void use (AbstractPlayer p, AbstractMonster m) {
+
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new PutOnBottomOfDeckAction(p,p,1,false));
 
 
 
@@ -43,7 +48,7 @@ public class CapillaryExchange extends AbstractDynamicCard{
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(1);
+            upgradeMagicNumber(UPGRADED_PLUS_DRAW);
             initializeDescription();
         }
     }

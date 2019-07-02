@@ -34,7 +34,9 @@ baseBlock = BLOCK;
     @Override
 
     public void use(AbstractPlayer p ,AbstractMonster m) {
-         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(m, p, baseBlock));
+        for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters)
+         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(mo, p, baseBlock));
+
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, baseBlock));
     }
 

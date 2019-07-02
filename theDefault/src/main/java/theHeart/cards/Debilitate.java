@@ -1,4 +1,5 @@
 package theHeart.cards;
+import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
  import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
  import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -25,7 +26,7 @@ import static theHeart.DefaultMod.makeCardPath;
 
     private static final int COST = 3;
     private static final int BASE_TURNS = 3;
-
+//I am going to change this to apply stun, but for now I will let it be -strength, even if its arguably op.
  public Debilitate() {
   super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
@@ -42,7 +43,7 @@ import static theHeart.DefaultMod.makeCardPath;
          AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new VulnerablePower
                  (mo, this.magicNumber, false), this.magicNumber, true, AbstractGameAction.AttackEffect.FIRE));
 
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new StrengthPower(m, -magicNumber), -magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new StunMonsterAction(m, p, 1));
 
      }
  }

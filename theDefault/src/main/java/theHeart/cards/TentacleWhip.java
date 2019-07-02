@@ -32,22 +32,18 @@ import static theHeart.DefaultMod.makeCardPath;
      private static final int UPGRADE_PLUS_DAMAGE = 2;
      private static final int STRENGTH_LOSS = 2;
      private static final int UPG_STRENGTH_AMT = 1;
-//Something about this card is broken, it doesn't apply strength loss and I don't know why. Put a pin into this card to try and solve it later.
+//I added code from piercing wail so this now properly reduces strength to all enemies but now it does an extra attack for every enemy?
+     // I moved some code up but that properly didn't fix the issue.
 
      public TentacleWhip() {
          super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
          baseDamage = DAMAGE;
          isMultiDamage = true;
-         baseMagicNumber = -2;
+         baseMagicNumber = 2;
          magicNumber = this.baseMagicNumber;
      }
 @Override
      public void use (AbstractPlayer p, AbstractMonster m) {
-
-    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new StrengthPower(m, -magicNumber), -magicNumber));
-
-    if (m != null && !m.hasPower("Artifact")){AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new GainStrengthPower(m, magicNumber), magicNumber));
-    }
 
     AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_HEAVY"));
 
@@ -55,6 +51,20 @@ import static theHeart.DefaultMod.makeCardPath;
 
     AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
 
+    for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new StrengthPower(mo, -this.magicNumber),
+                -this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
+    }
+
+    for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
+        if (!mo.hasPower("Artifact")) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction
+                    (mo, p, new GainStrengthPower(mo, this.magicNumber), this.magicNumber
+                            , true, AbstractGameAction.AttackEffect.NONE));
+        }
+
+
+    }
 }
      public AbstractDynamicCard makeCopy () {
          return new TentacleWhip();
