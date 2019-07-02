@@ -407,7 +407,7 @@ public class DefaultMod implements
         BaseMod.addCard(new DefaultSecondMagicNumberSkill());
         BaseMod.addCard(new DefaultCommonAttack());
         BaseMod.addCard(new DefaultAttackWithVariable());
-        BaseMod.addCard(new DefaultCommonSkill());
+        BaseMod.addCard(new theHeartDefend());
         BaseMod.addCard(new DefaultCommonPower());
         BaseMod.addCard(new DefaultUncommonSkill());
         BaseMod.addCard(new DefaultUncommonAttack());
@@ -426,6 +426,7 @@ public class DefaultMod implements
         BaseMod.addCard(new ChaoticEnergy());
         BaseMod.addCard(new CapillaryExchange());
         BaseMod.addCard(new Debilitate ());
+        BaseMod.addCard(new QuickTransfusion());
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
         // This is so that they are all "seen" in the library, for people who like to look at the card list
@@ -434,7 +435,7 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(DefaultSecondMagicNumberSkill.ID);
         UnlockTracker.unlockCard(DefaultCommonAttack.ID);
         UnlockTracker.unlockCard(DefaultAttackWithVariable.ID);
-        UnlockTracker.unlockCard(DefaultCommonSkill.ID);
+        UnlockTracker.unlockCard(theHeartDefend.ID);
         UnlockTracker.unlockCard(DefaultCommonPower.ID);
         UnlockTracker.unlockCard(DefaultUncommonSkill.ID);
         UnlockTracker.unlockCard(DefaultUncommonAttack.ID);
@@ -453,6 +454,7 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(ChaoticEnergy.ID);
         UnlockTracker.unlockCard(CapillaryExchange.ID);
         UnlockTracker.unlockCard(Debilitate.ID);
+        UnlockTracker.unlockCard(QuickTransfusion.ID);
         logger.info("Done adding cards!");
     }
     

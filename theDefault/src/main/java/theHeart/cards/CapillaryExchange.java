@@ -11,11 +11,12 @@ package theHeart.cards;
         import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
         import com.megacrit.cardcrawl.monsters.AbstractMonster;
         import theHeart.DefaultMod;
+        import theHeart.actions.ForethoughtCopyWithoutUpgrade;
         import theHeart.characters.TheDefault;
         import static theHeart.DefaultMod.makeCardPath;
 
 public class CapillaryExchange extends AbstractDynamicCard{
-
+//BTW This is broken
     public static final String ID = DefaultMod.makeID(CapillaryExchange.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
 
@@ -39,7 +40,7 @@ public class CapillaryExchange extends AbstractDynamicCard{
     public void use (AbstractPlayer p, AbstractMonster m) {
 
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new PutOnBottomOfDeckAction(p,p,1,false));
+        AbstractDungeon.actionManager.addToBottom(new ForethoughtCopyWithoutUpgrade()); //this place right here
 
 
 

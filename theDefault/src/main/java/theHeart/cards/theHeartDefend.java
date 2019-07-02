@@ -10,7 +10,7 @@ import theHeart.characters.TheDefault;
 
 import static theHeart.DefaultMod.makeCardPath;
 
-public class DefaultCommonSkill extends AbstractDynamicCard {
+public class theHeartDefend extends AbstractDynamicCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -21,7 +21,7 @@ public class DefaultCommonSkill extends AbstractDynamicCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = DefaultMod.makeID(DefaultCommonSkill.class.getSimpleName());
+    public static final String ID = DefaultMod.makeID(theHeartDefend.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
 
     // /TEXT DECLARATION/
@@ -42,7 +42,7 @@ public class DefaultCommonSkill extends AbstractDynamicCard {
     // /STAT DECLARATION/
 
 
-    public DefaultCommonSkill() {
+    public theHeartDefend() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseBlock = BLOCK;
 
