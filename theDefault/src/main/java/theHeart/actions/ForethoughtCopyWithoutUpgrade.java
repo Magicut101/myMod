@@ -25,28 +25,40 @@ package theHeart.actions;
 
 
     /*    */   public void update() {
-        /* 26 */     if (this.duration == Settings.ACTION_DUR_FAST) {
-            /* 27 */       if (this.p.hand.isEmpty()) {
-                /* 28 */         this.isDone = true; return;
-                /*    */       }
-            /* 30 */       if (this.p.hand.size() == 1 && !this.chooseAny) {
-                /* 31 */         AbstractCard c = this.p.hand.getTopCard();
-                /* 32 */         if (c.cost > 0) {
-                    /* 33 */           c.freeToPlayOnce = true;
-                    /*    */         }
-                /* 35 */         this.p.hand.moveToBottomOfDeck(c);
-                /* 36 */         AbstractDungeon.player.hand.refreshHandLayout();
-                /* 37 */         this.isDone = true;
-                /*    */         return;
-                /*    */    }
-                /* 43 */         AbstractDungeon.handCardSelectScreen.open(TEXT[0], 1, true, true);
-                /*    */       }
-            /* 45 */       tickDuration();
-            /*    *
+        /* 26 */
+        if (this.duration == Settings.ACTION_DUR_FAST) {
+            /* 27 */
+            if (this.p.hand.isEmpty()) {
+                /* 28 */
+                this.isDone = true;
+                return;
+                /*    */
+            }
+            /* 30 */
+            if (this.p.hand.size() == 1 && !this.chooseAny) {
+                /* 31 */
+                AbstractCard c = this.p.hand.getTopCard();
+                /* 32 */
+                if (c.cost > 0) {
+                    /* 33 */
+                    c.freeToPlayOnce = true;
+                    /*    */
+                }
+                /* 35 */
+                this.p.hand.moveToBottomOfDeck(c);
+                /* 36 */
+                AbstractDungeon.player.hand.refreshHandLayout();
+                /* 37 */
+                this.isDone = true;
+                /*    */
+                this.p.hand.moveToBottomOfDeck(c);
+                return;
+                /*    */
+            }
+            /* 43 */
+            AbstractDungeon.handCardSelectScreen.open(TEXT[0], 1, true, true);
             /*    */
-            /*    */       return;
-            /*    */     }
-        /*    */
-        /*    *
-        /*    */   }
-    /*    */
+        }
+        /* 45 */
+        tickDuration();
+    }             }

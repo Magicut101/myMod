@@ -16,7 +16,7 @@ import theHeart.actions.QuickTranfusionAction;
 import theHeart.characters.TheDefault;
 
 import static theHeart.DefaultMod.makeCardPath;
-
+//Mostly broken, I want it to give the player 3 strength when it kills an enemy.
 public class QuickTransfusion extends AbstractDynamicCard {
 
     public static final String ID = DefaultMod.makeID(QuickTransfusion.class.getSimpleName());

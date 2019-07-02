@@ -1,22 +1,22 @@
 {
-  "theHeart:DefaultCommonAttack": {
+  "theHeart:theHeartCommonAttack": {
     "NAME": "Strike",
-    "DESCRIPTION": "Deal !D! Damage. NL [#0000ff]This[] [#ff0000]Is[] [#ffff00]How[] [#88888]color[] [#ff00ff]works.[]"
+    "DESCRIPTION": "Deal !D! Damage."
   },
   "theHeart:theHeartDefend": {
     "NAME": "Defend",
-    "DESCRIPTION": "Gain !B! Block. NL theHeart:Multiword_Keyword."
+    "DESCRIPTION": "Gain !B! Block."
   },
   "theHeart:DefaultCommonPower": {
     "NAME": "Hold Place",
     "DESCRIPTION": "Gain !M! theHeart:Keyword.",
     "UPGRADE_DESCRIPTION": "Gain !M! theHeart:Keywords."
   },
-  "theHeart:DefaultUncommonAttack": {
-    "NAME": "Big slap",
-    "DESCRIPTION": "Deal !D! Damage."
+  "theHeart:Scab": {
+    "NAME": "Scab",
+    "DESCRIPTION": "Gain !B! Block, add 1 Wound to your Hand."
   },
-  "theHeart:DefaultUncommonSkill": {
+  "theHeart:BloodDrop": {
     "NAME": "A Better Defend",
     "DESCRIPTION": "Gain !B! Plated Armor. Affected by Dexterity."
   },

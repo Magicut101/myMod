@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 
-
+//This card is mostly broken
 public class QuickTranfusionAction
         /*    */   extends AbstractGameAction
         /*    */ {
@@ -21,7 +21,7 @@ public class QuickTranfusionAction
     /*    */   public QuickTranfusionAction(AbstractCreature target, DamageInfo info, int Strength) {
         /* 23 */     this.info = info;
         /* 24 */     setValues(target, info);
-        /* 25 *
+                    int increaseStrengthAmount = Strength;
         /* 26 */     this.actionType = AbstractGameAction.ActionType.DAMAGE;
         /* 27 */     this.duration = 0.1F;
         /*    */   }
@@ -35,7 +35,8 @@ public class QuickTranfusionAction
             /*    */
             /* 37 */       if ((((AbstractMonster)this.target).isDying || this.target.currentHealth <= 0) && !this.target.halfDead ) {
                 /* 39 */         AbstractDungeon.actionManager.addToBottom
-                        (new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, StrengthAmount  ), StrengthAmount));
+                        (new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
+                                new StrengthPower(AbstractDungeon.player, 3), StrengthAmount,  false));
                 /*    */
                 /*    */
                 /* 42 */

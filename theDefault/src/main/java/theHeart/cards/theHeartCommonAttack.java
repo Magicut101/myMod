@@ -25,8 +25,9 @@ import static theHeart.DefaultMod.makeCardPath;
 // the NAME and the DESCRIPTION into your card - it'll get it automatically. Of course, this functionality could have easily
 // Been added to the default card rather than creating a new Dynamic one, but was done so to deliberately.
 
-public class DefaultCommonAttack extends CustomCard {
-
+public class theHeartCommonAttack extends CustomCard {
+//NL [#0000ff]This[] [#ff0000]Is[] [#ffff00]How[] [#88888]color[] [#ff00ff]works.
+    // NL theHeart:Multiword_Keyword
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
      *
@@ -35,7 +36,7 @@ public class DefaultCommonAttack extends CustomCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = DefaultMod.makeID(DefaultCommonAttack.class.getSimpleName());
+    public static final String ID = DefaultMod.makeID(theHeartCommonAttack.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     public static final String IMG = makeCardPath("Attack.png");
@@ -70,7 +71,7 @@ public class DefaultCommonAttack extends CustomCard {
 
     // /STAT DECLARATION/
 
-    public DefaultCommonAttack() {
+    public theHeartCommonAttack() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
         // Aside from baseDamage/MagicNumber/Block there's also a few more.

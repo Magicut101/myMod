@@ -156,21 +156,22 @@ public class TheDefault extends CustomPlayer {
 
         logger.info("Begin loading starter Deck Strings");
 
-        retVal.add(DefaultCommonAttack.ID);
-        retVal.add(DefaultUncommonAttack.ID);
-        retVal.add(DefaultRareAttack.ID);
+        retVal.add(BloodDrop.ID);
+
+        retVal.add(Scab.ID);
+
 
         retVal.add(theHeartDefend.ID);
-        retVal.add(DefaultUncommonSkill.ID);
-        retVal.add(DefaultRareSkill.ID);
+        retVal.add(theHeartDefend.ID);
+        retVal.add(theHeartDefend.ID);
+        retVal.add(theHeartDefend.ID);
 
-        retVal.add(DefaultCommonPower.ID);
-        retVal.add(DefaultUncommonPower.ID);
-        retVal.add(DefaultRarePower.ID);
+        retVal.add(theHeartCommonAttack.ID);
+        retVal.add(theHeartCommonAttack.ID);
+        retVal.add(theHeartCommonAttack.ID);
+        retVal.add(theHeartCommonAttack.ID);
+        retVal.add(theHeartCommonAttack.ID);
 
-        retVal.add(DefaultAttackWithVariable.ID);
-        retVal.add(DefaultSecondMagicNumberSkill.ID);
-        retVal.add(OrbSkill.ID);
         return retVal;
     }
 
@@ -238,7 +239,7 @@ public class TheDefault extends CustomPlayer {
     //Which card should be obtainable from the Match and Keep event?
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new DefaultCommonAttack();
+        return new theHeartCommonAttack();
     }
 
     // The class name as it appears next to your player name in-game
