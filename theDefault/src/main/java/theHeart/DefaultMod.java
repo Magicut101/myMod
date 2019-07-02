@@ -427,6 +427,7 @@ public class DefaultMod implements
         BaseMod.addCard(new CapillaryExchange());
         BaseMod.addCard(new Debilitate ());
         BaseMod.addCard(new QuickTransfusion());
+        BaseMod.addCard(new BloodClots());
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
         // This is so that they are all "seen" in the library, for people who like to look at the card list
@@ -455,6 +456,7 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(CapillaryExchange.ID);
         UnlockTracker.unlockCard(Debilitate.ID);
         UnlockTracker.unlockCard(QuickTransfusion.ID);
+        UnlockTracker.unlockCard(BloodClots.ID);
         logger.info("Done adding cards!");
     }
     

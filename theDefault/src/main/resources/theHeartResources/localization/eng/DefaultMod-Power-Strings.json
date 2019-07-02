@@ -6,5 +6,9 @@
 "theHeart:RarePower": {
         "NAME": "Placeholder Power",
         "DESCRIPTIONS": ["At the start of your turn, TOUCH #b", " enemy." , " enemies."]
-}
+},
+        "theHeart:BloodClots": {
+        "NAME": "BloodClots",
+         "DESCRIPTION": ["Gain !B! Block each time you exhaust a Status card."]
+        }
 }

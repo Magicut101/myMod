@@ -17,8 +17,8 @@
     "DESCRIPTION": "Gain !B! Block, add 1 Wound to your Hand."
   },
   "theHeart:BloodDrop": {
-    "NAME": "A Better Defend",
-    "DESCRIPTION": "Gain !B! Plated Armor. Affected by Dexterity."
+    "NAME": "BloodDrop",
+    "DESCRIPTION": "Deal !D! Damage. Gain !M! Vulnerable."
   },
   "theHeart:DefaultUncommonPower": {
     "NAME": "Weirdness",
@@ -98,5 +98,9 @@
   "theHeart:QuickTransfusion": {
     "NAME": "QuickTransfusion",
     "DESCRIPTION": "Deal !D! damage, gain !M! strength this combat if this kills an enemy."
+  },
+  "theHeart:BloodClots": {
+    "NAME": "BloodClots",
+    "DESCRIPTION": "Gain !M! Block every time you exhaust a Status card."
   }
 }

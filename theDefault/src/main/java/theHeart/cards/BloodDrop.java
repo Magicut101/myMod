@@ -41,6 +41,7 @@ public class BloodDrop extends AbstractDynamicCard {
 
 
     private static final int DAMAGE = 13;
+    private static final int UPGRADE_PLUS_DAMAGE = 5;
     private static final int UPGRADE_PLUS_MAGICNUMBER = -1;
     private static final int MAGICNUMBER = 2;
 
@@ -73,6 +74,7 @@ public class BloodDrop extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADE_PLUS_MAGICNUMBER);
+            upgradeDamage(UPGRADE_PLUS_DAMAGE);
             initializeDescription();
         }
     }
