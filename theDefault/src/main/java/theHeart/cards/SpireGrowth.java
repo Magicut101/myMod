@@ -48,6 +48,7 @@ public void upgrade() {
     if (!upgraded) {
         upgradeName();
         upgradeMagicNumber(magicNumber);
+
         initializeDescription();
     }
 }

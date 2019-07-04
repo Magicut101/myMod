@@ -36,7 +36,7 @@ public class QuickTranfusionAction
             /* 37 */       if ((((AbstractMonster)this.target).isDying || this.target.currentHealth <= 0) && !this.target.halfDead ) {
                 /* 39 */         AbstractDungeon.actionManager.addToBottom
                         (new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
-                                new StrengthPower(AbstractDungeon.player, 3), StrengthAmount,  false));
+                                new StrengthPower(AbstractDungeon.player, StrengthAmount), StrengthAmount,  false));
                 /*    */
                 /*    */
                 /* 42 */

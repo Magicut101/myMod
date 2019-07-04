@@ -3,34 +3,31 @@ package theHeart.cards;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.megacrit.cardcrawl.actions.unique.AddCardToDeckAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.status.Wound;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.PlatedArmorPower;
+import com.megacrit.cardcrawl.powers.DrawReductionPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
-import com.megacrit.cardcrawl.powers.WeakPower;
 import theHeart.DefaultMod;
 import theHeart.characters.TheDefault;
 
 import static theHeart.DefaultMod.makeCardPath;
 
-public class BloodDrop extends AbstractDynamicCard {
+public class Embolism extends AbstractDynamicCard {
 
-    /*
-     * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
-     *
-     * A Better Defend Gain 1 Plated Armor. Affected by Dexterity.
-     */
 
-    // TEXT DECLARATION 
 
-    public static final String ID = DefaultMod.makeID(BloodDrop.class.getSimpleName());
+    public static final String ID = DefaultMod.makeID(Embolism.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
 
     // /TEXT DECLARATION/
 
-    // STAT DECLARATION 	
+    // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -40,18 +37,18 @@ public class BloodDrop extends AbstractDynamicCard {
     private static final int COST = 1;
 
 
-    private static final int DAMAGE = 15;
-    private static final int UPGRADE_PLUS_DAMAGE = 3;
-    private static final int UPGRADE_PLUS_MAGICNUMBER = -1;
-    private static final int MAGICNUMBER = 2;
+    private static final int DAMAGE = 12;
+    private static final int UPGRADE_PLUS_DAMAGE = 6;
+    private static final int UPGRADE_PLUS_MAGIC_NUMBER = -1;
+    private static final int MAGIC_NUMBER = 2;
 
     // /STAT DECLARATION/
 
 
-    public BloodDrop() {
+    public Embolism() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
-    baseMagicNumber = MAGICNUMBER;
+        baseMagicNumber = MAGIC_NUMBER;
 
     }
 
@@ -60,12 +57,13 @@ public class BloodDrop extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
-                        AbstractGameAction.AttackEffect.SLASH_HEAVY));
+                        AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Wound(),2, true, true));
         AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(p,p,new  VulnerablePower(p,baseMagicNumber, true)));
+                new ApplyPowerAction(p,p,new DrawReductionPower(p,baseMagicNumber)));
 
     }
-    public AbstractDynamicCard makeCopy() { return new BloodDrop(); }
+    public AbstractDynamicCard makeCopy() { return new Embolism(); }
 
 
     // Upgraded stats.
@@ -73,9 +71,11 @@ public class BloodDrop extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_MAGICNUMBER);
+            upgradeMagicNumber(UPGRADE_PLUS_MAGIC_NUMBER);
             upgradeDamage(UPGRADE_PLUS_DAMAGE);
             initializeDescription();
         }
     }
 }
+
+

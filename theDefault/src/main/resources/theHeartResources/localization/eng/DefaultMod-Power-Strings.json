@@ -10,5 +10,9 @@
         "theHeart:BloodClots": {
         "NAME": "BloodClots",
          "DESCRIPTION": ["Gain !B! Block each time you exhaust a Status card."]
+        },
+        "theHeart:HyperTrophy": {
+                "NAME": "HyperTrophy",
+                "DESCRIPTION":["Gain 210 Temporary Hp, Take 2.75 more damage from attacks."]
         }
 }

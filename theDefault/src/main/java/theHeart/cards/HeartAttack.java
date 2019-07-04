@@ -31,7 +31,7 @@ public class HeartAttack extends AbstractDynamicCard {
     private static final int COST = 1;
     private static final int DAMAGE = 60;
     private static final int HP_LOSS = 20;
-    private static final int UPGRADE_PLUS_DMG = 1;
+    private static final int UPGRADE_PLUS_MAGICNUMBER = 1;
 
     public HeartAttack() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -63,7 +63,7 @@ public class HeartAttack extends AbstractDynamicCard {
         public void upgrade(){
             if (!upgraded) {
                 upgradeName();
-                upgradeDamage(UPGRADE_PLUS_DMG);
+                upgradeMagicNumber(UPGRADE_PLUS_MAGICNUMBER);
                 initializeDescription();
             }
 

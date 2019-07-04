@@ -403,7 +403,7 @@ public class DefaultMod implements
         // Don't comment out/delete these cards (yet). You need 1 of each type and rarity (technically) for your game not to crash
         // when generating card rewards/shop screen items.
         
-        BaseMod.addCard(new OrbSkill());
+        BaseMod.addCard(new BloodShots());
         BaseMod.addCard(new DefaultSecondMagicNumberSkill());
         BaseMod.addCard(new theHeartCommonAttack());
         BaseMod.addCard(new DefaultAttackWithVariable());
@@ -428,11 +428,16 @@ public class DefaultMod implements
         BaseMod.addCard(new Debilitate ());
         BaseMod.addCard(new QuickTransfusion());
         BaseMod.addCard(new BloodClots());
+        BaseMod.addCard(new HyperTrophy());
+        BaseMod.addCard(new MindScape());
+        BaseMod.addCard(new BloodWall());
+        BaseMod.addCard(new Embolism());
+        BaseMod.addCard(new HeartBurn());
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
         // This is so that they are all "seen" in the library, for people who like to look at the card list
         // before playing your mod.
-        UnlockTracker.unlockCard(OrbSkill.ID);
+        UnlockTracker.unlockCard(BloodShots.ID);
         UnlockTracker.unlockCard(DefaultSecondMagicNumberSkill.ID);
         UnlockTracker.unlockCard(theHeartCommonAttack.ID);
         UnlockTracker.unlockCard(DefaultAttackWithVariable.ID);
@@ -457,6 +462,11 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(Debilitate.ID);
         UnlockTracker.unlockCard(QuickTransfusion.ID);
         UnlockTracker.unlockCard(BloodClots.ID);
+        UnlockTracker.unlockCard(HyperTrophy.ID);
+        UnlockTracker.unlockCard(MindScape.ID);
+        UnlockTracker.unlockCard(BloodWall.ID);
+        UnlockTracker.unlockCard(Embolism.ID);
+        UnlockTracker.unlockCard(HeartBurn.ID);
         logger.info("Done adding cards!");
     }
     

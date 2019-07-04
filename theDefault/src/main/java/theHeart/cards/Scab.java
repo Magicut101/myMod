@@ -2,6 +2,7 @@ package theHeart.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.status.Wound;
@@ -53,9 +54,7 @@ public class Scab extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new Wound(),2));
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
-                        AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, BLOCK));
     }
 
     //Upgraded stats.

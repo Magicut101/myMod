@@ -46,9 +46,10 @@
     "NAME": "Cool 2 Number Card",
     "DESCRIPTION": "Apply !M! vulnerable and !theHeart:SecondMagic! poison to an enemy."
   },
-  "theHeart:OrbSkill": {
-    "NAME": "Get Orb",
-    "DESCRIPTION": "Channel 1 Default Orb."
+  "theHeart:BloodShots": {
+    "NAME": "BloodShots",
+    "DESCRIPTION": "Deal !D! damage 12 times.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage, 15 times."
   },
   "theHeart:Echo": {
     "NAME": "Echo",
@@ -102,5 +103,29 @@
   "theHeart:BloodClots": {
     "NAME": "BloodClots",
     "DESCRIPTION": "Gain !M! Block every time you exhaust a Status card."
+
+  },
+  "theHeart:HyperTrophy": {
+    "NAME": "HyperTrophy",
+    "DESCRIPTION": "Gain x3 your hp as Temporary hp, take 2.75 more damage."
+  },
+  "theHeart:MindScape": {
+  "NAME": "MindScape",
+  "DESCRIPTION": "Deal !D! Damage, NL Put a card from your discard pile on top of your draw pile.",
+  "UPGRADE_DESCRIPTION": "Deal !D! Damage, NL Put two cards from your discard pile on top of your draw pile."
+
+},
+  "theHeart:BloodWall": {
+    "NAME":"BloodWall",
+    "DESCRIPTION": "Gain !B! Block, Gain block = to damage taken in this combat. "
+  },
+  "theHeart:Embolism": {
+    "NAME": "Embolism",
+    "DESCRIPTION": "Deal !D! damage, add 2 Wounds to your draw pile, and reduce draw by !M!."
+  },
+  "theHeart:HeartBurn": {
+    "NAME": "HeartBurn",
+    "DESCRIPTION": "Apply 11 poison to enemy, apply 4 poison to self. ",
+    "UPGRADE_DESCRIPTION": "Apply 14 poison to enemy, apply 3 poison to self."
   }
 }
