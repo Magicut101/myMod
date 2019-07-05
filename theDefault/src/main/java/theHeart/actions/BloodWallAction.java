@@ -14,15 +14,15 @@ public class BloodWallAction
     private DamageInfo info;
 
 
-    public BloodWallAction(AbstractCreature target, DamageInfo info, AbstractGameAction.AttackEffect effect) {
+    public BloodWallAction(AbstractCreature target, DamageInfo info) {
         /* 18 */
 
         // I am going to look at how
         //0 0 Aspiration uses aftershock
         this.info = info;
         setValues(target, info);
-        this.actionType = AbstractGameAction.ActionType.BLOCK;/* 21 */
-        this.attackEffect = effect;
+        this.actionType = AbstractGameAction.ActionType.BLOCK;
+
 
     }
 
@@ -31,7 +31,7 @@ public class BloodWallAction
 
     }
 
-    public int onAttacked(DamageInfo info, int dmgAmount) {
+    public int getDmgAmunt (DamageInfo info, int dmgAmount) {
         amount = 1;
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead() && dmgAmount > 0 && info.type == DamageInfo.DamageType.NORMAL && info.owner != null)
             ;

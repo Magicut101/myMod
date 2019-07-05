@@ -20,7 +20,9 @@ package theHeart.powers;
     public class HyperTrophyPower extends AbstractPower implements CloneablePowerInterface {
         public AbstractCreature source;
         //Originally I wanted this to multiply your max hp, so as to stimulate how high the Heart's hp can go, but I think I am just going to make the power give you x3 of your max hp as temporary hp,
-        //while multiplying all incoming  damage by a slightly lower ratio. x3 hp, 2.75 damage received.
+        // while multiplying all incoming  damage by a slightly lower ratio. x3 hp, 2.75 damage received. At least for now. Ideally I want there to be a cost to increasing your hp, primarily
+        //So for example, you have 50/100 hp, you play this power multiply your hp x3, 150/300. You take x2 or x2.5. So a 10 damage hit hits for 25.
+        // If you lose hp by the end of combat your hp/max hp is reduced by 3.
 
         public static final String POWER_ID = DefaultMod.makeID("HyperTrophyPower");
         private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);

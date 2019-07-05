@@ -1,4 +1,4 @@
-package theHeart.cards;
+package theHeart.cards.DefaultBaseCardsOrOtherExamples;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import theHeart.DefaultMod;
+import theHeart.cards.AbstractDynamicCard;
 import theHeart.characters.TheDefault;
 
 import static theHeart.DefaultMod.makeCardPath;

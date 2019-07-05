@@ -1,4 +1,4 @@
-package theHeart.cards;
+package theHeart.cards.DefaultBaseCardsOrOtherExamples;
 
 import basemod.helpers.BaseModCardTags;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theHeart.DefaultMod;
+import theHeart.cards.AbstractDynamicCard;
 import theHeart.characters.TheDefault;
 import theHeart.powers.RarePower;
 

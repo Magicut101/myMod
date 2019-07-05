@@ -1,4 +1,4 @@
-package theHeart.cards;
+package theHeart.cards.DefaultBaseCardsOrOtherExamples;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.WeightyImpactEffect;
 import theHeart.DefaultMod;
+import theHeart.cards.AbstractDynamicCard;
 import theHeart.characters.TheDefault;
 
 import static theHeart.DefaultMod.makeCardPath;

@@ -49,7 +49,7 @@
   "theHeart:BloodShots": {
     "NAME": "BloodShots",
     "DESCRIPTION": "Deal !D! damage 12 times.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage, 15 times."
+    "UPGRADE_DESCRIPTION": "Deal !D! damage, 15 times. Exhaust"
   },
   "theHeart:Echo": {
     "NAME": "Echo",
@@ -127,5 +127,17 @@
     "NAME": "HeartBurn",
     "DESCRIPTION": "Apply 11 poison to enemy, apply 4 poison to self. ",
     "UPGRADE_DESCRIPTION": "Apply 14 poison to enemy, apply 3 poison to self."
+  },
+  "theHeart:Constrict": {
+    "NAME": "Constrict",
+    "DESCRIPTION": "Apply !M! Constrict to an enemy. Exhaust"
+  },
+  "theHeart:AncientEvil": {
+    "NAME": "AncientEvil",
+    "DESCRIPTION": "Gain !M! Artifact."
+  },
+  "theHeart:Pacemaker": {
+    "NAME": "Pacemaker",
+    "DESCRIPTION": "Look at the first 5 cards in your draw pile and exhaust one card."
   }
 }

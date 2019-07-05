@@ -34,10 +34,10 @@ public class HeartBurn extends AbstractDynamicCard {
     private static final int COST = 1;
 
 
-    private static final int UPGRADE_PLUS_MAGIC_NUMBER = 3;
+    private static final int UPGRADE_PLUS_MAGIC_NUMBER = 4;
     private static final int MAGIC_NUMBER = 11;
     private static final int DEFAULTSECONDMAGICNUMBER = 4;
-    private static final int UPGRADE_PLUS_DEFAULTSECONDMAGICNUMBER = -1;
+    private static final int UPGRADE_PLUS_DEFAULTSECONDMAGICNUMBER = 1;
 
     // /STAT DECLARATION/
 

@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import theHeart.DefaultMod;
-import theHeart.cards.DefaultRareAttack;
+import theHeart.cards.DefaultBaseCardsOrOtherExamples.DefaultRareAttack;
 import theHeart.util.TextureLoader;
 
 public class RarePower extends AbstractPower implements CloneablePowerInterface {

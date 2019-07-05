@@ -39,11 +39,11 @@ public class BloodWall extends AbstractDynamicCard {
         }
         @Override
         public void use(AbstractPlayer p, AbstractMonster m) {
-            if (m != null) {
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p,p,baseBlock));
                 AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, onAttacked));
 
             }
-        }
+
         public AbstractDynamicCard makeCopy () {
             return new theHeart.cards.BloodWall();
         }

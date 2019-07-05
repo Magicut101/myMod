@@ -404,17 +404,10 @@ public class DefaultMod implements
         // when generating card rewards/shop screen items.
         
         BaseMod.addCard(new BloodShots());
-        BaseMod.addCard(new DefaultSecondMagicNumberSkill());
         BaseMod.addCard(new theHeartCommonAttack());
-        BaseMod.addCard(new DefaultAttackWithVariable());
         BaseMod.addCard(new theHeartDefend());
-        BaseMod.addCard(new DefaultCommonPower());
         BaseMod.addCard(new BloodDrop());
         BaseMod.addCard(new Scab());
-        BaseMod.addCard(new DefaultUncommonPower());
-        BaseMod.addCard(new DefaultRareAttack());
-        BaseMod.addCard(new DefaultRareSkill());
-        BaseMod.addCard(new DefaultRarePower());
         BaseMod.addCard(new Echo());
         BaseMod.addCard(new PainfulStabs());
         BaseMod.addCard(new Coagulation());
@@ -433,22 +426,18 @@ public class DefaultMod implements
         BaseMod.addCard(new BloodWall());
         BaseMod.addCard(new Embolism());
         BaseMod.addCard(new HeartBurn());
+        BaseMod.addCard(new Constrict());
+        BaseMod.addCard(new AncientEvil());
+        BaseMod.addCard(new Pacemaker());
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
         // This is so that they are all "seen" in the library, for people who like to look at the card list
         // before playing your mod.
         UnlockTracker.unlockCard(BloodShots.ID);
-        UnlockTracker.unlockCard(DefaultSecondMagicNumberSkill.ID);
         UnlockTracker.unlockCard(theHeartCommonAttack.ID);
-        UnlockTracker.unlockCard(DefaultAttackWithVariable.ID);
         UnlockTracker.unlockCard(theHeartDefend.ID);
-        UnlockTracker.unlockCard(DefaultCommonPower.ID);
         UnlockTracker.unlockCard(BloodDrop.ID);
         UnlockTracker.unlockCard(Scab.ID);
-        UnlockTracker.unlockCard(DefaultUncommonPower.ID);
-        UnlockTracker.unlockCard(DefaultRareAttack.ID);
-        UnlockTracker.unlockCard(DefaultRareSkill.ID);
-        UnlockTracker.unlockCard(DefaultRarePower.ID);
         UnlockTracker.unlockCard(Echo.ID);
         UnlockTracker.unlockCard(PainfulStabs.ID);
         UnlockTracker.unlockCard(Coagulation.ID);
@@ -467,6 +456,9 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(BloodWall.ID);
         UnlockTracker.unlockCard(Embolism.ID);
         UnlockTracker.unlockCard(HeartBurn.ID);
+        UnlockTracker.unlockCard(Constrict.ID);
+        UnlockTracker.unlockCard(AncientEvil.ID);
+        UnlockTracker.unlockCard(Pacemaker.ID);
         logger.info("Done adding cards!");
     }
     

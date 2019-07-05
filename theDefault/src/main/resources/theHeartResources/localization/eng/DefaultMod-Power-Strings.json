@@ -14,5 +14,9 @@
         "theHeart:HyperTrophy": {
                 "NAME": "HyperTrophy",
                 "DESCRIPTION":["Gain 210 Temporary Hp, Take 2.75 more damage from attacks."]
+        },
+        "theHeart:Pacemaker": {
+                "NAME": "Pacemaker",
+                "DESCRIPTION":["Look at the first 5 cards in your draw pile, exhaust one card"]
         }
 }
