@@ -7,10 +7,11 @@
         /*    */ import com.megacrit.cardcrawl.core.Settings;
         /*    */ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
         /*    */ import com.megacrit.cardcrawl.localization.UIStrings;
+
 /*    */
 /*    */ public class ExhaustingReprogramAction
         /*    */   extends AbstractGameAction {
-    /* 13 */   private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("ReprogramAction");
+    /* 13 */   private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("ExhaustingReprogramAction");
     /* 14 */   public static final String[] TEXT = uiStrings.TEXT;
     /*    */   private float startingDuration;
     /*    */
@@ -43,5 +44,7 @@
             /* 43 */       AbstractDungeon.gridSelectScreen.selectedCards.clear();
             /*    */     }
         /* 45 */     tickDuration();
+        this.isDone =true;
         /*    */   }
-    /*    */ }
+    /*    */
+        }

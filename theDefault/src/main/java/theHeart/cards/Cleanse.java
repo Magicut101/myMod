@@ -1,33 +1,39 @@
 package theHeart.cards;
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import theHeart.actions.ExhaustingReprogramAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.actions.unique.RemoveDebuffsAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.ArtifactPower;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 import theHeart.DefaultMod;
 import theHeart.characters.TheDefault;
 
 import static theHeart.DefaultMod.makeCardPath;
 
-import theHeart.powers.PacemakerPower;
+public class Cleanse extends AbstractDynamicCard {
 
-import static theHeart.DefaultMod.makeCardPath;
 
-public class Pacemaker extends AbstractDynamicCard {
-    public static final String ID = DefaultMod.makeID(Pacemaker.class.getSimpleName());
-    public static final String IMG = makeCardPath("Power.png");
+
+    public static final String ID = DefaultMod.makeID(Cleanse.class.getSimpleName());
+    public static final String IMG = makeCardPath("Skill.png");
+
     // /TEXT DECLARATION/
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.POWER;
+    private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
     private static final int UPGRADE_PLUS_MAGICNUMBER = 2;
     private static final int MAGICNUMBER = 4;
@@ -35,7 +41,7 @@ public class Pacemaker extends AbstractDynamicCard {
     // /STAT DECLARATION/
 
 
-    public Pacemaker() {
+    public Cleanse() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = MAGICNUMBER;
 
@@ -45,11 +51,10 @@ public class Pacemaker extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(p,p, new PacemakerPower(p, p, magicNumber), magicNumber));
-
-
+                new RemoveDebuffsAction(p));
+AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p,p, magicNumber));
     }
-    public AbstractDynamicCard makeCopy() { return new Pacemaker(); }
+    public AbstractDynamicCard makeCopy() { return new Cleanse(); }
 
 
     // Upgraded stats.
@@ -62,4 +67,3 @@ public class Pacemaker extends AbstractDynamicCard {
         }
     }
 }
-

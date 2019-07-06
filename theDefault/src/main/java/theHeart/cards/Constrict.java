@@ -29,6 +29,7 @@ public class Constrict extends AbstractDynamicCard {
         public static final AbstractCard.CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
         private static final int COST = 3;
+        private static final int UPGRADE_COST = 1;
 
         private static final int UPGRADE_PLUS_MAGICNUMBER = 5 ;
         private static final int MAGICNUMBER = 10;
@@ -59,6 +60,7 @@ this.exhaust = true;
             if (!upgraded) {
                 upgradeName();
                 upgradeMagicNumber(UPGRADE_PLUS_MAGICNUMBER);
+                upgradeBaseCost(UPGRADE_COST);
                 initializeDescription();
             }
 

@@ -1,6 +1,6 @@
 package theHeart.cards;
-
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import theHeart.actions.ExhaustingReprogramAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -11,11 +11,11 @@ import theHeart.characters.TheDefault;
 
 import static theHeart.DefaultMod.makeCardPath;
 
+import theHeart.powers.LoseEnergyNextTurn;
 import theHeart.powers.PacemakerPower;
 
-import static theHeart.DefaultMod.makeCardPath;
 
-public class Pacemaker extends AbstractDynamicCard {
+public class Toil extends AbstractDynamicCard {
     public static final String ID = DefaultMod.makeID(Pacemaker.class.getSimpleName());
     public static final String IMG = makeCardPath("Power.png");
     // /TEXT DECLARATION/
@@ -27,15 +27,15 @@ public class Pacemaker extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
-    private static final int COST = 2;
+    private static final int COST = 0;
 
     private static final int UPGRADE_PLUS_MAGICNUMBER = 2;
-    private static final int MAGICNUMBER = 4;
+    private static final int MAGICNUMBER = 2;
 
     // /STAT DECLARATION/
 
 
-    public Pacemaker() {
+    public Toil() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = MAGICNUMBER;
 
@@ -45,11 +45,14 @@ public class Pacemaker extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(p,p, new PacemakerPower(p, p, magicNumber), magicNumber));
+                new ApplyPowerAction(p,p, new LoseEnergyNextTurn(p, p, magicNumber), magicNumber));
+        AbstractDungeon.actionManager.addToBottom(
+                new GainEnergyAction(magicNumber));
+
 
 
     }
-    public AbstractDynamicCard makeCopy() { return new Pacemaker(); }
+    public AbstractDynamicCard makeCopy() { return new Toil(); }
 
 
     // Upgraded stats.
@@ -62,4 +65,3 @@ public class Pacemaker extends AbstractDynamicCard {
         }
     }
 }
-

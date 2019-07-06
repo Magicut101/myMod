@@ -10,11 +10,12 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import theHeart.DefaultMod;
 import theHeart.actions.ExhaustingReprogramAction;
+import theHeart.cards.Pacemaker;
 import theHeart.util.TextureLoader;
 
 public class PacemakerPower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
-    public static final String POWER_ID = DefaultMod.makeID("Pacemaker");
+    public static final String POWER_ID = DefaultMod.makeID("PacemakerPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -31,8 +32,8 @@ public class PacemakerPower extends AbstractPower implements CloneablePowerInter
         this.amount = amount;
         this.source = source;
 
-        type = AbstractPower.PowerType.DEBUFF;
-        isTurnBased = false;
+        type = PowerType.BUFF;
+        isTurnBased = true;
 
         // We load those textures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
@@ -43,11 +44,11 @@ public class PacemakerPower extends AbstractPower implements CloneablePowerInter
     @Override
     public void atStartOfTurn () {
 
-        AbstractDungeon.actionManager.addToBottom(new ExhaustingReprogramAction(1));
+        AbstractDungeon.actionManager.addToBottom(new ExhaustingReprogramAction(amount));
 
 }
     @Override
     public AbstractPower makeCopy() {
-        return new RarePower(owner, source, amount);
+        return new PacemakerPower(owner, source, amount);
     }
 }

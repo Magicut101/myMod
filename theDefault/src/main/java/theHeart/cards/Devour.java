@@ -1,25 +1,18 @@
 package theHeart.cards;
 
-import com.badlogic.gdx.graphics.Color;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.combat.BiteEffect;
-import com.megacrit.cardcrawl.vfx.combat.ImpactSparkEffect;
 import theHeart.DefaultMod;
-import theHeart.actions.QuickTranfusionAction;
+import theHeart.actions.SunderForStrengthAction;
 import theHeart.characters.TheDefault;
 
 import static theHeart.DefaultMod.makeCardPath;
 //Mostly broken, I want it to give the player 3 strength when it kills an enemy.
-public class QuickTransfusion extends AbstractDynamicCard {
+public class Devour extends AbstractDynamicCard {
 
-    public static final String ID = DefaultMod.makeID(QuickTransfusion.class.getSimpleName());
+    public static final String ID = DefaultMod.makeID(Devour.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
 
     public static final CardRarity RARITY = CardRarity.COMMON;
@@ -32,21 +25,21 @@ public class QuickTransfusion extends AbstractDynamicCard {
     private static final int UPGRADE_PLUS_DMG = 4 ;
     private static int magicNumber = 3;
 
-    public QuickTransfusion() {
+    public Devour() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
 
       magicNumber = this.baseMagicNumber;
-        this.exhaust = true;
+
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-AbstractDungeon.actionManager.addToBottom(new QuickTranfusionAction(m, new DamageInfo(p , damage, damageTypeForTurn), this.magicNumber));
+AbstractDungeon.actionManager.addToBottom(new SunderForStrengthAction(m, new DamageInfo(p , damage, damageTypeForTurn), this.magicNumber));
 
         }
 
-    public AbstractDynamicCard makeCopy() { return new QuickTransfusion(); }
+    public AbstractDynamicCard makeCopy() { return new Devour(); }
 
     @Override
     public void upgrade(){

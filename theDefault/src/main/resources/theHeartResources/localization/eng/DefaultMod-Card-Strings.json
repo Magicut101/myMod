@@ -72,13 +72,13 @@
     "DESCRIPTION": "Lose 4 HP. !D! damage to all enemies."
   },
   "theHeart:TentacleWhip": {
-  "NAME": "TentacleWhip",
-  "DESCRIPTION": "Deal !D! damage to all enemies, temporarily reduce !M! strength to all enemies."
-},
+    "NAME": "TentacleWhip",
+    "DESCRIPTION": "Deal !D! damage to all enemies, temporarily reduce !M! strength to all enemies."
+  },
   "theHeart:SpireGrowth": {
-  "NAME": "SpireGrowth",
-  "DESCRIPTION": "Gain !B! Temporary Hp, draw !M! cards."
-},
+    "NAME": "SpireGrowth",
+    "DESCRIPTION": "Gain !B! Temporary Hp, draw !M! cards."
+  },
   "theHeart:HastyFortification": {
     "NAME": "HastyFortification",
     "DESCRIPTION": "Gain !B! Block, lose !M! Dexterity."
@@ -86,37 +86,35 @@
   "theHeart:CapillaryExchange": {
     "NAME": "CapillaryExchange",
     "DESCRIPTION": "Draw the top and bottom card in your draw pile.",
-    "UPGRADE_DESCRIPTION":"Draw the top two cards and bottom card in your draw pile."
+    "UPGRADE_DESCRIPTION": "Draw the top two cards and bottom card in your draw pile."
   },
-    "theHeart:ChaoticEnergy": {
-      "NAME": "ChaoticEnergy",
-      "DESCRIPTION": "Give !B! Block to player and enemies. "
-    },
+  "theHeart:ChaoticEnergy": {
+    "NAME": "ChaoticEnergy",
+    "DESCRIPTION": "Give !B! Block to player and enemies. "
+  },
   "theHeart:Debilitate": {
     "NAME": "Debilitate",
     "DESCRIPTION": "Give !M! Weak, !M! Vulnerable, and Stun the enemy. Exhaust "
   },
-  "theHeart:QuickTransfusion": {
-    "NAME": "QuickTransfusion",
+  "theHeart:Devour": {
+    "NAME": "Devour",
     "DESCRIPTION": "Deal !D! damage, gain !M! strength this combat if this kills an enemy."
   },
   "theHeart:BloodClots": {
     "NAME": "BloodClots",
     "DESCRIPTION": "Gain !M! Block every time you exhaust a Status card."
-
   },
   "theHeart:HyperTrophy": {
     "NAME": "HyperTrophy",
     "DESCRIPTION": "Gain x3 your hp as Temporary hp, take 2.75 more damage."
   },
   "theHeart:MindScape": {
-  "NAME": "MindScape",
-  "DESCRIPTION": "Deal !D! Damage, NL Put a card from your discard pile on top of your draw pile.",
-  "UPGRADE_DESCRIPTION": "Deal !D! Damage, NL Put two cards from your discard pile on top of your draw pile."
-
-},
+    "NAME": "MindScape",
+    "DESCRIPTION": "Deal !D! Damage, NL Put a card from your discard pile on top of your draw pile.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage, NL Put two cards from your discard pile on top of your draw pile."
+  },
   "theHeart:BloodWall": {
-    "NAME":"BloodWall",
+    "NAME": "BloodWall",
     "DESCRIPTION": "Gain !B! Block, Gain block = to damage taken in this combat. "
   },
   "theHeart:Embolism": {
@@ -138,6 +136,31 @@
   },
   "theHeart:Pacemaker": {
     "NAME": "Pacemaker",
-    "DESCRIPTION": "Look at the first 5 cards in your draw pile and exhaust one card."
-  }
+    "DESCRIPTION": "Look at the first !M! cards in your draw pile and exhaust one card."
+  },
+  "theHeart:Hemorrhage": {
+    "NAME": "Hemorrhage",
+    "DESCRIPTION": "Draw 1 extra card per turn, add 1 wound to your discard pile per turn. "
+  },
+  "theHeart:Corrupt": {
+    "NAME": "Corrupt",
+    "DESCRIPTION": "Triple SOME debuffs. Exhaust"
+  },
+  "theHeart:ArterialFlow": {
+    "NAME": "ArterialFlow",
+    "DESCRIPTION": "Deal !D! damage, draw !M! cards, add 1 Wound to your draw pile."
+  },
+  "theHeart:Invincibility": {
+    "NAME": "Invincibility",
+    "DESCRIPTION": "Cap damage taken in a single to !M! damage."
+  },
+  "theHeart:Cleanse": {
+    "NAME": "Cleanse",
+    "Description": "Remove all Debuffs from self, Gain !M! Block"
+  },
+  "theHeart:Toil": {
+  "NAME": "Toil",
+  "DESCRIPTION": "Gain !M! energy this turn, lose !M! energy next turn"
+}
+
 }

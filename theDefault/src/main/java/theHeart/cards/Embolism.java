@@ -60,7 +60,7 @@ public class Embolism extends AbstractDynamicCard {
                         AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Wound(),2, true, true));
         AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(p,p,new DrawReductionPower(p,baseMagicNumber)));
+                new ApplyPowerAction(p,p,new DrawReductionPower(p,magicNumber)));
 
     }
     public AbstractDynamicCard makeCopy() { return new Embolism(); }

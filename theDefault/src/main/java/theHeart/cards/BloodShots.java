@@ -85,7 +85,9 @@ baseDamage = DAMAGE;
         }
 
     }
-
+    public AbstractDynamicCard makeCopy() {
+        return new BloodShots();
+    }
     // Upgraded stats.
     @Override
     public void upgrade() {

@@ -45,7 +45,7 @@ private static final int UPGRADE_PLUS_DMG = 3 ;
 public MindScape() {
     super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
     baseDamage = DAMAGE;
-    this.isEthereal = true;
+
 
 }
 @Override

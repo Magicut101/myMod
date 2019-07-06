@@ -1,6 +1,7 @@
 package theHeart.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.powers.InvinciblePower;
 import theHeart.actions.ExhaustingReprogramAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -15,8 +16,8 @@ import theHeart.powers.PacemakerPower;
 
 import static theHeart.DefaultMod.makeCardPath;
 
-public class Pacemaker extends AbstractDynamicCard {
-    public static final String ID = DefaultMod.makeID(Pacemaker.class.getSimpleName());
+public class Invincibility extends AbstractDynamicCard {
+    public static final String ID = DefaultMod.makeID(Invincibility .class.getSimpleName());
     public static final String IMG = makeCardPath("Power.png");
     // /TEXT DECLARATION/
 
@@ -29,13 +30,13 @@ public class Pacemaker extends AbstractDynamicCard {
 
     private static final int COST = 2;
 
-    private static final int UPGRADE_PLUS_MAGICNUMBER = 2;
-    private static final int MAGICNUMBER = 4;
+    private static final int UPGRADE_PLUS_MAGICNUMBER = -5;
+    private static final int MAGICNUMBER = 30;
 
     // /STAT DECLARATION/
 
 
-    public Pacemaker() {
+    public Invincibility () {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = MAGICNUMBER;
 
@@ -45,11 +46,11 @@ public class Pacemaker extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(p,p, new PacemakerPower(p, p, magicNumber), magicNumber));
+                new ApplyPowerAction(p,p, new InvinciblePower(p,  magicNumber), magicNumber));
 
 
     }
-    public AbstractDynamicCard makeCopy() { return new Pacemaker(); }
+    public AbstractDynamicCard makeCopy() { return new Invincibility(); }
 
 
     // Upgraded stats.

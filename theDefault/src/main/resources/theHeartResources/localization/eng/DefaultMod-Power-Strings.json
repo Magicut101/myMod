@@ -18,5 +18,13 @@
         "theHeart:Pacemaker": {
                 "NAME": "Pacemaker",
                 "DESCRIPTION":["Look at the first 5 cards in your draw pile, exhaust one card"]
-        }
+        },
+        "theHeart:Hemorrhage": {
+                "NAME": "Hemorrhage",
+                "DESCRIPTION": ["Draw 1 extra card, add 1 Wound to your draw pile"]
+        },
+        "theHeart:LoseEnergyNextTurn": {
+        "NAME": "LoseEnergyNextTurn",
+        "DESCRIPTION": ["Lose !M! energy next turn."]
+}
 }

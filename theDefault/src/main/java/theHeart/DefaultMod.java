@@ -419,7 +419,7 @@ public class DefaultMod implements
         BaseMod.addCard(new ChaoticEnergy());
         BaseMod.addCard(new CapillaryExchange());
         BaseMod.addCard(new Debilitate ());
-        BaseMod.addCard(new QuickTransfusion());
+        BaseMod.addCard(new Devour());
         BaseMod.addCard(new BloodClots());
         BaseMod.addCard(new HyperTrophy());
         BaseMod.addCard(new MindScape());
@@ -429,6 +429,11 @@ public class DefaultMod implements
         BaseMod.addCard(new Constrict());
         BaseMod.addCard(new AncientEvil());
         BaseMod.addCard(new Pacemaker());
+        BaseMod.addCard(new Hemorrhage());
+        BaseMod.addCard(new ArterialFlow());
+        BaseMod.addCard(new Invincibility());
+        BaseMod.addCard(new Cleanse());
+        BaseMod.addCard(new Toil());
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
         // This is so that they are all "seen" in the library, for people who like to look at the card list
@@ -449,7 +454,7 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(ChaoticEnergy.ID);
         UnlockTracker.unlockCard(CapillaryExchange.ID);
         UnlockTracker.unlockCard(Debilitate.ID);
-        UnlockTracker.unlockCard(QuickTransfusion.ID);
+        UnlockTracker.unlockCard(Devour.ID);
         UnlockTracker.unlockCard(BloodClots.ID);
         UnlockTracker.unlockCard(HyperTrophy.ID);
         UnlockTracker.unlockCard(MindScape.ID);
@@ -459,6 +464,12 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(Constrict.ID);
         UnlockTracker.unlockCard(AncientEvil.ID);
         UnlockTracker.unlockCard(Pacemaker.ID);
+        UnlockTracker.unlockCard(Hemorrhage.ID);
+        UnlockTracker.unlockCard(ArterialFlow.ID);
+        UnlockTracker.unlockCard(Invincibility.ID);
+        UnlockTracker.unlockCard(Cleanse.ID);
+        UnlockTracker.unlockCard(Toil.ID);
+
         logger.info("Done adding cards!");
     }
     

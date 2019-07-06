@@ -37,7 +37,7 @@ public class HeartBurn extends AbstractDynamicCard {
     private static final int UPGRADE_PLUS_MAGIC_NUMBER = 4;
     private static final int MAGIC_NUMBER = 11;
     private static final int DEFAULTSECONDMAGICNUMBER = 4;
-    private static final int UPGRADE_PLUS_DEFAULTSECONDMAGICNUMBER = 1;
+    private static final int UPGRADE_PLUS_DEFAULTSECONDMAGICNUMBER = 2;
 
     // /STAT DECLARATION/
 
@@ -55,7 +55,7 @@ defaultSecondMagicNumber =  DEFAULTSECONDMAGICNUMBER;
          AbstractDungeon.actionManager.addToBottom
                  (new ApplyPowerAction(m, p, new PoisonPower(m, p, this.magicNumber), this.magicNumber, AbstractGameAction.AttackEffect.POISON));
          AbstractDungeon.actionManager.addToBottom
-                 (new ApplyPowerAction (p, p, new PoisonPower(p, p, this.defaultSecondMagicNumber), this.defaultSecondMagicNumber));
+                 (new ApplyPowerAction (p, p, new PoisonPower(p, p, this.defaultSecondMagicNumber), this.defaultSecondMagicNumber, AbstractGameAction.AttackEffect.POISON));
 
         }
 
