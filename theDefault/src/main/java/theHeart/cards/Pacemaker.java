@@ -29,15 +29,15 @@ public class Pacemaker extends AbstractDynamicCard {
 
     private static final int COST = 2;
 
-    private static final int UPGRADE_PLUS_MAGICNUMBER = 2;
-    private static final int MAGICNUMBER = 4;
+    private static final int UPGRADE_PLUS_MAGIC_NUMBER = 2;
+    private static final int MAGIC_NUMBER = 4;
 
     // /STAT DECLARATION/
 
 
     public Pacemaker() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseMagicNumber = MAGICNUMBER;
+        baseMagicNumber = MAGIC_NUMBER;
 
     }
 
@@ -49,7 +49,6 @@ public class Pacemaker extends AbstractDynamicCard {
 
 
     }
-    public AbstractDynamicCard makeCopy() { return new Pacemaker(); }
 
 
     // Upgraded stats.
@@ -57,7 +56,7 @@ public class Pacemaker extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_MAGICNUMBER);
+            upgradeMagicNumber(UPGRADE_PLUS_MAGIC_NUMBER);
             initializeDescription();
         }
     }

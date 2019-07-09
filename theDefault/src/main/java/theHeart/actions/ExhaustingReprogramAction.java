@@ -11,7 +11,7 @@
 /*    */
 /*    */ public class ExhaustingReprogramAction
         /*    */   extends AbstractGameAction {
-    /* 13 */   private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("ExhaustingReprogramAction");
+    /* 13 */   private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("ReprogramAction");
     /* 14 */   public static final String[] TEXT = uiStrings.TEXT;
     /*    */   private float startingDuration;
     /*    */
@@ -39,7 +39,7 @@
             /*    */     }
         /* 39 */     else if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
             /* 40 */       for (AbstractCard c : AbstractDungeon.gridSelectScreen.selectedCards) {
-                /* 41 */         AbstractDungeon.player.exhaustPile.moveToExhaustPile(c);
+                /* 41 */         AbstractDungeon.player.hand.moveToExhaustPile(c);
                 /*    */       }
             /* 43 */       AbstractDungeon.gridSelectScreen.selectedCards.clear();
             /*    */     }

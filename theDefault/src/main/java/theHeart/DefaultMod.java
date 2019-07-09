@@ -434,6 +434,10 @@ public class DefaultMod implements
         BaseMod.addCard(new Invincibility());
         BaseMod.addCard(new Cleanse());
         BaseMod.addCard(new Toil());
+        BaseMod.addCard(new Embolectomy ());
+        BaseMod.addCard(new EndlessHatred());
+        BaseMod.addCard(new MyocardialRupture());
+        BaseMod.addCard(new QuantumEntanglement());
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
         // This is so that they are all "seen" in the library, for people who like to look at the card list
@@ -469,7 +473,10 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(Invincibility.ID);
         UnlockTracker.unlockCard(Cleanse.ID);
         UnlockTracker.unlockCard(Toil.ID);
-
+        UnlockTracker.unlockCard(Embolectomy.ID);
+        UnlockTracker.unlockCard(EndlessHatred.ID);
+        UnlockTracker.unlockCard(MyocardialRupture.ID);
+        UnlockTracker.unlockCard(QuantumEntanglement.ID);
         logger.info("Done adding cards!");
     }
     

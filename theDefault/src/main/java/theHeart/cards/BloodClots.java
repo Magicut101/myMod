@@ -76,7 +76,6 @@ public class BloodClots extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber (UPGRADE_PLUS_MAGIC_NUMBER);
-            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

@@ -44,7 +44,7 @@ public class PacemakerPower extends AbstractPower implements CloneablePowerInter
     @Override
     public void atStartOfTurn () {
 
-        AbstractDungeon.actionManager.addToBottom(new ExhaustingReprogramAction(amount));
+        AbstractDungeon.actionManager.addToTurnStart(new ExhaustingReprogramAction(amount));
 
 }
     @Override

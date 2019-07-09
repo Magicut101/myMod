@@ -17,11 +17,11 @@ import static theHeart.DefaultMod.makeCardPath;
 
     public class ArterialFlow  extends AbstractDynamicCard{
 
-        public static final String ID = DefaultMod.makeID(theHeart.cards.ArterialFlow.class.getSimpleName());
+        public static final String ID = DefaultMod.makeID(ArterialFlow.class.getSimpleName());
         public static final String IMG = makeCardPath("Attack.png");
 
         private static final CardRarity RARITY = CardRarity.COMMON;
-        private static final CardTarget TARGET = CardTarget.SELF;
+        private static final CardTarget TARGET = CardTarget.ENEMY;
         private static final CardType TYPE = CardType.ATTACK;
         public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
@@ -49,7 +49,7 @@ import static theHeart.DefaultMod.makeCardPath;
                    new Wound(),1, true,true,false));
         }
         public AbstractDynamicCard makeCopy() {
-            return new theHeart.cards.ArterialFlow();
+            return new ArterialFlow();
         }
 
         @Override

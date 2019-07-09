@@ -28,14 +28,14 @@ public class Hemorrhage extends AbstractDynamicCard {
     private static final int UPGRADE_COST = 1;
 
 
-    private static final int MAGICNUMBER = 1;
+    private static final int MAGIC_NUMBER = 1;
 
     // /STAT DECLARATION/
 
 
     public Hemorrhage() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseMagicNumber = MAGICNUMBER;
+        baseMagicNumber = magicNumber = MAGIC_NUMBER;
 
     }
 

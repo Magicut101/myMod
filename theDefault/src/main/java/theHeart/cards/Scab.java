@@ -38,7 +38,7 @@ public class Scab extends AbstractDynamicCard {
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
-    private static final int BLOCK = 13;
+    private static final int BLOCK = 12;
     private static final int UPGRADE_PLUS_BLOCK = 4;
 
     // /STAT DECLARATION/
@@ -56,7 +56,7 @@ public class Scab extends AbstractDynamicCard {
         AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new Wound(),2));
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, BLOCK));
     }
-
+    public AbstractDynamicCard makeCopy() { return new Scab(); }
     //Upgraded stats.
     @Override
     public void upgrade() {

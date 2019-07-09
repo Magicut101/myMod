@@ -16,7 +16,7 @@ import theHeart.powers.PacemakerPower;
 
 
 public class Toil extends AbstractDynamicCard {
-    public static final String ID = DefaultMod.makeID(Pacemaker.class.getSimpleName());
+    public static final String ID = DefaultMod.makeID(Toil.class.getSimpleName());
     public static final String IMG = makeCardPath("Power.png");
     // /TEXT DECLARATION/
 
@@ -24,20 +24,21 @@ public class Toil extends AbstractDynamicCard {
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.POWER;
+    private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
     private static final int COST = 0;
 
-    private static final int UPGRADE_PLUS_MAGICNUMBER = 2;
-    private static final int MAGICNUMBER = 2;
+    private static final int UPGRADE_PLUS_ENERGY = 2;
+    private static final int ENERGY = 2;
+
 
     // /STAT DECLARATION/
 
 
     public Toil() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseMagicNumber = MAGICNUMBER;
+        baseMagicNumber = magicNumber = ENERGY;
 
     }
 
@@ -60,7 +61,7 @@ public class Toil extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_MAGICNUMBER);
+            upgradeMagicNumber(UPGRADE_PLUS_ENERGY);
             initializeDescription();
         }
     }

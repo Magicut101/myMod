@@ -34,18 +34,18 @@ public class HeartBurn extends AbstractDynamicCard {
     private static final int COST = 1;
 
 
-    private static final int UPGRADE_PLUS_MAGIC_NUMBER = 4;
-    private static final int MAGIC_NUMBER = 11;
-    private static final int DEFAULTSECONDMAGICNUMBER = 4;
-    private static final int UPGRADE_PLUS_DEFAULTSECONDMAGICNUMBER = 2;
+    private static final int UPGRADE_PLUS_POISON = 4;
+    private static final int POISON = 11;
+    private static final int SELF_POISON = 4;
+    private static final int UPGRADE_PLUS_SELF_POISON = 2;
 
     // /STAT DECLARATION/
 
 
     public HeartBurn() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-magicNumber = MAGIC_NUMBER;
-defaultSecondMagicNumber =  DEFAULTSECONDMAGICNUMBER;
+magicNumber = baseMagicNumber = POISON;
+defaultSecondMagicNumber = defaultBaseSecondMagicNumber = SELF_POISON;
     }
 
     // Actions the card should do.
@@ -53,9 +53,11 @@ defaultSecondMagicNumber =  DEFAULTSECONDMAGICNUMBER;
     public void use(AbstractPlayer p, AbstractMonster m) {
 
          AbstractDungeon.actionManager.addToBottom
-                 (new ApplyPowerAction(m, p, new PoisonPower(m, p, this.magicNumber), this.magicNumber, AbstractGameAction.AttackEffect.POISON));
+                 (new ApplyPowerAction(m, p, new PoisonPower(m, p, this.magicNumber), this.magicNumber,
+                         AbstractGameAction.AttackEffect.POISON));
          AbstractDungeon.actionManager.addToBottom
-                 (new ApplyPowerAction (p, p, new PoisonPower(p, p, this.defaultSecondMagicNumber), this.defaultSecondMagicNumber, AbstractGameAction.AttackEffect.POISON));
+                 (new ApplyPowerAction (p, p, new PoisonPower(p, p, this.defaultSecondMagicNumber),
+                         this.defaultSecondMagicNumber, AbstractGameAction.AttackEffect.POISON));
 
         }
 
@@ -66,8 +68,8 @@ defaultSecondMagicNumber =  DEFAULTSECONDMAGICNUMBER;
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_MAGIC_NUMBER);
-            upgradeDefaultSecondMagicNumber(UPGRADE_PLUS_DEFAULTSECONDMAGICNUMBER);
+            upgradeMagicNumber(UPGRADE_PLUS_POISON);
+            upgradeDefaultSecondMagicNumber(UPGRADE_PLUS_SELF_POISON);
             rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

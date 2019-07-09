@@ -14,7 +14,7 @@
   },
   "theHeart:Scab": {
     "NAME": "Scab",
-    "DESCRIPTION": "Gain !B! Block, add 1 Wound to your Hand."
+    "DESCRIPTION": "Gain !B! Block, add !M! Wounds to your Hand."
   },
   "theHeart:BloodDrop": {
     "NAME": "BloodDrop",
@@ -131,7 +131,7 @@
     "DESCRIPTION": "Apply !M! Constrict to an enemy. Exhaust"
   },
   "theHeart:AncientEvil": {
-    "NAME": "AncientEvil",
+    "NAME": "Ancient Evil",
     "DESCRIPTION": "Gain !M! Artifact."
   },
   "theHeart:Pacemaker": {
@@ -156,11 +156,26 @@
   },
   "theHeart:Cleanse": {
     "NAME": "Cleanse",
-    "Description": "Remove all Debuffs from self, Gain !M! Block"
+    "DESCRIPTION": "Remove all debuffs from self, Gain !B! Block"
   },
   "theHeart:Toil": {
-  "NAME": "Toil",
-  "DESCRIPTION": "Gain !M! energy this turn, lose !M! energy next turn"
-}
-
+    "NAME": "Toil",
+    "DESCRIPTION": "Gain !M! energy this turn, lose !M! energy next turn"
+  },
+  "theHeart:Embolectomy": {
+    "NAME": "Embolectomy",
+    "DESCRIPTION": "Look at the first !M! cards in your deck, exhaust one."
+  },
+  "theHeart:EndlessHatred": {
+    "NAME": "EndlessHatred",
+    "DESCRIPTION": "When a status card exhausts deal !M! to all enemies."
+  },
+  "theHeart:MyocardialRupture": {
+    "NAME": "Myocardial Rupture",
+    "DESCRIPTION": "All cards cost zero, when you play a card transform it into a Wound."
+  },
+  "theHeart:QuantumEntanglement": {
+    "NAME":" Quantum Entanglement",
+    "DESCRIPTION": "Deal Damage  = to enemy intent  !D!."
+  }
 }

@@ -1,17 +1,10 @@
-package theHeart.cards;
+ package theHeart.cards;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.unique.RemoveDebuffsAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
 import theHeart.DefaultMod;
 import theHeart.characters.TheDefault;
 
@@ -20,13 +13,9 @@ import static theHeart.DefaultMod.makeCardPath;
 public class Cleanse extends AbstractDynamicCard {
 
 
-
     public static final String ID = DefaultMod.makeID(Cleanse.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
 
-    // /TEXT DECLARATION/
-
-    // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -35,16 +24,15 @@ public class Cleanse extends AbstractDynamicCard {
 
     private static final int COST = 1;
 
-    private static final int UPGRADE_PLUS_MAGICNUMBER = 2;
-    private static final int MAGICNUMBER = 4;
+    private static final int UPGRADE_PLUS_BLOCK= 2;
+    private static final int BLOCK = 4;
 
     // /STAT DECLARATION/
 
 
     public Cleanse() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseMagicNumber = MAGICNUMBER;
-
+        baseBlock = BLOCK;
     }
 
     // Actions the card should do.
@@ -52,9 +40,14 @@ public class Cleanse extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
                 new RemoveDebuffsAction(p));
-AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p,p, magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
+
+
+}
+    public AbstractDynamicCard makeCopy() {
+        return new Cleanse();
     }
-    public AbstractDynamicCard makeCopy() { return new Cleanse(); }
+
 
 
     // Upgraded stats.
@@ -62,7 +55,7 @@ AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p,p, magicNumber))
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_MAGICNUMBER);
+            upgradeMagicNumber(UPGRADE_PLUS_BLOCK);
             initializeDescription();
         }
     }
