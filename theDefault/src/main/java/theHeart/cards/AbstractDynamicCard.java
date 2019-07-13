@@ -28,6 +28,4 @@ public abstract class AbstractDynamicCard extends AbstractDefaultCard {
 
     }
 
-    //This card crashes the game when played
-    public abstract void use (AbstractMonster m, AbstractPlayer p);
 }

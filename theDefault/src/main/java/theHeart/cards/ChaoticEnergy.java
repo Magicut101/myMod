@@ -28,17 +28,17 @@ public class ChaoticEnergy extends AbstractDynamicCard {
 
     public ChaoticEnergy() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-baseBlock = BLOCK;
+        baseBlock = BLOCK;
     }
 //This card crashes the game when played
 
-
-
     @Override
-
+    public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {}
+        
+        @Override
     public void triggerWhenDrawn() {
         for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters)
-         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(mo, AbstractDungeon.player, baseBlock));
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(mo, AbstractDungeon.player, baseBlock));
 
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, baseBlock));
     }
@@ -47,12 +47,7 @@ baseBlock = BLOCK;
     public AbstractDynamicCard makeCopy() {
         return new ChaoticEnergy();
     }
-
-    @Override
-    public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-
-    }
-
+    
 
     @Override
     public void upgrade() {
@@ -62,8 +57,8 @@ baseBlock = BLOCK;
             initializeDescription();
         }
     }
-
-
 }
+
+
 
 
