@@ -88,7 +88,7 @@ public class DefaultMod implements
     //This is for the in-game mod settings panel.
     private static final String MODNAME = "theHeart";
     private static final String AUTHOR = "Magicut101"; // And pretty soon - You!
-    private static final String DESCRIPTION = "A base for Slay the Spire to start your own mod from, feat. the Default.";
+    private static final String DESCRIPTION = "Slay the Spire's Heart";
     
     // =============== INPUT TEXTURE LOCATION =================
     
