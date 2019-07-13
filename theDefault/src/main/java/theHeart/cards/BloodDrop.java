@@ -40,7 +40,7 @@ public class BloodDrop extends AbstractDynamicCard {
     private static final int COST = 1;
 
 
-    private static final int DAMAGE = 15;
+    private static final int DAMAGE = 13;
     private static final int UPGRADE_PLUS_DAMAGE = 3;
     private static final int UPGRADE_PLUS_MAGICNUMBER = -1;
     private static final int MAGICNUMBER = 2;

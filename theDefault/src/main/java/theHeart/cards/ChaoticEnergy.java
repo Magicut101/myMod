@@ -34,7 +34,10 @@ public class ChaoticEnergy extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {}
-        
+
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        return false;
+    }
         @Override
     public void triggerWhenDrawn() {
         for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters)

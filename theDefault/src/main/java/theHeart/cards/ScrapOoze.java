@@ -16,7 +16,7 @@ import static theHeart.DefaultMod.makeCardPath;
 
 public class ScrapOoze extends AbstractDynamicCard {
 
-    public static final String ID = DefaultMod.makeID(SpireGrowth.class.getSimpleName());
+    public static final String ID = DefaultMod.makeID(ScrapOoze.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
 
     private static final AbstractCard.CardRarity RARITY = AbstractCard.CardRarity.UNCOMMON;
@@ -26,9 +26,9 @@ public class ScrapOoze extends AbstractDynamicCard {
 
     private static final int COST = -2;
 
-    private static final int BLOCK = 5;
+    private static final int BLOCK = 8;
     private static final int UPGRADED_PLUS_BLOCK = 3;
-    private static final int MAGIC_NUMBER = 1;
+    private static final int MAGIC_NUMBER = 2;
 
     public ScrapOoze() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -37,22 +37,23 @@ public class ScrapOoze extends AbstractDynamicCard {
     }
 @Override
     public void use(AbstractPlayer p, AbstractMonster m){}
-
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        return false;
+    }
     public void triggerOnExhaust() {
         AbstractDungeon.actionManager.addToBottom
                 (new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, this.magicNumber));
     }
 
     @Override
-    public void onPlayCard(AbstractCard c, AbstractMonster m) {
-        super.onPlayCard(c, m);
+   public void triggerWhenDrawn() {
         AbstractDungeon.actionManager.addToBottom(new LoseHPAction(AbstractDungeon.player, AbstractDungeon.player, magicNumber));
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player,AbstractDungeon.player,baseBlock));
 
     }
 
     public AbstractDynamicCard makeCopy() {
-        return new SpireGrowth();
+        return new ScrapOoze ();
     }
 
     @Override

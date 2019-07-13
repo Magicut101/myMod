@@ -54,8 +54,6 @@ public class PacemakerPower extends AbstractPower implements CloneablePowerInter
 
     public void atStartOfTurnPostDraw() {
 
-AbstractDungeon.actionManager.addToBottom(new DrawCardAction(owner, amount));
-AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(new Wound(), AbstractDungeon.player.hand, false ));
     }
 
         public AbstractPower makeCopy() {

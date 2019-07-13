@@ -223,7 +223,7 @@
     "DESCRIPTION": "Exhaust X cards in hand, Add X burns, Deal X damage X times."
   },
   "theHeart:ScrapOoze": {
-    "NAME": "ScrapOoze",
-    "DESCRIPTION":"Unplayable. Lose !M! hp whenever you play a card and Gain !B! Block."
+    "NAME":"ScrapOoze",
+    "DESCRIPTION":"Unplayable. Lose !M! hp whenever you play a card and Gain !B! Block. When Exhausted gain !M! Block."
   }
 }
