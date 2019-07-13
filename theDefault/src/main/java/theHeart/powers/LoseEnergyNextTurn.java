@@ -7,6 +7,7 @@ package theHeart.powers;
         import com.megacrit.cardcrawl.actions.AbstractGameAction;
         import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
         import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+        import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
         import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
         import com.megacrit.cardcrawl.actions.unique.LoseEnergyAction;
         import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -35,6 +36,7 @@ public class LoseEnergyNextTurn extends AbstractPower implements CloneablePowerI
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
+
     public LoseEnergyNextTurn(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
         ID = POWER_ID;
@@ -43,21 +45,23 @@ public class LoseEnergyNextTurn extends AbstractPower implements CloneablePowerI
         this.amount = amount;
         this.source = source;
 
+
         type = AbstractPower.PowerType.DEBUFF;
-        isTurnBased = false;
+        isTurnBased = true;
 
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
 
         updateDescription();
+
     }
-
-
     public void atStartOfTurn() {
         flash();
         AbstractDungeon.actionManager.addToBottom(new LoseEnergyAction(this.amount));
-        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, "LoseEnergyNextTurn"));
     }
+   public void atEndOfRound() {
+           AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, "LoseEnergyNextTurn"));
+   }
     public AbstractPower makeCopy() {
         return new LoseEnergyNextTurn(owner, source, amount);
     }

@@ -30,7 +30,7 @@ import static theHeart.DefaultMod.makeCardPath;
      private static final int COST = 1;
      private static final int DAMAGE = 4;
      private static final int UPGRADE_PLUS_DAMAGE = 2;
-     private static final int STRENGTH_LOSS = 2;
+     private static final int STRENGTH_LOSS = 1;
      private static final int UPG_STRENGTH_AMT = 1;
 //I added code from piercing wail so this now properly reduces strength to all enemies but now it does an extra attack for every enemy?
      // I moved some code up but that properly didn't fix the issue.
@@ -39,7 +39,7 @@ import static theHeart.DefaultMod.makeCardPath;
          super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
          baseDamage = DAMAGE;
          isMultiDamage = true;
-         baseMagicNumber = 2;
+         baseMagicNumber = STRENGTH_LOSS;
          magicNumber = this.baseMagicNumber;
      }
 @Override
@@ -76,7 +76,7 @@ import static theHeart.DefaultMod.makeCardPath;
          if (!upgraded) {
              upgradeName();
              upgradeDamage(UPGRADE_PLUS_DAMAGE);
-             upgradeMagicNumber(1);
+             upgradeMagicNumber(UPG_STRENGTH_AMT);
              initializeDescription();
          }
      }

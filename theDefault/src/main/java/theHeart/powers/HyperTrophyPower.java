@@ -5,6 +5,7 @@ package theHeart.powers;
     import com.badlogic.gdx.graphics.Texture;
     import com.badlogic.gdx.graphics.g2d.TextureAtlas;
     import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+    import com.megacrit.cardcrawl.actions.unique.IncreaseMaxHpAction;
     import com.megacrit.cardcrawl.cards.AbstractCard;
     import com.megacrit.cardcrawl.cards.DamageInfo;
     import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -15,6 +16,7 @@ package theHeart.powers;
     import com.megacrit.cardcrawl.powers.AbstractPower;
     import theHeart.DefaultMod;
 
+    import theHeart.cards.HyperTrophy;
     import theHeart.util.TextureLoader;
 
     public class HyperTrophyPower extends AbstractPower implements CloneablePowerInterface {
@@ -47,16 +49,39 @@ package theHeart.powers;
 
             updateDescription();
         }
-        private static final float EFFECTIVENESS = 2.75F; private static final int EFFECTIVENESS_STRING = 275;
+
+        private static final float EFFECTIVENESS = 3.00F;
+        private static final int EFFECTIVENESS_STRING = 300;
+
+
+        @Override
+        public void onInitialApplication() {
+            super.onInitialApplication();
+            final int healthAmount = AbstractDungeon.player.maxHealth * amount;
+            AbstractDungeon.player.increaseMaxHp(healthAmount, false);
+        }
+
+
+        @Override
+        public void atEndOfRound() {
+            super.atEndOfRound();
+            final int healthAmount = AbstractDungeon.player.maxHealth * amount;
+                    AbstractDungeon.player.decreaseMaxHealth(healthAmount);
+                }
+
 
         @Override
         public float atDamageReceive(float damage, DamageInfo.DamageType type) {
-             if (type == DamageInfo.DamageType.NORMAL) {
-             }
-             return damage * 2.75F;
-                 }
+
+            if (type == DamageInfo.DamageType.NORMAL) {
+            }
+            return damage * 3.00F;
+        }
+
+
+
         @Override
         public AbstractPower makeCopy() {
-            return new BloodClotsPower(owner, source, amount);
+            return new HyperTrophyPower(owner, source, amount);
         }
         }

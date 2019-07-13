@@ -55,7 +55,7 @@ public class HyperTrophy extends AbstractDynamicCard {
 
     private static final int COST = 1;
     private static final int UPGRADED_COST = 1;
-    private static final int MAGIC = 1;
+    private static final int MAGIC = 3;
     private static final int HP = 210;
 
     // /STAT DECLARATION/
@@ -68,7 +68,6 @@ public class HyperTrophy extends AbstractDynamicCard {
 
     }
 
-    // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 

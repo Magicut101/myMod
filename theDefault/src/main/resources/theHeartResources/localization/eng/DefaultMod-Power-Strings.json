@@ -24,7 +24,7 @@
         "theHeart:HyperTrophy": {
                 "NAME": "HyperTrophy",
                 "DESCRIPTION": [
-                        "Gain 210 Temporary Hp, Take 2.75 more damage from attacks."
+                        "Gain 210 Temporary Hp, Take 3x more damage from attacks."
                 ]
         },
         "theHeart:Pacemaker": {
@@ -56,5 +56,17 @@
                 "DESCRIPTION": [
                         "All cards cost zero, when you play a card transform it into a Wound."
                 ]
-        }
+        },
+        "theHeart:NoxiousBloodPower": {
+                "NAME": "Noxious Blood",
+                "DESCRIPTION": [
+                        "At the start of your turn, Apply !M! poison to self and ALL enemies."
+                ]
+          },
+"theHeart:GrayPlateletsPower": {
+"NAME": "GrayPlateletsPower",
+"DESCRIPTION": [
+        "Whenever you lose hp from a card, apply 2 poison to all enemies."
+]
+}
 }

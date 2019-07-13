@@ -24,7 +24,6 @@ import org.apache.logging.log4j.Logger;
 import theHeart.DefaultMod;
 import theHeart.cards.*;
 import theHeart.relics.DefaultClickableRelic;
-import theHeart.relics.PlaceholderRelic;
 import theHeart.relics.PlaceholderRelic2;
 
 import java.util.ArrayList;
@@ -179,11 +178,10 @@ public class TheDefault extends CustomPlayer {
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
 
-        retVal.add(PlaceholderRelic.ID);
+
         retVal.add(PlaceholderRelic2.ID);
         retVal.add(DefaultClickableRelic.ID);
 
-        UnlockTracker.markRelicAsSeen(PlaceholderRelic.ID);
         UnlockTracker.markRelicAsSeen(PlaceholderRelic2.ID);
         UnlockTracker.markRelicAsSeen(DefaultClickableRelic.ID);
 

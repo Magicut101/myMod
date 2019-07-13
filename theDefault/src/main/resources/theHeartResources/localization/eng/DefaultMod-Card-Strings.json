@@ -14,7 +14,7 @@
   },
   "theHeart:Scab": {
     "NAME": "Scab",
-    "DESCRIPTION": "Gain !B! Block, add !M! Wounds to your Hand."
+    "DESCRIPTION": "Gain !B! Block, add 2 Wounds to your Hand."
   },
   "theHeart:BloodDrop": {
     "NAME": "BloodDrop",
@@ -115,7 +115,7 @@
   },
   "theHeart:BloodWall": {
     "NAME": "BloodWall",
-    "DESCRIPTION": "Gain !B! Block, Gain block = to damage taken in this combat. "
+    "DESCRIPTION": "Gain !B! Block, Gain block = to last damage taken in this combat. "
   },
   "theHeart:Embolism": {
     "NAME": "Embolism",
@@ -170,12 +170,60 @@
     "NAME": "EndlessHatred",
     "DESCRIPTION": "When a status card exhausts deal !M! to all enemies."
   },
-  "theHeart:MyocardialRupture": {
-    "NAME": "Myocardial Rupture",
-    "DESCRIPTION": "All cards cost zero, when you play a card transform it into a Wound."
+  "theHeart:CardiacRupture": {
+    "NAME": "Cardiac Rupture",
+    "DESCRIPTION": "Lose !M! hp every time you play a card. All cards cost zero, when you play a card exhaust it and add a wound to hand."
   },
   "theHeart:QuantumEntanglement": {
-    "NAME":" Quantum Entanglement",
+    "NAME": " Quantum Entanglement",
     "DESCRIPTION": "Deal Damage  = to enemy intent  !D!."
+  },
+  "theHeart:Crumble": {
+    "NAME": "Crumble",
+    "DESCRIPTION": "Remove all buffs, and debuffs on an enemy, deal !M! times damage = to enemy block."
+  },
+  "theHeart:TranquilRhythm": {
+    "NAME": "TranquilRhythm",
+    "DESCRIPTION": "Gain !B! block, heal the enemy for !M! hp, and give !theHeart:SecondMagic! weaken."
+  },
+  "theHeart:NoxiousBlood": {
+    "NAME": "Noxious Blood",
+    "DESCRIPTION": "At the start of your turn, apply !M! poison to SELF and ALL enemies."
+  },
+  "theHeart:GrayPlatelets": {
+    "NAME": "GrayPlatelets",
+    "DESCRIPTION": "Whenever you lose hp apply !M! poison to self and ALL enemies."
+  },
+  "theHeart:Tachycardia": {
+    "NAME": "Tachycardia",
+    "DESCRIPTION": "Deal !D! to all enemies, gain !M! energy next turn, add a Void to your discard pile."
+  },
+  "theHeart:Hemoblastosis": {
+    "NAME":"Hemoblastosis",
+    "DESCRIPTION": "Lose !M! Hp and gain !M! Weaken, deal !D! in 2 turns."
+  },
+  "theHeart:LeechSeed": {
+    "NAME": "LeechSeed",
+    "DESCRIPTION": "Apply !M! regen to self and !M! poison to enemy. "
+  },
+  "theHeart:AntiCoagulant": {
+    "NAME":"AntiCoagulant",
+    "DESCRIPTION": "Exhaust all non-attack cards, Gain !M! energy and draw for every card exhausted"
+  },
+  "theHeart:BloodFlow": {
+    "NAME":"BloodFlow",
+    "DESCRIPTION": "Draw !M! cards, Exhaust 1 card."
+  },
+  "theHeart:Cholesterol": {
+    "NAME": "Cholesterol",
+    "DESCRIPTION": "Heal !M! hp, and add !theHeart:SecondMagic! Slimed to your hand. Exhaust."
+  },
+  "theHeart:ElementalCharge": {
+    "NAME":  "ElementalCharge",
+    "DESCRIPTION": "Exhaust X cards in hand, Add X burns, Deal X damage X times."
+  },
+  "theHeart:ScrapOoze": {
+    "NAME": "ScrapOoze",
+    "DESCRIPTION":"Unplayable. Lose !M! hp whenever you play a card and Gain !B! Block."
   }
 }

@@ -1,9 +1,9 @@
 {
-  "theHeart:PlaceholderRelic": {
-    "NAME": "Placeholder Energy Relic",
-    "FLAVOR": "The snake is a friend.",
+  "theHeart:BeatOfDeath": {
+    "NAME": "Beat Of Death",
+    "FLAVOR": "Faint heartbeats can be heard across the Spire.",
     "DESCRIPTIONS": [
-      "Gain #b1 [E] ."
+      "Deal 1 damage to all enemies every time you play a card ."
     ]
   },
   "theHeart:PlaceholderRelic2": {

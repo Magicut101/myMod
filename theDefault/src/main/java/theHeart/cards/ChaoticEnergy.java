@@ -18,12 +18,12 @@ public class ChaoticEnergy extends AbstractDynamicCard {
     public static final String IMG = makeCardPath("Skill.png");
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
-    private static final CardTarget TARGET = CardTarget.SELF_AND_ENEMY;
+    private static final CardTarget TARGET = CardTarget.NONE;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
-    private static final int COST = 1;
-    public static final int BLOCK = 13;
+    private static final int COST = -2;
+    public static final int BLOCK = 10;
     public static final int UPGRADED_PLUS_BLOCK = 5;
 
     public ChaoticEnergy() {
@@ -31,18 +31,26 @@ public class ChaoticEnergy extends AbstractDynamicCard {
 baseBlock = BLOCK;
     }
 //This card crashes the game when played
+
+
+
     @Override
 
-    public void use(AbstractPlayer p ,AbstractMonster m) {
+    public void triggerWhenDrawn() {
         for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters)
-         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(mo, p, baseBlock));
+         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(mo, AbstractDungeon.player, baseBlock));
 
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, baseBlock));
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, baseBlock));
     }
 
 
     public AbstractDynamicCard makeCopy() {
         return new ChaoticEnergy();
+    }
+
+    @Override
+    public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+
     }
 
 
@@ -54,5 +62,8 @@ baseBlock = BLOCK;
             initializeDescription();
         }
     }
+
+
 }
+
 

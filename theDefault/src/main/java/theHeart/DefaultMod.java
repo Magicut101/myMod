@@ -3,6 +3,7 @@ package theHeart;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
+import basemod.devcommands.unlock.Unlock;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
@@ -27,7 +28,6 @@ import theHeart.events.IdentityCrisisEvent;
 import theHeart.potions.PlaceholderPotion;
 import theHeart.relics.BottledPlaceholderRelic;
 import theHeart.relics.DefaultClickableRelic;
-import theHeart.relics.PlaceholderRelic;
 import theHeart.relics.PlaceholderRelic2;
 import theHeart.util.IDCheckDontTouchPls;
 import theHeart.util.TextureLoader;
@@ -370,7 +370,7 @@ public class DefaultMod implements
         logger.info("Adding relics");
         
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
-        BaseMod.addRelicToCustomPool(new PlaceholderRelic(), TheDefault.Enums.COLOR_GRAY);
+
         BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), TheDefault.Enums.COLOR_GRAY);
         BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), TheDefault.Enums.COLOR_GRAY);
         
@@ -436,8 +436,20 @@ public class DefaultMod implements
         BaseMod.addCard(new Toil());
         BaseMod.addCard(new Embolectomy ());
         BaseMod.addCard(new EndlessHatred());
-        BaseMod.addCard(new MyocardialRupture());
+        BaseMod.addCard(new CardiacRupture());
         BaseMod.addCard(new QuantumEntanglement());
+        BaseMod.addCard(new Crumble());
+        BaseMod.addCard(new TranquilRhythm());
+        BaseMod.addCard(new NoxiousBlood());
+        BaseMod.addCard(new GrayPlatelets());
+        BaseMod.addCard(new Tachycardia());
+        BaseMod.addCard(new Hemoblastosis());
+        BaseMod.addCard(new LeechSeed());
+        BaseMod.addCard(new AntiCoagulant());
+        BaseMod.addCard(new BloodFlow());
+        BaseMod.addCard(new Cholesterol());
+        BaseMod.addCard(new ElementalCharge());
+        BaseMod.addCard(new ScrapOoze());
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
         // This is so that they are all "seen" in the library, for people who like to look at the card list
@@ -475,8 +487,20 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(Toil.ID);
         UnlockTracker.unlockCard(Embolectomy.ID);
         UnlockTracker.unlockCard(EndlessHatred.ID);
-        UnlockTracker.unlockCard(MyocardialRupture.ID);
+        UnlockTracker.unlockCard(CardiacRupture.ID);
         UnlockTracker.unlockCard(QuantumEntanglement.ID);
+        UnlockTracker.unlockCard(Crumble.ID);
+        UnlockTracker.unlockCard(TranquilRhythm.ID);
+        UnlockTracker.unlockCard(NoxiousBlood.ID);
+        UnlockTracker.unlockCard(GrayPlatelets.ID);
+        UnlockTracker.unlockCard(Tachycardia.ID);
+        UnlockTracker.unlockCard( Hemoblastosis.ID);
+        UnlockTracker.unlockCard(LeechSeed.ID);
+        UnlockTracker.unlockCard(AntiCoagulant.ID);
+        UnlockTracker.unlockCard(BloodFlow.ID);
+        UnlockTracker.unlockCard(Cholesterol.ID);
+        UnlockTracker.unlockCard(ElementalCharge.ID);
+        UnlockTracker.unlockCard(ScrapOoze.ID);
         logger.info("Done adding cards!");
     }
     

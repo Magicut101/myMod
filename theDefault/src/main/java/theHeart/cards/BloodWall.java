@@ -1,17 +1,10 @@
 package theHeart.cards;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import basemod.interfaces.OnPlayerDamagedSubscriber;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.LoseHPAction;
-import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.combat.DieDieDieEffect;
-import jdk.nashorn.internal.ir.Block;
-import theHeart.actions.BloodWallAction;
 import theHeart.DefaultMod;
 import theHeart.characters.TheDefault;
 
@@ -30,22 +23,24 @@ public class BloodWall extends AbstractDynamicCard {
         private static final int COST = 1;
         private static final int BLOCK = 6;
         private static final int UPGRADE_PLUS_BLOCK = 3;
-//Completely broken eventually I will fix this.
-        public int onAttacked;
+//Okay, so local variable B, takes last damage taken as the block value.
 
         public BloodWall() {
             super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
             baseBlock = BLOCK;
         }
         @Override
+
         public void use(AbstractPlayer p, AbstractMonster m) {
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p,p,baseBlock));
-                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, onAttacked));
+final int e = Math.abs( AbstractDungeon.player.damagedThisCombat);
+
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p,p,baseBlock));
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, e));
 
             }
 
         public AbstractDynamicCard makeCopy () {
-            return new theHeart.cards.BloodWall();
+            return new BloodWall();
         }
 
 

@@ -3,6 +3,12 @@ package theHeart.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.ExhaustAction;
+import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.cards.status.Wound;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -10,8 +16,12 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import theHeart.DefaultMod;
 import theHeart.actions.ExhaustingReprogramAction;
+import theHeart.cards.AbstractDynamicCard;
 import theHeart.cards.Pacemaker;
 import theHeart.util.TextureLoader;
+
+import static com.megacrit.cardcrawl.cards.AbstractCard.*;
+import static com.megacrit.cardcrawl.cards.AbstractCard.CardType.STATUS;
 
 public class PacemakerPower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
@@ -41,14 +51,14 @@ public class PacemakerPower extends AbstractPower implements CloneablePowerInter
 
         updateDescription();
     }
-    @Override
-    public void atStartOfTurn () {
 
-        AbstractDungeon.actionManager.addToTurnStart(new ExhaustingReprogramAction(amount));
+    public void atStartOfTurnPostDraw() {
 
-}
-    @Override
-    public AbstractPower makeCopy() {
+AbstractDungeon.actionManager.addToBottom(new DrawCardAction(owner, amount));
+AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(new Wound(), AbstractDungeon.player.hand, false ));
+    }
+
+        public AbstractPower makeCopy() {
         return new PacemakerPower(owner, source, amount);
     }
 }

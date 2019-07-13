@@ -2,6 +2,7 @@
 package theHeart.cards;
 
 
+        import com.megacrit.cardcrawl.actions.unique.SetupAction;
         import com.megacrit.cardcrawl.actions.utility.ConditionalDrawAction;
         import com.megacrit.cardcrawl.actions.utility.DrawPileToHandAction;
         import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -12,6 +13,7 @@ package theHeart.cards;
         import com.megacrit.cardcrawl.monsters.AbstractMonster;
         import theHeart.DefaultMod;
         import theHeart.actions.ForethoughtCopyWithoutUpgrade;
+        import theHeart.actions.SetUpCopyAction;
         import theHeart.characters.TheDefault;
         import static theHeart.DefaultMod.makeCardPath;
 
@@ -40,7 +42,7 @@ public class CapillaryExchange extends AbstractDynamicCard{
     public void use (AbstractPlayer p, AbstractMonster m) {
 
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new ForethoughtCopyWithoutUpgrade()); //this place right here
+        AbstractDungeon.actionManager.addToBottom(new SetupAction()); //this place right here
 
 
 

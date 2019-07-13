@@ -23,7 +23,7 @@ public class Constrict extends AbstractDynamicCard {
 
         // STAT DECLARATION
 
-        private static final AbstractCard.CardRarity RARITY = AbstractCard.CardRarity.COMMON;
+        private static final AbstractCard.CardRarity RARITY = AbstractCard.CardRarity.UNCOMMON;
         private static final AbstractCard.CardTarget TARGET = AbstractCard.CardTarget.ENEMY;
         private static final AbstractCard.CardType TYPE = AbstractCard.CardType.ATTACK;
         public static final AbstractCard.CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
@@ -31,8 +31,8 @@ public class Constrict extends AbstractDynamicCard {
         private static final int COST = 3;
         private static final int UPGRADE_COST = 2;
 
-        private static final int UPGRADE_PLUS_MAGICNUMBER = 5 ;
-        private static final int MAGICNUMBER = 10;
+        private static final int MAGIC_NUMBER = 10;
+        private static final int UPGRADE_PLUS_MAGIC_NUMBER = 2;
 
         // /STAT DECLARATION/
 
@@ -40,7 +40,7 @@ public class Constrict extends AbstractDynamicCard {
         public Constrict() {
             super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
-            baseMagicNumber = magicNumber = MAGICNUMBER;
+            baseMagicNumber = magicNumber = MAGIC_NUMBER;
 this.exhaust = true;
         }
 
@@ -59,8 +59,8 @@ this.exhaust = true;
         public void upgrade() {
             if (!upgraded) {
                 upgradeName();
-                upgradeMagicNumber(UPGRADE_PLUS_MAGICNUMBER);
                 upgradeBaseCost(UPGRADE_COST);
+                upgradeMagicNumber(UPGRADE_PLUS_MAGIC_NUMBER);
                 initializeDescription();
             }
 

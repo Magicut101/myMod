@@ -27,15 +27,15 @@ public class AncientEvil extends AbstractDynamicCard {
 
                 private static final int COST = 1;
 
-                private static final int UPGRADE_PLUS_MAGICNUMBER = 1;
-                private static final int MAGICNUMBER = 2;
+                private static final int UPGRADE_PLUS_MAGIC_NUMBER = 1;
+                private static final int MAGIC_NUMBER = 2;
 
                 // /STAT DECLARATION/
 
 
                 public AncientEvil() {
                     super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-                    baseMagicNumber = MAGICNUMBER;
+                    baseMagicNumber = magicNumber = MAGIC_NUMBER;
 
                 }
 
@@ -55,7 +55,7 @@ public class AncientEvil extends AbstractDynamicCard {
         public void upgrade() {
             if (!upgraded) {
                 upgradeName();
-                upgradeMagicNumber(UPGRADE_PLUS_MAGICNUMBER);
+                upgradeMagicNumber(UPGRADE_PLUS_MAGIC_NUMBER);
                 initializeDescription();
             }
         }

@@ -27,13 +27,14 @@ import static theHeart.DefaultMod.makeCardPath;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
     private static final int COST = 3;
-    private static final int UPGRADE_MAGICNUMBER = 3;
+    private static final int UPGRADE_MAGIC_NUMBER = 2;
+    private static final int magic_Number = 3;
 //I am going to change this to apply stun, but for now I will let it be -strength, even if its arguably op.
  public Debilitate() {
   super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
            this.exhaust = true;
-           this.baseMagicNumber = 3;
+           this.baseMagicNumber = magic_Number;
           this.magicNumber = this.baseMagicNumber;
       }
  @Override
@@ -55,7 +56,7 @@ import static theHeart.DefaultMod.makeCardPath;
      public void upgrade() {
          if (!upgraded) {
              upgradeName();
-             upgradeMagicNumber(UPGRADE_MAGICNUMBER);
+             upgradeMagicNumber(UPGRADE_MAGIC_NUMBER);
              initializeDescription();
          }
      }

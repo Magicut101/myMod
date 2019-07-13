@@ -1,23 +1,18 @@
 package theHeart.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.powers.InvinciblePower;
-import theHeart.actions.ExhaustingReprogramAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.ArtifactPower;
 import theHeart.DefaultMod;
 import theHeart.characters.TheDefault;
-
-import static theHeart.DefaultMod.makeCardPath;
-
+import theHeart.powers.EndlessHatredPower;
 import theHeart.powers.PacemakerPower;
 
 import static theHeart.DefaultMod.makeCardPath;
 
-public class Invincibility extends AbstractDynamicCard {
-    public static final String ID = DefaultMod.makeID(Invincibility .class.getSimpleName());
+public class EndlessHatred extends AbstractDynamicCard {
+    public static final String ID = DefaultMod.makeID(EndlessHatred.class.getSimpleName());
     public static final String IMG = makeCardPath("Power.png");
     // /TEXT DECLARATION/
 
@@ -30,15 +25,15 @@ public class Invincibility extends AbstractDynamicCard {
 
     private static final int COST = 2;
 
-    private static final int UPGRADE_PLUS_MAGIC_NUMBER = -5;
-    private static final int MAGIC_NUMBER = 30;
+    private static final int UPGRADE_PLUS_MAGIC_NUMBER = 2;
+    private static final int MAGIC_NUMBER = 4;
 
     // /STAT DECLARATION/
 
 
-    public Invincibility () {
+    public  EndlessHatred() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseMagicNumber = magicNumber =  MAGIC_NUMBER;
+        baseMagicNumber = MAGIC_NUMBER;
 
     }
 
@@ -46,11 +41,10 @@ public class Invincibility extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(p,p, new InvinciblePower(p,  magicNumber), magicNumber));
+                new ApplyPowerAction(p,p, new EndlessHatredPower(p,p, MAGIC_NUMBER)));
 
 
     }
-    public AbstractDynamicCard makeCopy() { return new Invincibility(); }
 
 
     // Upgraded stats.
@@ -63,4 +57,3 @@ public class Invincibility extends AbstractDynamicCard {
         }
     }
 }
-
