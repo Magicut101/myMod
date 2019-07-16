@@ -77,7 +77,7 @@
   },
   "theHeart:SpireGrowth": {
     "NAME": "SpireGrowth",
-    "DESCRIPTION": "Gain !B! Temporary Hp, draw !M! cards."
+    "DESCRIPTION": "Gain 5 Temporary Hp, draw !M! cards."
   },
   "theHeart:HastyFortification": {
     "NAME": "HastyFortification",
@@ -136,7 +136,7 @@
   },
   "theHeart:Pacemaker": {
     "NAME": "Pacemaker",
-    "DESCRIPTION": "Look at the first !M! cards in your draw pile and exhaust one card."
+    "DESCRIPTION": "At the start of your turn, play One Reprogram. "
   },
   "theHeart:Hemorrhage": {
     "NAME": "Hemorrhage",
@@ -152,7 +152,7 @@
   },
   "theHeart:Invincibility": {
     "NAME": "Invincibility",
-    "DESCRIPTION": "Cap damage taken in a single to !M! damage."
+    "DESCRIPTION": "Cap damage taken in a single turn to !M! damage."
   },
   "theHeart:Cleanse": {
     "NAME": "Cleanse",
@@ -164,7 +164,7 @@
   },
   "theHeart:Embolectomy": {
     "NAME": "Embolectomy",
-    "DESCRIPTION": "Look at the first !M! cards in your deck, exhaust one."
+    "DESCRIPTION": "Exhaust all Status Cards in your discard pile. Exhaust."
   },
   "theHeart:EndlessHatred": {
     "NAME": "EndlessHatred",
@@ -172,7 +172,7 @@
   },
   "theHeart:CardiacRupture": {
     "NAME": "Cardiac Rupture",
-    "DESCRIPTION": "Lose !M! hp every time you play a card. All cards cost zero, when you play a card exhaust it and add a wound to hand."
+    "DESCRIPTION": "Lose !M! hp every time you play a card. All cards cost zero, when you play a card remove it from combat and add a wound to hand."
   },
   "theHeart:QuantumEntanglement": {
     "NAME": " Quantum Entanglement",
@@ -184,7 +184,7 @@
   },
   "theHeart:TranquilRhythm": {
     "NAME": "TranquilRhythm",
-    "DESCRIPTION": "Gain !B! block, heal the enemy for !M! hp, and give !theHeart:SecondMagic! weaken."
+    "DESCRIPTION": "Gain !B! block, Apply  !M! Regen and  !theHeart:SecondMagic! Weaken."
   },
   "theHeart:NoxiousBlood": {
     "NAME": "Noxious Blood",
@@ -204,7 +204,7 @@
   },
   "theHeart:LeechSeed": {
     "NAME": "LeechSeed",
-    "DESCRIPTION": "Apply !M! regen to self and !M! poison to enemy. "
+    "DESCRIPTION": "Apply !M! regen to self and !M! poison to enemy. Exhaust."
   },
   "theHeart:AntiCoagulant": {
     "NAME":"AntiCoagulant",
@@ -212,7 +212,7 @@
   },
   "theHeart:BloodFlow": {
     "NAME":"BloodFlow",
-    "DESCRIPTION": "Draw !M! cards, Exhaust 1 card."
+    "DESCRIPTION": " Exhaust 1 card, Draw !M! cards."
   },
   "theHeart:Cholesterol": {
     "NAME": "Cholesterol",
@@ -220,10 +220,46 @@
   },
   "theHeart:ElementalCharge": {
     "NAME":  "ElementalCharge",
-    "DESCRIPTION": "Exhaust X cards in hand, Add X burns, Deal X damage X times."
+    "DESCRIPTION": "Exhaust X cards in hand, Add X burns, Deal !M! damage X times."
   },
   "theHeart:ScrapOoze": {
     "NAME":"ScrapOoze",
-    "DESCRIPTION":"Unplayable. Lose !M! hp whenever you play a card and Gain !B! Block. When Exhausted gain !M! Block."
+    "DESCRIPTION":"Unplayable. Lose !M! hp when you draw this card and Gain !B! Block. When Exhausted gain !M! Block."
+  },
+  "theHeart:Wrath": {
+    "NAME":"Wrath" ,
+    "DESCRIPTION": "Deal damage = to damage taken this combat."
+  },
+  "theHeart:HyperCoagulation": {
+    "NAME": "HyperCoagulation",
+    "DESCRIPTION": "Deal !D! damage and !D! Block based on number of Status cards in your deck, draw and discard pile."
+},
+  "theHeart:Cyroablation": {
+    "NAME": "Cyroablation",
+    "DESCRIPTION": "Exhaust a card from your hand ,gain !M! Block."
+  },
+  "theHeart:Enrage": {
+    "NAME": "Enraged",
+    "DESCRIPTION": "It should reduce/increase strength of enemies to 28 or 23."
+  },
+  "theHeart:CorruptedForm": {
+    "NAME":"Corrupted Form",
+    "DESCRIPTION": "Whenever you draw a Status Card, Gain !M! Strength, At the end of this turn lose !M! strength.. "
+  },
+  "theHeart:Hypertension": {
+    "NAME": "Hypertension",
+    "DESCRIPTION": "Deal !D! damage and heal for damage dealt. Add 3 Slime to Hand and immediately end your turn."
+  },
+  "theHeart:Crush": {
+    "NAME": "Crush",
+    "DESCRIPTION": "Deal !D! damage, apply 1 vulnerable."
+  },
+  "theHeart:AdapativeCells": {
+    "NAME": "Adaptive Cells",
+    "DESCRIPTION": "When you draw a card if it is a Status,gain !M! Block,if it exhausts draw 1 card, if it has a negative effect deal !D! damage."
+  },
+  "theHeart:Omega3": {
+    "NAME": "Omega-3",
+    "DESCRIPTION": "Ethereal, Gain !B! Block, Gain 1 Dex this turn, Lose 1 Dex at the end of this turn."
   }
 }

@@ -38,16 +38,17 @@ public class Hypertension  extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
-    private static final int COST = 2;
+    private static final int COST = 0;
 
-    private static final int DAMAGE = 14;
-    private static final int UPGRADE_PLUS_DMG = 3 ;
+    private static final int DAMAGE = 4;
+    private static final int UPGRADE_PLUS_DMG = 2 ;
 // /STAT DECLARATION/
 
 
     public Hypertension () {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
+        exhaust=true;
         this.tags.add(AbstractCard.CardTags.HEALING);
 
 

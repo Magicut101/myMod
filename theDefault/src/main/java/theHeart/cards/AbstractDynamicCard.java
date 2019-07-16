@@ -1,5 +1,6 @@
 package theHeart.cards;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -27,5 +28,5 @@ public abstract class AbstractDynamicCard extends AbstractDefaultCard {
         super(id, languagePack.getCardStrings(id).NAME, img, cost, languagePack.getCardStrings(id).DESCRIPTION, type, color, rarity, target);
 
     }
-
 }
+    // Actions the card should do.

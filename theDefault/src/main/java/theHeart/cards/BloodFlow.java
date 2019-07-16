@@ -40,19 +40,17 @@ public class BloodFlow extends AbstractDynamicCard
 
     public  BloodFlow  () {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        exhaust=true;
-        this.tags.add(AbstractCard.CardTags.HEALING);
+
         baseMagicNumber = magicNumber = MAGIC_NUMBER;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom (new DrawCardAction(p,magicNumber,false));
         AbstractDungeon.actionManager.addToBottom(new ExhaustAction(p,p,1, false, false, false));
-
+        AbstractDungeon.actionManager.addToBottom (new DrawCardAction(p,magicNumber,false));
     }
-    public AbstractDynamicCard makeCopy() { return new LeechSeed (); }
+    public AbstractDynamicCard makeCopy() { return new BloodFlow  (); }
 
 
     // Upgraded stats.

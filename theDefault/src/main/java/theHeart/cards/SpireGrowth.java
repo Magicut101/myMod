@@ -28,7 +28,7 @@ private static final int UPGRADED_PLUS_BLOCK = 3;
 
 public SpireGrowth () {
     super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
- baseBlock = BLOCK;
+
 magicNumber = 1;
 baseMagicNumber = magicNumber;
 }
@@ -36,7 +36,7 @@ baseMagicNumber = magicNumber;
 @Override
 public void use (AbstractPlayer p, AbstractMonster m) {
     AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, magicNumber));
-    AbstractDungeon.actionManager.addToBottom(new AddTemporaryHPAction(p, p, BLOCK));
+    AbstractDungeon.actionManager.addToBottom(new AddTemporaryHPAction(p, p, 5));
 
 }
     public AbstractDynamicCard makeCopy() {

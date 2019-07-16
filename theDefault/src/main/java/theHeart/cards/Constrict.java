@@ -59,7 +59,6 @@ this.exhaust = true;
         public void upgrade() {
             if (!upgraded) {
                 upgradeName();
-                upgradeBaseCost(UPGRADE_COST);
                 upgradeMagicNumber(UPGRADE_PLUS_MAGIC_NUMBER);
                 initializeDescription();
             }

@@ -34,7 +34,6 @@ public class Tachycardia extends AbstractDynamicCard {
     private static final int UPGRADE_COST = 1;
 
     private static final int MAGIC_NUMBER = 1;
-    private static final int UPGRADE_PLUS_MAGIC_NUMBER = 1;
     private static final int DAMAGE = 6;
     private static final int UPGRADE_PLUS_DAMAGE = 3;
 
@@ -55,7 +54,7 @@ public class Tachycardia extends AbstractDynamicCard {
         AbstractDungeon.actionManager.addToBottom(
                 new MakeTempCardInDiscardAction(new VoidCard(), 1));
         AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new EnergizedPower(p, MAGIC_NUMBER), magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new EnergizedPower(p, magicNumber), magicNumber));
 
     }
     public AbstractDynamicCard makeCopy() { return new Tachycardia(); }
@@ -68,7 +67,7 @@ public class Tachycardia extends AbstractDynamicCard {
             upgradeName();
             upgradeBaseCost(UPGRADE_COST);
             upgradeDamage(UPGRADE_PLUS_DAMAGE);
-            upgradeMagicNumber(UPGRADE_PLUS_MAGIC_NUMBER);
+
             initializeDescription();
         }
 

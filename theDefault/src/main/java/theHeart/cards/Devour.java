@@ -1,10 +1,15 @@
 package theHeart.cards;
 
+import com.badlogic.gdx.graphics.Color;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.combat.BiteEffect;
 import theHeart.DefaultMod;
+import theHeart.actions.DevourAction;
 import theHeart.actions.SunderForStrengthAction;
 import theHeart.characters.TheDefault;
 
@@ -23,21 +28,24 @@ public class Devour extends AbstractDynamicCard {
     private static final int COST = 1;
     private static final int DAMAGE = 9;
     private static final int UPGRADE_PLUS_DMG = 4 ;
-    private static int magicNumber = 3;
+    private static int MAGIC_NUMBER = 3;
 
     public Devour() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = DAMAGE;
+        baseDamage = damage=  DAMAGE;
 
-      magicNumber = this.baseMagicNumber;
+      magicNumber = this.baseMagicNumber = MAGIC_NUMBER;
 
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+         if (m != null) {
+             AbstractDungeon.actionManager.addToBottom(new VFXAction( new BiteEffect(m.hb.cX, m.hb.cY - 40.0F * Settings.scale, Color.SCARLET
+         .cpy()), 0.3F));
+              }
+            AbstractDungeon.actionManager.addToBottom(new DevourAction(m,new DamageInfo(p, damage, damageType), magicNumber, p));
+           }
 
-AbstractDungeon.actionManager.addToBottom(new SunderForStrengthAction(m, new DamageInfo(p , damage, damageTypeForTurn), this.magicNumber));
-
-        }
 
     public AbstractDynamicCard makeCopy() { return new Devour(); }
 

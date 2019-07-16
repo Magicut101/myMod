@@ -32,7 +32,7 @@ public class BloodWall extends AbstractDynamicCard {
         @Override
 
         public void use(AbstractPlayer p, AbstractMonster m) {
-final int e = Math.abs( AbstractDungeon.player.damagedThisCombat);
+final int e = Math.abs( AbstractDungeon.player.lastDamageTaken);
 
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p,p,baseBlock));
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, e));

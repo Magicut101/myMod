@@ -102,7 +102,7 @@ public class TheDefault extends CustomPlayer {
         super(name, setClass, orbTextures,
                 "theHeartResources/images/char/defaultCharacter/orb/vfx.png", null,
                 new SpriterAnimation(
-                        "theHeartResources/images/char/defaultCharacter/Spriter/theHeartAnimation.scml"));
+                        "theHeartResources/images/char/defaultCharacter/Spriter/TheHeartAnimation.scml"));
 
 
         // =============== TEXTURES, ENERGY, LOADOUT =================  

@@ -54,7 +54,7 @@
         "theHeart:MyocardialRupturePower": {
                 "NAME": "Myocardial Rupture",
                 "DESCRIPTION": [
-                        "All cards cost zero, when you play a card transform it into a Wound."
+                        "Lose 1 hp every time you play a card, all cards cost zero, when you play a card exhaust it and add a Wound."
                 ]
         },
         "theHeart:NoxiousBloodPower": {
@@ -62,11 +62,23 @@
                 "DESCRIPTION": [
                         "At the start of your turn, Apply !M! poison to self and ALL enemies."
                 ]
-          },
-"theHeart:GrayPlateletsPower": {
-"NAME": "GrayPlateletsPower",
-"DESCRIPTION": [
-        "Whenever you lose hp from a card, apply 2 poison to all enemies."
-]
-}
+        },
+        "theHeart:GrayPlateletsPower": {
+                "NAME": "GrayPlateletsPower",
+                "DESCRIPTION": [
+                        "Whenever you lose hp from a card, apply 2 poison to all enemies."
+                ]
+        },
+        "theHeart:CorruptedFormPower": {
+                "NAME": "Corrupted Form",
+                "DESCRIPTION": [
+                        "When you draw a Wound gain !M! temporary Strength."
+                ]
+        },
+        "theHeart:AdaptiveCellsPower": {
+                "NAME": "Adaptive Cells",
+                "DESCRIPTION": [
+                        "If you draw a Status gain block, if it exhausts draw 1 card, if it has a negative effect deal damage."
+                ]
+        }
 }

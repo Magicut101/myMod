@@ -450,6 +450,16 @@ public class DefaultMod implements
         BaseMod.addCard(new Cholesterol());
         BaseMod.addCard(new ElementalCharge());
         BaseMod.addCard(new ScrapOoze());
+        BaseMod.addCard(new Wrath());
+        BaseMod.addCard(new HyperCoagulation());
+        BaseMod.addCard(new Cyroablation  ());
+        BaseMod.addCard(new Enrage());
+        BaseMod.addCard(new CorruptedForm());
+        BaseMod.addCard(new Crush());
+        BaseMod.addCard(new Hypertension ());
+        BaseMod.addCard(new AdaptiveCells());
+        BaseMod.addCard(new Omega3());
+        BaseMod.addCard(new HeartyVessels());
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
         // This is so that they are all "seen" in the library, for people who like to look at the card list
@@ -501,6 +511,16 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(Cholesterol.ID);
         UnlockTracker.unlockCard(ElementalCharge.ID);
         UnlockTracker.unlockCard(ScrapOoze.ID);
+        UnlockTracker.unlockCard(Wrath.ID);
+        UnlockTracker.unlockCard(HyperCoagulation.ID);
+        UnlockTracker.unlockCard(Cyroablation.ID);
+        UnlockTracker.unlockCard(Enrage.ID);
+        UnlockTracker.unlockCard(CorruptedForm.ID);
+        UnlockTracker.unlockCard(Crush.ID);
+        UnlockTracker.unlockCard(Hypertension .ID);
+        UnlockTracker.unlockCard(AdaptiveCells.ID);
+        UnlockTracker.unlockCard(Omega3.ID);
+        UnlockTracker.unlockCard(HeartyVessels.ID);
         logger.info("Done adding cards!");
     }
     

@@ -46,7 +46,7 @@ public class Toil extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(p,p, new LoseEnergyNextTurn(p, p, magicNumber), magicNumber));
+                new ApplyPowerAction(p,p, new LoseEnergyNextTurn(p, magicNumber), magicNumber));
         AbstractDungeon.actionManager.addToBottom(
                 new GainEnergyAction(magicNumber));
 

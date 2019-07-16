@@ -5,16 +5,14 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import theHeart.DefaultMod;
 import theHeart.actions.ElementalChargeAction;
-import theHeart.actions.GainDrawEnergyPerNonAttackAction;
 import theHeart.characters.TheDefault;
 
 import static theHeart.DefaultMod.makeCardPath;
 
-public class ElementalCharge extends AbstractDynamicCard {
-    public static final String ID = DefaultMod.makeID( ElementalCharge.class.getSimpleName());
+public class HeartyVessels extends AbstractDynamicCard {
+    public static final String ID = DefaultMod.makeID( HeartyVessels.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -30,7 +28,7 @@ public class ElementalCharge extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
-    private static final int COST = -2;
+    private static final int COST = 1;
 
     private static final int MAGIC_NUMBER = 1;
     private static final int DAMAGE = 10;
@@ -38,7 +36,7 @@ public class ElementalCharge extends AbstractDynamicCard {
     // /STAT DECLARATION/
 
 
-    public  ElementalCharge() {
+    public  HeartyVessels() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         exhaust = true;
         baseMagicNumber = magicNumber = MAGIC_NUMBER;
@@ -53,7 +51,7 @@ public class ElementalCharge extends AbstractDynamicCard {
 
         AbstractDungeon.actionManager.addToBottom(new ElementalChargeAction(p,m,this.multiDamage, magicNumber, false, 0 ));
 
-                }
+    }
 
 
 

@@ -19,6 +19,7 @@ package theHeart.powers;
         import com.megacrit.cardcrawl.powers.AbstractPower;
         import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
         import theHeart.DefaultMod;
+        import theHeart.cards.Toil;
         import theHeart.util.TextureLoader;
 
         import static theHeart.DefaultMod.makePowerPath;
@@ -37,17 +38,16 @@ public class LoseEnergyNextTurn extends AbstractPower implements CloneablePowerI
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
 
-    public LoseEnergyNextTurn(final AbstractCreature owner, final AbstractCreature source, final int amount) {
+    public LoseEnergyNextTurn(final AbstractCreature owner, final int amount) {
         name = NAME;
         ID = POWER_ID;
 
         this.owner = owner;
         this.amount = amount;
-        this.source = source;
 
 
         type = AbstractPower.PowerType.DEBUFF;
-        isTurnBased = true;
+        isTurnBased = false;
 
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
@@ -58,12 +58,10 @@ public class LoseEnergyNextTurn extends AbstractPower implements CloneablePowerI
     public void atStartOfTurn() {
         flash();
         AbstractDungeon.actionManager.addToBottom(new LoseEnergyAction(this.amount));
-    }
-   public void atEndOfRound() {
-           AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, "LoseEnergyNextTurn"));
    }
+
     public AbstractPower makeCopy() {
-        return new LoseEnergyNextTurn(owner, source, amount);
+        return new LoseEnergyNextTurn(owner, amount);
     }
 }
 

@@ -1,5 +1,7 @@
 package theHeart.cards;
 
+import com.megacrit.cardcrawl.actions.common.ExhaustAction;
+import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.status.Wound;
@@ -7,6 +9,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theHeart.DefaultMod;
+import theHeart.actions.ExhaustDrawPileWounds;
 import theHeart.actions.ExhaustingReprogramAction;
 import theHeart.characters.TheDefault;
 
@@ -37,6 +40,7 @@ public class Embolectomy  extends AbstractDynamicCard {
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
+    private static final int UPGRADED_PLUS_COST = 0;
     private static final int DRAW = 4;
     private static final int UPGRADE_PLUS_DRAW = 2;
 
@@ -46,12 +50,13 @@ public class Embolectomy  extends AbstractDynamicCard {
     public  Embolectomy() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = DRAW;
+       exhaust = true;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ExhaustingReprogramAction(DRAW));
+        AbstractDungeon.actionManager.addToBottom( new ExhaustDrawPileWounds());
     }
 
     //Upgraded stats.
@@ -59,7 +64,7 @@ public class Embolectomy  extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_DRAW);
+            upgradeBaseCost(UPGRADED_PLUS_COST);
             initializeDescription();
         }
     }

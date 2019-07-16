@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import theHeart.DefaultMod;
 import theHeart.util.TextureLoader;
@@ -54,7 +55,7 @@ public MyocardialRupturePower(final AbstractCreature owner, final AbstractCreatu
 
 
 
-public void onUseCard(AbstractCard card, UseCardAction action) {
+public void onInitialApplication() {
     for (AbstractCard c : AbstractDungeon.player.hand.group) {
         c.modifyCostForCombat(-9);
     }
@@ -67,7 +68,11 @@ public void onUseCard(AbstractCard card, UseCardAction action) {
     for (AbstractCard c : AbstractDungeon.player.discardPile.group) {
         c.modifyCostForCombat(-9);
     }
-    action.exhaustCard = true;
+}
+
+        @Override
+        public void onPlayCard(AbstractCard card, AbstractMonster m) {
+    card.purgeOnUse = true;
 AbstractDungeon.actionManager.addToBottom(new LoseHPAction(owner, source, amount));
         AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new Wound()));
         }
