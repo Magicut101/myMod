@@ -30,7 +30,7 @@ public class Hemoblastosis extends AbstractDynamicCard {
     private static final int COST = 2;
     private static final int UPGRADE_COST = 1;
 
-    private static final int MAGIC_NUMBER = 5;
+    private static final int MAGIC_NUMBER = 3;
     private static final int UPGRADE_PLUS_MAGIC_NUMBER = -1;
     private static final int DAMAGE = 25;
     private static final int UPGRADE_PLUS_DAMAGE = 5;
@@ -58,7 +58,7 @@ AbstractDungeon.actionManager.addToBottom
         (new ApplyPowerAction(p, p, new WeakPower
                 (m, this.defaultSecondMagicNumber, false)
                         , this.defaultSecondMagicNumber, true, AbstractGameAction.AttackEffect.NONE));
-AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p, new TheBombPower(p, 2, damage), defaultSecondMagicNumber, true, AbstractGameAction.AttackEffect.NONE));
+AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p, new TheBombPower(p, 3, damage), defaultSecondMagicNumber, true, AbstractGameAction.AttackEffect.NONE));
     }
     public AbstractDynamicCard makeCopy() { return new Hemoblastosis(); }
 

@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.status.*;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -16,11 +17,10 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import theHeart.DefaultMod;
 import theHeart.util.TextureLoader;
 
+import static com.megacrit.cardcrawl.cards.AbstractCard.CardType.CURSE;
 import static theHeart.DefaultMod.makePowerPath;
 
 public class AdaptiveCellsPower extends AbstractPower implements CloneablePowerInterface {
-    private final int damaging;
-    private final int drawing;
     public AbstractCreature source;
 
     public static final String POWER_ID = DefaultMod.makeID("AdaptiveCellsPower");
@@ -32,15 +32,13 @@ public class AdaptiveCellsPower extends AbstractPower implements CloneablePowerI
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
-    public AdaptiveCellsPower(final AbstractCreature owner, final AbstractCreature source, final int amount, final int drawing, final int damaging) {
+    public AdaptiveCellsPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
         ID = POWER_ID;
 
         this.owner = owner;
         this.amount = amount;
         this.source = source;
-        this.damaging = damaging;
-        this.drawing = drawing;
 
 
         type = AbstractPower.PowerType.BUFF;
@@ -56,38 +54,18 @@ public class AdaptiveCellsPower extends AbstractPower implements CloneablePowerI
     // On use card, apply (amount) of Dexterity. (Go to the actual power card for the amount.)
 
 
-    @Override
-    public void onCardDraw(AbstractCard card) {
+
+//I imagine this counts as hard coded. If I wanted to unhardcode this I would want to look at if a card is a status, exhausts, and has some extra effect.
+        @Override
+        public void onCardDraw (AbstractCard card){
+
+            if (card.type == AbstractCard.CardType.STATUS) {
+                            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(owner, amount));
+
+        }
+        }
 
 
-            if (card == new Wound()) {
-                AbstractDungeon.actionManager.addToBottom(new GainBlockAction
-                        (this.owner, this.owner, this.amount));
-            }
-            if (card == new Slimed()) {
-                AbstractDungeon.actionManager.addToBottom(new GainBlockAction
-                        (this.owner, this.owner, this.amount));
-            }        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(owner,  drawing));
-            if (card == new Burn()) {
-                AbstractDungeon.actionManager.addToBottom(
-                        new DamageAction(owner, new DamageInfo(owner, damaging, DamageInfo.DamageType.NORMAL),
-                                AbstractGameAction.AttackEffect.NONE));
-                AbstractDungeon.actionManager.addToBottom(new GainBlockAction
-                        (this.owner, this.owner, this.amount));
-            }
-            if (card == new Dazed()) {
-                AbstractDungeon.actionManager.addToBottom(new DrawCardAction(owner,  drawing));
-                AbstractDungeon.actionManager.addToBottom(new GainBlockAction
-                        (this.owner, this.owner, this.amount));
-            }
-            if (card == new VoidCard()) {
-                AbstractDungeon.actionManager.addToBottom(new DrawCardAction(owner, drawing));
-                AbstractDungeon.actionManager.addToBottom(new GainBlockAction
-                        (this.owner, this.owner, this.amount));
-                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(owner, owner, amount));
-            }
-
-    }
 
     @Override
     public void atStartOfTurn() {
@@ -97,16 +75,11 @@ public class AdaptiveCellsPower extends AbstractPower implements CloneablePowerI
 
 
 
-    public void updateDescription() {
-        if (amount == 1) {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
-        } else if (amount > 1) {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
-        }
-    }
 
     @Override
     public AbstractPower makeCopy() {
-        return new AdaptiveCellsPower(owner, source, amount, drawing, damaging);
+        return new AdaptiveCellsPower(owner, source, amount);
     }
 }
+
+

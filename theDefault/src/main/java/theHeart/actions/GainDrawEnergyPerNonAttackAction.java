@@ -9,14 +9,14 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 /*    */
 public class GainDrawEnergyPerNonAttackAction extends AbstractGameAction {
     public GainDrawEnergyPerNonAttackAction(int EnergyDrawAmount) {
-        this.BLOCKGAIN_AMOUNT = 0;
+        this.EnergyDrawAmount = 0;
 
-        this.BLOCKGAIN_AMOUNT = EnergyDrawAmount;
+        this.EnergyDrawAmount = EnergyDrawAmount;
         setValues(AbstractDungeon.player, AbstractDungeon.player);
         this.actionType = AbstractGameAction.ActionType.BLOCK;
     }
 
-    private int BLOCKGAIN_AMOUNT;
+    private int EnergyDrawAmount;
 
     /*    */
     /*    */
@@ -31,10 +31,10 @@ public class GainDrawEnergyPerNonAttackAction extends AbstractGameAction {
                 }
 
 
-                total += this.BLOCKGAIN_AMOUNT;
+                total += this.EnergyDrawAmount;
             }
-            AbstractDungeon.actionManager.addToTop(new DrawCardAction(AbstractDungeon.player, BLOCKGAIN_AMOUNT, false));
-            AbstractDungeon.actionManager.addToTop(new GainEnergyAction((BLOCKGAIN_AMOUNT)));
+            AbstractDungeon.actionManager.addToTop(new DrawCardAction(AbstractDungeon.player, EnergyDrawAmount, false));
+            AbstractDungeon.actionManager.addToTop(new GainEnergyAction((EnergyDrawAmount)));
         }
     }
 }

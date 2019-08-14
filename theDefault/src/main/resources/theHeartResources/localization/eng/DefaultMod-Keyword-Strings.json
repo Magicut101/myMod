@@ -14,7 +14,16 @@
       "multiword_keywords",
       "multikey",
       "multikeyword"
+    ]
+  },
+  {
+    "PROPER_NAME": "Rebound",
+    "NAMES": [
+      "Rebound",
+      "Rebounds"
     ],
-    "DESCRIPTION": "Make sure the first element in the NAMES is the same as your PROPER_NAME. The rest is to match keywords like the single word keyword."
+    "DESCRIPTION": "Put the next card you play this turn on top of your draw pile."
+
   }
+
 ]

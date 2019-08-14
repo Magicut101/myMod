@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import theHeart.DefaultMod;
 import theHeart.characters.TheDefault;
 
+import static com.megacrit.cardcrawl.cards.DamageInfo.DamageType.NORMAL;
 import static theHeart.DefaultMod.makeCardPath;
 
 public class Wrath extends AbstractDynamicCard {
@@ -39,6 +40,7 @@ public class Wrath extends AbstractDynamicCard {
 
     private static final int DAMAGE = 0;
     private static final int UPGRADE_PLUS_DMG = 0;
+    private static float WrathDamage;
 
 
 // /STAT DECLARATION/
@@ -49,15 +51,28 @@ public class Wrath extends AbstractDynamicCard {
         baseDamage = DAMAGE;
 
 
+
     }
 
-public void use (AbstractPlayer p, AbstractMonster m){}
+
+    @Override
+    public void tookDamage() {
+        WrathDamage = 0;
+        
+    }
+
+    //Get current hp at the start of combat, then make it compare that value to damage taken while in combat, by looking at Current hp - Hp in Room.
 
 
 
 
+    public void use (AbstractPlayer p, AbstractMonster m){
+
+        int IntWrathDamage = Math.round(WrathDamage);
+    AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p,IntWrathDamage )));
+    }
     public AbstractDynamicCard makeCopy () {
-        return new Wrath ();
+        return new Wrath();
     }
 
     @Override

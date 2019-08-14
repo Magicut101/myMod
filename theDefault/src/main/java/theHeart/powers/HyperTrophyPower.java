@@ -4,6 +4,7 @@ package theHeart.powers;
     import basemod.interfaces.CloneablePowerInterface;
     import com.badlogic.gdx.graphics.Texture;
     import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+    import com.megacrit.cardcrawl.actions.common.DamageAction;
     import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
     import com.megacrit.cardcrawl.actions.unique.IncreaseMaxHpAction;
     import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -30,11 +31,11 @@ package theHeart.powers;
         private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
         public static final String NAME = powerStrings.NAME;
         public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-
+        int damagedInCombat;
         private static final Texture tex84 = TextureLoader.getTexture("theHeartResources/images/powers/placeholder_power84.png");
         private static final Texture tex32 = TextureLoader.getTexture("theHeartResources/images/powers/placeholder_power32.png");
 
-        public HyperTrophyPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
+        public HyperTrophyPower(final AbstractCreature owner, final AbstractCreature source, final int amount, int damagedInCombat) {
             name = NAME;
             ID = POWER_ID;
 
@@ -56,18 +57,21 @@ package theHeart.powers;
 
         @Override
         public void onInitialApplication() {
-            super.onInitialApplication();
-            final int healthAmount = AbstractDungeon.player.maxHealth * amount;
+
+            final int healthAmount = 200;
             AbstractDungeon.player.increaseMaxHp(healthAmount, false);
         }
 
+        public void onVictory() {
+            int damaged = AbstractDungeon.player.damagedThisCombat;
 
-        @Override
-        public void atEndOfRound() {
-            super.atEndOfRound();
-            final int healthAmount = AbstractDungeon.player.maxHealth * amount;
-                    AbstractDungeon.player.decreaseMaxHealth(healthAmount);
-                }
+            final int ReduceHealthAmount = 200;
+            AbstractDungeon.player.decreaseMaxHealth(ReduceHealthAmount);
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(owner,new DamageInfo(owner, damagedInCombat), damagedInCombat));
+
+        }
+
+
 
 
         @Override
@@ -82,6 +86,6 @@ package theHeart.powers;
 
         @Override
         public AbstractPower makeCopy() {
-            return new HyperTrophyPower(owner, source, amount);
+            return new HyperTrophyPower(owner, source, amount, damagedInCombat);
         }
         }

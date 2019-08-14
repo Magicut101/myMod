@@ -63,7 +63,7 @@ public class BurningStrike extends AbstractDynamicCard {
     }
 
     public AbstractDynamicCard makeCopy() {
-        return new BurningStrike();
+        return new HeartBurn();
     }
 
     // Upgraded stats.

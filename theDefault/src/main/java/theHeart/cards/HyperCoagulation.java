@@ -47,19 +47,21 @@ public class HyperCoagulation extends AbstractDynamicCard {
 
     private static final int COST = 2;
     private static final int UPGRADE_PLUS_COST = 1;
-
+    private static final int MAGIC_NUMBER = 3;
+    private static final int UPGRADE_PLUS_MAGIC_NUMBER = 1;
 
     // /STAT DECLARATION/
 //I need to add a dynamic description box so that people can know how high the count is
     public HyperCoagulation() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = damage;
-baseMagicNumber = magicNumber;
+        baseDamage = damage ;
+        baseBlock = block;
+        baseMagicNumber = magicNumber = MAGIC_NUMBER;
     }
 
     // Actions the card should do.
-
-    public static int countCards() {
+//Count all the status cards that has seen play in combat.
+   private int countCards() {
         int count = 0;
 
         for (AbstractCard c : AbstractDungeon.player.hand.group) {
@@ -76,16 +78,23 @@ baseMagicNumber = magicNumber;
             if (c.type == AbstractCard.CardType.STATUS) {
                 count++;
             }
-
-
-            return count ;
         }
-        return count ;
+        for (AbstractCard c : AbstractDungeon.player.exhaustPile.group) {
+            if (c.type == AbstractCard.CardType.STATUS) {
+                count++;
+            }
+        }
+        return count * magicNumber;
     }
+
+
+
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p,p,countCards()));
-AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, countCards())));
+        block = countCards();
+        damage = countCards();
+AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p,p,block));
+AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage)));
 
     }
 
@@ -99,6 +108,7 @@ AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, 
         if (!this.upgraded) {
             this.upgradeName();
             upgradeBaseCost(UPGRADE_PLUS_COST);
+            upgradeMagicNumber(UPGRADE_PLUS_MAGIC_NUMBER);
             this.initializeDescription();
         }
     }

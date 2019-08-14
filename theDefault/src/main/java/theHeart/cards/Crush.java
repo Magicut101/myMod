@@ -65,10 +65,11 @@ public class Crush extends AbstractDynamicCard {
         AbstractDungeon.actionManager.addToBottom(
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
                         AbstractGameAction.AttackEffect.NONE));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(p, magicNumber, false), magicNumber));
 
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower
+                (m, this.magicNumber, false), this.magicNumber, true, AbstractGameAction.AttackEffect.FIRE));
     }
-    public AbstractDynamicCard makeCopy() { return new Crush (); }
+        public AbstractDynamicCard makeCopy() { return new Crush (); }
 
     //Upgraded stats.
     @Override

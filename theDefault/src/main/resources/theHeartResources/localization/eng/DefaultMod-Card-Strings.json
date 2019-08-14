@@ -48,7 +48,7 @@
   },
   "theHeart:BloodShots": {
     "NAME": "BloodShots",
-    "DESCRIPTION": "Deal !D! damage 12 times.",
+    "DESCRIPTION": "Deal !D! damage 12 times.Exhaust",
     "UPGRADE_DESCRIPTION": "Deal !D! damage, 15 times. Exhaust"
   },
   "theHeart:Echo": {
@@ -85,8 +85,8 @@
   },
   "theHeart:CapillaryExchange": {
     "NAME": "CapillaryExchange",
-    "DESCRIPTION": "Draw the top and bottom card in your draw pile.",
-    "UPGRADE_DESCRIPTION": "Draw the top two cards and bottom card in your draw pile."
+    "DESCRIPTION": "Draw 1 card and place 1 card to the top of your deck, that cards now costs 0 until played.",
+    "UPGRADE_DESCRIPTION": "Draw 2 cards and place 1 card to the top of your deck, that cards now costs 0 until played."
   },
   "theHeart:ChaoticEnergy": {
     "NAME": "ChaoticEnergy",
@@ -106,7 +106,7 @@
   },
   "theHeart:HyperTrophy": {
     "NAME": "HyperTrophy",
-    "DESCRIPTION": "Gain x3 your hp as Temporary hp, take 2.75 more damage."
+    "DESCRIPTION": "Gain 200 max hp for the combat, take 3x more damage."
   },
   "theHeart:MindScape": {
     "NAME": "MindScape",
@@ -180,7 +180,7 @@
   },
   "theHeart:Crumble": {
     "NAME": "Crumble",
-    "DESCRIPTION": "Remove all buffs, and debuffs on an enemy, deal !M! times damage = to enemy block."
+    "DESCRIPTION": "Deal damage  = to x!M! enemy block"
   },
   "theHeart:TranquilRhythm": {
     "NAME": "TranquilRhythm",
@@ -188,11 +188,11 @@
   },
   "theHeart:NoxiousBlood": {
     "NAME": "Noxious Blood",
-    "DESCRIPTION": "At the start of your turn, apply !M! poison to SELF and ALL enemies."
+    "DESCRIPTION": "At the start of your turn, apply !M! poison to Self and ALL enemies."
   },
   "theHeart:GrayPlatelets": {
     "NAME": "GrayPlatelets",
-    "DESCRIPTION": "Whenever you lose hp apply !M! poison to self and ALL enemies."
+    "DESCRIPTION": "Whenever you lose hp apply !M! poison to ALL enemies."
   },
   "theHeart:Tachycardia": {
     "NAME": "Tachycardia",
@@ -208,7 +208,7 @@
   },
   "theHeart:AntiCoagulant": {
     "NAME":"AntiCoagulant",
-    "DESCRIPTION": "Exhaust all non-attack cards, Gain !M! energy and draw for every card exhausted"
+    "DESCRIPTION": "Exhaust all Status cards in hand, Gain !M! energy and draw for every card exhausted"
   },
   "theHeart:BloodFlow": {
     "NAME":"BloodFlow",
@@ -232,34 +232,63 @@
   },
   "theHeart:HyperCoagulation": {
     "NAME": "HyperCoagulation",
-    "DESCRIPTION": "Deal !D! damage and !D! Block based on number of Status cards in your deck, draw and discard pile."
+    "DESCRIPTION": "Deal !D! damage and !B! Block based on number of Status cards in your deck, draw and discard pile."
 },
   "theHeart:Cyroablation": {
     "NAME": "Cyroablation",
-    "DESCRIPTION": "Exhaust a card from your hand ,gain !M! Block."
+    "DESCRIPTION": "Exhaust a card from your hand ,gain !B! Block."
   },
   "theHeart:Enrage": {
     "NAME": "Enraged",
-    "DESCRIPTION": "It should reduce/increase strength of enemies to 28 or 23."
+    "DESCRIPTION": " Deal !D! damage to ALL enemies, lose !M! strength. ."
   },
   "theHeart:CorruptedForm": {
     "NAME":"Corrupted Form",
-    "DESCRIPTION": "Whenever you draw a Status Card, Gain !M! Strength, At the end of this turn lose !M! strength.. "
+    "DESCRIPTION": "Whenever you draw a Status Card, Gain !M! Strength, At the end of the turn lose !M! strength.. "
   },
   "theHeart:Hypertension": {
     "NAME": "Hypertension",
-    "DESCRIPTION": "Deal !D! damage and heal for damage dealt. Add 3 Slime to Hand and immediately end your turn."
+    "DESCRIPTION": "Deal !D! damage and heal for damage dealt. Add 2 Void to your discard pile."
   },
   "theHeart:Crush": {
     "NAME": "Crush",
     "DESCRIPTION": "Deal !D! damage, apply 1 vulnerable."
   },
-  "theHeart:AdapativeCells": {
+  "theHeart:AdaptiveCells": {
     "NAME": "Adaptive Cells",
-    "DESCRIPTION": "When you draw a card if it is a Status,gain !M! Block,if it exhausts draw 1 card, if it has a negative effect deal !D! damage."
+    "DESCRIPTION": "When you draw a Status,gain !M! Block,if it exhausts draw 1 card, if it has a negative effect deal !D! damage."
   },
   "theHeart:Omega3": {
     "NAME": "Omega-3",
     "DESCRIPTION": "Ethereal, Gain !B! Block, Gain 1 Dex this turn, Lose 1 Dex at the end of this turn."
+  },
+  "theHeart:HeartyVessels": {
+    "NAME": "Hearty Vessels",
+    "DESCRIPTION": "Deal !D! damage, Gain Malleable. Exhaust. "
+        },
+  "theHeart:Terrify": {
+    "NAME": "Terrify",
+    "DESCRIPTION": "Placeholder card, apply !M!  strength to all enemies"
+  },
+  "theHeart:TotalHeartFailure": {
+    "NAME": "Total Heart Failure",
+    "DESCRIPTION": "Gain !B! Block and Retain your hand for !M! turns, You can not draw or block for !M! turns."
+  },
+  "theHeart:Arrhythmia": {
+    "NAME": "Arrhythmia",
+    "DESCRIPTION": "Gain !B! Block this turn, gain !theHeart:SecondMagic! Block next turn."
+  },
+  "theHeart:Heartbeat": {
+    "NAME": "Heartbeat",
+    "DESCRIPTION": "Gain 1 Rebound each turn."
+  },
+  "theHeart:FattyMembrane": {
+    "NAME": "FattyMembrane",
+    "DESCRIPTION": "Gain !B! Block and !M! Block for every status card in your hand, draw, discard, and exhaust pile. You have !theHeart:StatusCardsNumber! status cards."
+  },
+  "theHeart:Betablockers ": {
+    "NAME":"Betablockers ",
+    "DESCRIPTION": "Deal !D! damage and gain !M! artifact."
+
   }
 }

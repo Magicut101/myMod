@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import theHeart.DefaultMod;
 import theHeart.actions.ElementalChargeAction;
-import theHeart.actions.GainDrawEnergyPerNonAttackAction;
 import theHeart.characters.TheDefault;
 
 import static theHeart.DefaultMod.makeCardPath;
@@ -33,14 +32,14 @@ public class ElementalCharge extends AbstractDynamicCard {
     private static final int COST = -2;
 
     private static final int MAGIC_NUMBER = 1;
-    private static final int DAMAGE = 10;
+    private static final int DAMAGE = 8;
 
     // /STAT DECLARATION/
 
 
     public  ElementalCharge() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        exhaust = true;
+
         baseMagicNumber = magicNumber = MAGIC_NUMBER;
         baseDamage = damage = DAMAGE;
         this.isMultiDamage = true;
@@ -49,11 +48,13 @@ public class ElementalCharge extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
-
-        AbstractDungeon.actionManager.addToBottom(new ElementalChargeAction(p,m,this.multiDamage, magicNumber, false, 0 ));
-
-                }
+        /* 39 */     if (this.energyOnUse < EnergyPanel.totalCount) {
+            /* 40 */       this.energyOnUse = EnergyPanel.totalCount;
+            /*    */     }
+        /*    */
+        /* 43 */     AbstractDungeon.actionManager.addToBottom(new ElementalChargeAction(p, this.multiDamage, this.damageTypeForTurn, 1, this.freeToPlayOnce, this.energyOnUse));
+        /*    */   }
+    /*    */
 
 
 

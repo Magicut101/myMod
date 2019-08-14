@@ -21,14 +21,14 @@ public class ScrapOoze extends AbstractDynamicCard {
 
     private static final AbstractCard.CardRarity RARITY = AbstractCard.CardRarity.UNCOMMON;
     private static final AbstractCard.CardTarget TARGET = AbstractCard.CardTarget.SELF;
-    private static final AbstractCard.CardType TYPE = AbstractCard.CardType.SKILL;
+    private static final AbstractCard.CardType TYPE = AbstractCard.CardType.STATUS;
     public static final AbstractCard.CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
     private static final int COST = -2;
 
     private static final int BLOCK = 8;
     private static final int UPGRADED_PLUS_BLOCK = 3;
-    private static final int MAGIC_NUMBER = 2;
+    private static final int MAGIC_NUMBER = 5;
 
     public ScrapOoze() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -42,7 +42,7 @@ public class ScrapOoze extends AbstractDynamicCard {
     }
     public void triggerOnExhaust() {
         AbstractDungeon.actionManager.addToBottom
-                (new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, this.magicNumber));
+                (new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, this.block));
     }
 
     @Override

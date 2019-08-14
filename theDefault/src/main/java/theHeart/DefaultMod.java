@@ -3,7 +3,6 @@ package theHeart;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
-import basemod.devcommands.unlock.Unlock;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
@@ -33,6 +32,7 @@ import theHeart.util.IDCheckDontTouchPls;
 import theHeart.util.TextureLoader;
 import theHeart.variables.DefaultCustomVariable;
 import theHeart.variables.DefaultSecondMagicNumber;
+import theHeart.variables.StatusCardsNumber;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -397,6 +397,7 @@ public class DefaultMod implements
         // Add the Custom Dynamic variabls
         BaseMod.addDynamicVariable(new DefaultCustomVariable());
         BaseMod.addDynamicVariable(new DefaultSecondMagicNumber());
+        BaseMod.addDynamicVariable(new StatusCardsNumber());
         
         logger.info("Adding cards");
         // Add the cards
@@ -460,6 +461,13 @@ public class DefaultMod implements
         BaseMod.addCard(new AdaptiveCells());
         BaseMod.addCard(new Omega3());
         BaseMod.addCard(new HeartyVessels());
+        BaseMod.addCard(new TotalHeartFailure());
+        BaseMod.addCard(new Arrhythmia ());
+        BaseMod.addCard(new Terrify());
+        BaseMod.addCard(new Heartbeat());
+        BaseMod.addCard(new Antibiotics());
+        BaseMod.addCard(new FattyMembrane ());
+        BaseMod.addCard(new Betablocker ());
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
         // This is so that they are all "seen" in the library, for people who like to look at the card list
@@ -521,6 +529,13 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(AdaptiveCells.ID);
         UnlockTracker.unlockCard(Omega3.ID);
         UnlockTracker.unlockCard(HeartyVessels.ID);
+        UnlockTracker.unlockCard(TotalHeartFailure.ID);
+        UnlockTracker.unlockCard(Arrhythmia .ID);
+        UnlockTracker.unlockCard(Terrify.ID);
+        UnlockTracker.unlockCard(Heartbeat.ID);
+        UnlockTracker.unlockCard(Antibiotics.ID);
+        UnlockTracker.unlockCard(FattyMembrane .ID);
+        UnlockTracker.unlockCard(Betablocker .ID);
         logger.info("Done adding cards!");
     }
     

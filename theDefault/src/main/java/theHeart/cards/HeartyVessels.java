@@ -1,10 +1,14 @@
 package theHeart.cards;
 
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.MalleablePower;
 import theHeart.DefaultMod;
 import theHeart.actions.ElementalChargeAction;
 import theHeart.characters.TheDefault;
@@ -24,14 +28,15 @@ public class HeartyVessels extends AbstractDynamicCard {
     // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
-    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
-    private static final CardType TYPE = CardType.SKILL;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
 
     private static final int MAGIC_NUMBER = 1;
-    private static final int DAMAGE = 10;
+    private static final int DAMAGE = 7;
+    private static final int UPGRADED_PLUS_DAMAGE = 3;
 
     // /STAT DECLARATION/
 
@@ -41,16 +46,13 @@ public class HeartyVessels extends AbstractDynamicCard {
         exhaust = true;
         baseMagicNumber = magicNumber = MAGIC_NUMBER;
         baseDamage = damage = DAMAGE;
-        this.isMultiDamage = true;
-    }
+}
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
-
-        AbstractDungeon.actionManager.addToBottom(new ElementalChargeAction(p,m,this.multiDamage, magicNumber, false, 0 ));
-
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m ,new DamageInfo(p,damage, DamageInfo.DamageType.NORMAL)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p,new MalleablePower(p)));
     }
 
 
@@ -60,6 +62,7 @@ public class HeartyVessels extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            upgradeDamage(UPGRADED_PLUS_DAMAGE);
             initializeDescription();
         }
     }

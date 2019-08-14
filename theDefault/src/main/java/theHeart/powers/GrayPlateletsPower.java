@@ -52,13 +52,8 @@ public class GrayPlateletsPower extends AbstractPower implements CloneablePowerI
     public int onLoseHp (int damageAmount) {
 
         if (damageAmount > 0 && owner == this.owner) {
-            AbstractDungeon.actionManager.addToBottom
-                    (new ApplyPowerAction(owner, this.source, new PoisonPower
-                            (owner, owner, this.amount), this.amount));
             if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-                /* 28 */
                 flash();
-                /* 29 */
                 for (AbstractMonster m : (AbstractDungeon.getMonsters()).monsters) {
                     /* 30 */
                     if (!m.isDead && !m.isDying) {

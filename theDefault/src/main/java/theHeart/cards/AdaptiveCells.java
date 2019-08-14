@@ -19,13 +19,13 @@ public class AdaptiveCells extends AbstractDynamicCard{
     public static final String ID = DefaultMod.makeID(AdaptiveCells.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
 
-    private static final AbstractCard.CardRarity RARITY = AbstractCard.CardRarity.COMMON;
+    private static final AbstractCard.CardRarity RARITY = AbstractCard.CardRarity.UNCOMMON;
     private static final AbstractCard.CardTarget TARGET = AbstractCard.CardTarget.SELF;
     private static final AbstractCard.CardType TYPE = AbstractCard.CardType.SKILL;
     public static final AbstractCard.CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
-    private static final int MAGIC_NUMBER = 2;
+    private static final int MAGIC_NUMBER = 1;
 
 
     public AdaptiveCells() {
@@ -37,7 +37,7 @@ public class AdaptiveCells extends AbstractDynamicCard{
     @Override
     public void use (AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom
-                (new ApplyPowerAction(p, p, new AdaptiveCellsPower(p,p, magicNumber, 1, 5)));
+                (new ApplyPowerAction(p, p, new AdaptiveCellsPower(p,p, magicNumber)));
 
     }
     public AbstractDynamicCard makeCopy() {
@@ -49,7 +49,6 @@ public class AdaptiveCells extends AbstractDynamicCard{
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(magicNumber);
-
             initializeDescription();
         }
     }

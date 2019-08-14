@@ -33,7 +33,7 @@ public class AntiCoagulant extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
     private static final int UPGRADED_PLUS_COST = 1;
 
     private static final int MAGIC_NUMBER = 1;

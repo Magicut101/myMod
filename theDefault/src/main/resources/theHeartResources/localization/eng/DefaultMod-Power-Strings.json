@@ -24,7 +24,7 @@
         "theHeart:HyperTrophy": {
                 "NAME": "HyperTrophy",
                 "DESCRIPTION": [
-                        "Gain 210 Temporary Hp, Take 3x more damage from attacks."
+                        " Take 3x more damage from attacks."
                 ]
         },
         "theHeart:Pacemaker": {
@@ -79,6 +79,12 @@
                 "NAME": "Adaptive Cells",
                 "DESCRIPTION": [
                         "If you draw a Status gain block, if it exhausts draw 1 card, if it has a negative effect deal damage."
+                ]
+        },
+        "theHeart:Heartbeat": {
+                "NAME": "Heartbeat",
+                "DESCRIPTION": [
+                        "The next card you play goes back to the top of your draw pile."
                 ]
         }
 }

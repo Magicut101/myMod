@@ -17,11 +17,7 @@ import static theHeart.DefaultMod.makeCardPath;
 
 public class BloodDrop extends AbstractDynamicCard {
 
-    /*
-     * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
-     *
-     * A Better Defend Gain 1 Plated Armor. Affected by Dexterity.
-     */
+
 
     // TEXT DECLARATION 
 

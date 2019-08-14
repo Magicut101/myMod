@@ -20,16 +20,15 @@ public class DevourAction
 
     /*    */
     /*    */   public  DevourAction(AbstractCreature target, DamageInfo info, int StrengthAmount, AbstractCreature owner) {
-        /* 23 */     this.info = info;
-        /* 24 */     setValues(target, info);
-        /* 25 */     this.GainStrengthInt =  StrengthAmount;
-        /* 26 */     this.actionType = AbstractGameAction.ActionType.DAMAGE;
-        /* 27 */     this.duration = 0.1F;
-                    this.owner = owner;
-        /*    */   }
-    /*    */
-    /*    */
-    /*    */   public void update() {
+     this.info = info;
+     setValues(target, info);
+      this.GainStrengthInt =  StrengthAmount;
+      this.actionType = AbstractGameAction.ActionType.DAMAGE;
+      this.duration = 0.1F;
+    this.owner = owner;
+ }
+
+   public void update() {
 
       if (this.duration == 0.1F &&
              this.target != null) {

@@ -70,10 +70,9 @@ public class HyperTrophy extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
+      int damagedInCombat = AbstractDungeon.player.damagedThisCombat;
         AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(p, p, new theHeart.powers.HyperTrophyPower(p ,p, magicNumber), magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new AddTemporaryHPAction(p, p, HP));
+                new ApplyPowerAction(p, p, new theHeart.powers.HyperTrophyPower(p ,p, magicNumber, damagedInCombat ), magicNumber));
 
     }
 
