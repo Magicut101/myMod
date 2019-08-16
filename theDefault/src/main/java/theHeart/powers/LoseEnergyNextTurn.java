@@ -58,7 +58,7 @@ public class LoseEnergyNextTurn extends AbstractPower implements CloneablePowerI
     public void atStartOfTurn() {
         flash();
         AbstractDungeon.actionManager.addToBottom(new LoseEnergyAction(this.amount));
-        AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(owner,owner, LoseEnergyNextTurn.POWER_ID, 1));
+        AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(owner,owner, LoseEnergyNextTurn.POWER_ID, amount));
    }
 
 

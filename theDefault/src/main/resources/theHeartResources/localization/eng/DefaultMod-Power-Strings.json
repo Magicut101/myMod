@@ -86,5 +86,11 @@
                 "DESCRIPTION": [
                         "The next card you play goes back to the top of your draw pile."
                 ]
+        },
+        "theHeart:NoDrawPowersTurnBased": {
+                "NAME": "NoDrawsToday",
+                "DESCRIPTION": [
+                        "Reduce your draw to 0."
+                ]
         }
 }

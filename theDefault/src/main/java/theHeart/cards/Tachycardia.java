@@ -34,7 +34,7 @@ public class Tachycardia extends AbstractDynamicCard {
     private static final int UPGRADE_COST = 1;
 
     private static final int MAGIC_NUMBER = 1;
-    private static final int DAMAGE = 6;
+    private static final int DAMAGE = 9;
     private static final int UPGRADE_PLUS_DAMAGE = 3;
 
 

@@ -30,9 +30,7 @@ import theHeart.relics.DefaultClickableRelic;
 import theHeart.relics.PlaceholderRelic2;
 import theHeart.util.IDCheckDontTouchPls;
 import theHeart.util.TextureLoader;
-import theHeart.variables.DefaultCustomVariable;
-import theHeart.variables.DefaultSecondMagicNumber;
-import theHeart.variables.StatusCardsNumber;
+import theHeart.variables.*;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -355,7 +353,7 @@ public class DefaultMod implements
         // Class Specific Potion. If you want your potion to not be class-specific,
         // just remove the player class at the end (in this case the "TheDefaultEnum.THE_DEFAULT".
         // Remember, you can press ctrl+P inside parentheses like addPotions)
-        BaseMod.addPotion(PlaceholderPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, PlaceholderPotion.POTION_ID, TheDefault.Enums.THE_DEFAULT);
+
         
         logger.info("Done editing potions");
     }
@@ -371,11 +369,11 @@ public class DefaultMod implements
         
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
 
-        BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), TheDefault.Enums.COLOR_GRAY);
-        BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), TheDefault.Enums.COLOR_GRAY);
+        //BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), TheDefault.Enums.COLOR_GRAY);
+      //  BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), TheDefault.Enums.COLOR_GRAY);
         
         // This adds a relic to the Shared pool. Every character can find this relic.
-        BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
+      //  BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
         
         // Mark relics as seen (the others are all starters so they're marked as seen in the character file
         UnlockTracker.markRelicAsSeen(BottledPlaceholderRelic.ID);
@@ -398,7 +396,8 @@ public class DefaultMod implements
         BaseMod.addDynamicVariable(new DefaultCustomVariable());
         BaseMod.addDynamicVariable(new DefaultSecondMagicNumber());
         BaseMod.addDynamicVariable(new StatusCardsNumber());
-        
+        BaseMod.addDynamicVariable(new TotalDamageFromStatusCardsNumber());
+        BaseMod.addDynamicVariable(new TotalBlockFromStatusCardsNumber());
         logger.info("Adding cards");
         // Add the cards
         // Don't comment out/delete these cards (yet). You need 1 of each type and rarity (technically) for your game not to crash
@@ -468,6 +467,8 @@ public class DefaultMod implements
         BaseMod.addCard(new Antibiotics());
         BaseMod.addCard(new FattyMembrane ());
         BaseMod.addCard(new Betablocker ());
+        BaseMod.addCard(new OxygenRichBlood());
+        BaseMod.addCard(new PoisonousCyst());
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
         // This is so that they are all "seen" in the library, for people who like to look at the card list
@@ -536,6 +537,8 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(Antibiotics.ID);
         UnlockTracker.unlockCard(FattyMembrane .ID);
         UnlockTracker.unlockCard(Betablocker .ID);
+        UnlockTracker.unlockCard(OxygenRichBlood.ID);
+        UnlockTracker.unlockCard(PoisonousCyst.ID);
         logger.info("Done adding cards!");
     }
     

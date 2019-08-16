@@ -26,10 +26,10 @@ public class ElementalCharge extends AbstractDynamicCard {
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
-    private static final CardType TYPE = CardType.SKILL;
+    private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
-    private static final int COST = -2;
+    private static final int COST = -9;
 
     private static final int MAGIC_NUMBER = 1;
     private static final int DAMAGE = 8;
@@ -63,6 +63,7 @@ public class ElementalCharge extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            upgradeDamage(4);
             initializeDescription();
         }
     }

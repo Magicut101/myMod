@@ -54,10 +54,6 @@ public class Hemoblastosis extends AbstractDynamicCard {
 AbstractDungeon.actionManager.addToBottom
         (new LoseHPAction(p,p,magicNumber));
 
-AbstractDungeon.actionManager.addToBottom
-        (new ApplyPowerAction(p, p, new WeakPower
-                (m, this.defaultSecondMagicNumber, false)
-                        , this.defaultSecondMagicNumber, true, AbstractGameAction.AttackEffect.NONE));
 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p, new TheBombPower(p, 3, damage), defaultSecondMagicNumber, true, AbstractGameAction.AttackEffect.NONE));
     }
     public AbstractDynamicCard makeCopy() { return new Hemoblastosis(); }

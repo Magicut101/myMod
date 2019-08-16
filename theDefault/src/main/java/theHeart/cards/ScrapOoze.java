@@ -26,9 +26,9 @@ public class ScrapOoze extends AbstractDynamicCard {
 
     private static final int COST = -2;
 
-    private static final int BLOCK = 8;
+    private static final int BLOCK = 11;
     private static final int UPGRADED_PLUS_BLOCK = 3;
-    private static final int MAGIC_NUMBER = 5;
+    private static final int MAGIC_NUMBER = 3;
 
     public ScrapOoze() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

@@ -30,8 +30,6 @@ public class QuantumEntanglement extends AbstractDynamicCard {
 
     private static final int COST = 0;
 
-    private static final int DAMAGE = 0 ;
-    private static final int UPGRADE_PLUS_DAMAGE = 10;
 
     // /STAT DECLARATION/
 
@@ -39,15 +37,18 @@ public class QuantumEntanglement extends AbstractDynamicCard {
     public QuantumEntanglement() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
-        baseDamage = damage = DAMAGE;
+        baseDamage = damage;
     }
 
-    // Actions the card should do.
+
+      // Actions the card should do.
+
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        final int b = m.getIntentDmg();
+int b = m.getIntentDmg();
+
         AbstractDungeon.actionManager.addToBottom(new DamageAction
-                (m, new DamageInfo(p,b,damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+                (m, new DamageInfo(p,b ,damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
     }
     public AbstractDynamicCard makeCopy() { return new QuantumEntanglement(); }
 
@@ -57,7 +58,6 @@ public class QuantumEntanglement extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DAMAGE);
             initializeDescription();
         }
 

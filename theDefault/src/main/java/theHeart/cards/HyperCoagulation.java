@@ -48,20 +48,23 @@ public class HyperCoagulation extends AbstractDynamicCard {
     private static final int COST = 2;
     private static final int UPGRADE_PLUS_COST = 1;
     private static final int MAGIC_NUMBER = 3;
-    private static final int UPGRADE_PLUS_MAGIC_NUMBER = 1;
+
 
     // /STAT DECLARATION/
 //I need to add a dynamic description box so that people can know how high the count is
     public HyperCoagulation() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = damage ;
-        baseBlock = block;
+        this.baseDamage = damage;
         baseMagicNumber = magicNumber = MAGIC_NUMBER;
     }
 
     // Actions the card should do.
-//Count all the status cards that has seen play in combat.
-   private int countCards() {
+    public void applyPowers() {
+        /* 58 */
+
+        /* 59 */
+        super.applyPowers();
+
         int count = 0;
 
         for (AbstractCard c : AbstractDungeon.player.hand.group) {
@@ -83,16 +86,15 @@ public class HyperCoagulation extends AbstractDynamicCard {
             if (c.type == AbstractCard.CardType.STATUS) {
                 count++;
             }
-        }
-        return count * magicNumber;
-    }
+       }
 
+this.baseDamage = count * magicNumber;
+this.baseBlock = count * magicNumber;
 
-
+}
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        block = countCards();
-        damage = countCards();
+
 AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p,p,block));
 AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage)));
 
@@ -108,7 +110,6 @@ AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, 
         if (!this.upgraded) {
             this.upgradeName();
             upgradeBaseCost(UPGRADE_PLUS_COST);
-            upgradeMagicNumber(UPGRADE_PLUS_MAGIC_NUMBER);
             this.initializeDescription();
         }
     }

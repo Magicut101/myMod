@@ -21,21 +21,22 @@ public class BloodWall extends AbstractDynamicCard {
         public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
         private static final int COST = 1;
-        private static final int BLOCK = 6;
-        private static final int UPGRADE_PLUS_BLOCK = 3;
+        private static final int MAGIC_NUMBER = 6;
+        private static final int UPGRADE_PLUS_MAGIC_NUMBER = 3;
 //Okay, so local variable B, takes last damage taken as the block value.
 
         public BloodWall() {
             super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-            baseBlock = BLOCK;
+            baseBlock = block;
+            baseMagicNumber = magicNumber = MAGIC_NUMBER;
         }
         @Override
 
         public void use(AbstractPlayer p, AbstractMonster m) {
-final int e = Math.abs( AbstractDungeon.player.lastDamageTaken);
+baseBlock = Math.abs( AbstractDungeon.player.lastDamageTaken);
 
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p,p,baseBlock));
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, e));
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p,p, MAGIC_NUMBER));
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
 
             }
 
@@ -48,7 +49,7 @@ final int e = Math.abs( AbstractDungeon.player.lastDamageTaken);
         public void upgrade() {
             if (!upgraded) {
                 upgradeName();
-                upgradeBlock(UPGRADE_PLUS_BLOCK);
+                upgradeMagicNumber(MAGIC_NUMBER);
                 initializeDescription();
             }
         }
