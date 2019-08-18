@@ -32,7 +32,7 @@ import static theHeart.DefaultMod.makeCardPath;
 
            public Coagulation() {
                super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-
+this.retain = true;
            }
 
 

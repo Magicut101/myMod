@@ -34,10 +34,10 @@ public class HeartBurn extends AbstractDynamicCard {
     private static final int COST = 1;
 
 
-    private static final int UPGRADE_PLUS_POISON = 4;
-    private static final int POISON = 11;
+    private static final int UPGRADE_PLUS_POISON = 2;
+    private static final int POISON = 9;
     private static final int SELF_POISON = 4;
-    private static final int UPGRADE_PLUS_SELF_POISON = 2;
+    private static final int UPGRADE_PLUS_SELF_POISON = -1;
 
     // /STAT DECLARATION/
 

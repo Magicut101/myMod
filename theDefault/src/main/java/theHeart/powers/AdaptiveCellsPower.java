@@ -56,6 +56,7 @@ public class AdaptiveCellsPower extends AbstractPower implements CloneablePowerI
 
 
 //I imagine this counts as hard coded. If I wanted to unhardcode this I would want to look at if a card is a status, exhausts, and has some extra effect.
+    //I changed my mind so this is just a glorified evolve.
         @Override
         public void onCardDraw (AbstractCard card){
 

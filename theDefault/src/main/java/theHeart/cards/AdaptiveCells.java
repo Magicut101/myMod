@@ -25,7 +25,7 @@ public class AdaptiveCells extends AbstractDynamicCard{
     public static final AbstractCard.CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
-    private static final int MAGIC_NUMBER = 1;
+    private static final int MAGIC_NUMBER = 2;
 
 
     public AdaptiveCells() {

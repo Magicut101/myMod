@@ -2,7 +2,9 @@ package theHeart.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
+import com.megacrit.cardcrawl.actions.unique.ExhaustAllNonAttackAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -34,10 +36,9 @@ public class AntiCoagulant extends AbstractDynamicCard {
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
-    private static final int UPGRADED_PLUS_COST = 1;
+    private static final int UPGRADED_PLUS_COST = 0;
 
     private static final int MAGIC_NUMBER = 1;
-
 
     // /STAT DECLARATION/
 
@@ -51,7 +52,8 @@ baseMagicNumber = magicNumber = MAGIC_NUMBER;
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new GainDrawEnergyPerNonAttackAction(magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ExhaustAllNonAttackAction());
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, magicNumber));
 
 
     }

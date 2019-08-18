@@ -434,7 +434,6 @@ public class DefaultMod implements
         BaseMod.addCard(new Invincibility());
         BaseMod.addCard(new Cleanse());
         BaseMod.addCard(new Toil());
-        BaseMod.addCard(new Embolectomy ());
         BaseMod.addCard(new EndlessHatred());
         BaseMod.addCard(new CardiacRupture());
         BaseMod.addCard(new QuantumEntanglement());
@@ -469,6 +468,8 @@ public class DefaultMod implements
         BaseMod.addCard(new Betablocker ());
         BaseMod.addCard(new OxygenRichBlood());
         BaseMod.addCard(new PoisonousCyst());
+        BaseMod.addCard(new SpireSpear());
+        BaseMod.addCard(new Hemochromatosis());
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
         // This is so that they are all "seen" in the library, for people who like to look at the card list
@@ -504,7 +505,6 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(Invincibility.ID);
         UnlockTracker.unlockCard(Cleanse.ID);
         UnlockTracker.unlockCard(Toil.ID);
-        UnlockTracker.unlockCard(Embolectomy.ID);
         UnlockTracker.unlockCard(EndlessHatred.ID);
         UnlockTracker.unlockCard(CardiacRupture.ID);
         UnlockTracker.unlockCard(QuantumEntanglement.ID);
@@ -539,6 +539,8 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(Betablocker .ID);
         UnlockTracker.unlockCard(OxygenRichBlood.ID);
         UnlockTracker.unlockCard(PoisonousCyst.ID);
+        UnlockTracker.unlockCard(SpireSpear.ID);
+        UnlockTracker.unlockCard(Hemochromatosis.ID);
         logger.info("Done adding cards!");
     }
     

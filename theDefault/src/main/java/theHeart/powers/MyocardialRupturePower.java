@@ -72,7 +72,7 @@ public void onInitialApplication() {
 
         @Override
         public void onPlayCard(AbstractCard card, AbstractMonster m) {
-    card.purgeOnUse = true;
+    card.exhaustOnUseOnce = true;
 AbstractDungeon.actionManager.addToBottom(new LoseHPAction(owner, source, amount));
         AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new Wound()));
         }

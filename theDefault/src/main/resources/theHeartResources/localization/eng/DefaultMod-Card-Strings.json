@@ -48,7 +48,7 @@
   },
   "theHeart:BloodShots": {
     "NAME": "BloodShots",
-    "DESCRIPTION": "Deal !D! damage 12 times.Exhaust",
+    "DESCRIPTION": "Deal !D! damage 12 times. Exhaust",
     "UPGRADE_DESCRIPTION": "Deal !D! damage, 15 times. Exhaust"
   },
   "theHeart:Echo": {
@@ -61,7 +61,7 @@
   },
   "theHeart:Coagulation": {
     "NAME": "Coagulation",
-    "DESCRIPTION": "Draw all Status cards in your draw pile."
+    "DESCRIPTION": "Retain. Draw all Status cards in your draw pile."
   },
   "theHeart:HeartAttack": {
     "NAME": "Heart Attack",
@@ -200,7 +200,7 @@
     "DESCRIPTION": "Deal !D! to all enemies, gain !M! energy next turn, add a Void to your discard pile."
   },
   "theHeart:Hemoblastosis": {
-    "NAME":"Hemoblastosis",
+    "NAME": "Hemoblastosis",
     "DESCRIPTION": "Lose !M! Hp and deal !D! in 2 turns."
   },
   "theHeart:LeechSeed": {
@@ -208,11 +208,11 @@
     "DESCRIPTION": "Apply !M! regen to self and !M! poison to enemy. Exhaust."
   },
   "theHeart:AntiCoagulant": {
-    "NAME":"AntiCoagulant",
-    "DESCRIPTION": "Exhaust all Status cards in hand, Gain !M! energy and draw for every card exhausted"
+    "NAME": "AntiCoagulant",
+    "DESCRIPTION": "Exhaust all Non-Attack cards in your hand, draw 1 card."
   },
   "theHeart:BloodFlow": {
-    "NAME":"BloodFlow",
+    "NAME": "BloodFlow",
     "DESCRIPTION": " Exhaust 1 card, Draw !M! cards."
   },
   "theHeart:Cholesterol": {
@@ -220,31 +220,31 @@
     "DESCRIPTION": "Heal !M! hp, and add !theHeart:SecondMagic! Slimed to your hand. Exhaust."
   },
   "theHeart:ElementalCharge": {
-    "NAME":  "ElementalCharge",
+    "NAME": "ElementalCharge",
     "DESCRIPTION": "Exhaust X cards in hand, Add X burns, Deal !D! damage X times."
   },
   "theHeart:ScrapOoze": {
-    "NAME":"ScrapOoze",
-    "DESCRIPTION":"Unplayable. Lose !M! hp when you draw this card and Gain !B! Block. When Exhausted gain !M! Block."
+    "NAME": "ScrapOoze",
+    "DESCRIPTION": "Unplayable. Lose !M! hp when you draw this card and Gain !B! Block. When Exhausted gain !M! Block."
   },
   "theHeart:Wrath": {
-    "NAME":"Wrath" ,
+    "NAME": "Wrath",
     "DESCRIPTION": "Deal damage = to damage taken this combat."
   },
   "theHeart:HyperCoagulation": {
     "NAME": "HyperCoagulation",
     "DESCRIPTION": "Deal !D! damage and !B! Block.This card gains !M! Block and Damage for every status card in combat. You have !theHeart:StatusCardsNumber! status cards."
-},
+  },
   "theHeart:Cyroablation": {
     "NAME": "Cyroablation",
-    "DESCRIPTION": "gain !B! Block and exhaust a card from your hand."
+    "DESCRIPTION": "Gain !B! Block and exhaust a card from your hand."
   },
   "theHeart:Enrage": {
     "NAME": "Enraged",
     "DESCRIPTION": " Deal !D! damage to ALL enemies, lose !M! strength. ."
   },
   "theHeart:CorruptedForm": {
-    "NAME":"Corrupted Form",
+    "NAME": "Corrupted Form",
     "DESCRIPTION": "Whenever you draw a Status Card, Gain !M! Strength, At the end of the turn lose !M! strength.. "
   },
   "theHeart:Hypertension": {
@@ -266,10 +266,10 @@
   "theHeart:HeartyVessels": {
     "NAME": "Hearty Vessels",
     "DESCRIPTION": "Deal !D! damage, Gain Malleable. Exhaust. "
-        },
+  },
   "theHeart:Terrify": {
     "NAME": "Terrify",
-    "DESCRIPTION": "All enemies lose 6 Strength this turn."
+    "DESCRIPTION": "All enemies lose !M! strength."
   },
   "theHeart:TotalHeartFailure": {
     "NAME": "Total Heart Failure",
@@ -288,12 +288,12 @@
     "DESCRIPTION": "Gain !B! Block and !theHeart:SecondMagic! Block for every status card in your hand, draw, discard, and exhaust pile. You have !theHeart:StatusCardsNumber! status cards."
   },
   "theHeart:Betablockers": {
-    "NAME":"Betablockers",
+    "NAME": "Betablockers",
     "DESCRIPTION": "Deal !D! damage and gain !M! artifact."
   },
   "theHeart:Antibiotics": {
-    "NAME":"Antibiotics",
-    "DESCRIPTION": "Gain !M! temporary hp and !theHeart:SecondMagic! temporary hp based on number of Status Cards."
+    "NAME": "Antibiotics",
+    "DESCRIPTION": "Gain !M! temporary hp and !theHeart:StatusCardsNumber! temporary hp based on number of Status Cards."
   },
   "theHeart:OxygenRichBlood": {
     "NAME": "OxygenRichBlood",
@@ -301,6 +301,14 @@
   },
   "theHeart:PoisonousCyst": {
     "NAME": "PoisonousCyst",
-    "DESCRIPTION": "Apply !M! total poison, this card gains !theHeart:SecondMagic! poison to the enemy for every status cards in combat. You have !theHeart:StatusCardsNumber! status cards."
+    "DESCRIPTION": "Apply !M! total poison, this card applys !theHeart:SecondMagic! poison for every status cards in combat. You have !theHeart:StatusCardsNumber! status cards."
+  },
+  "theHeart:SpireSpear": {
+    "NAME": "SpireSpear",
+    "DESCRIPTION": "Deal !D! damage 4 times. Reduce this cards cost for every status card in your hand. This card returns to your hand when exhausted."
+  },
+  "theHeart:Hemochromatosis": {
+    "NAME": "Hemochromatosis",
+    "DESCRIPTION": "Add 5 random cards to your hand, they cost 0. Add one Dazed, Wound, Burn, Void and Slimed to your draw pile."
   }
 }
