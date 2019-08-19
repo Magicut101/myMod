@@ -29,7 +29,7 @@ public class ElementalCharge extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
-    private static final int COST = -9;
+    private static final int COST = -3;
 
     private static final int MAGIC_NUMBER = 1;
     private static final int DAMAGE = 8;

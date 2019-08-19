@@ -49,7 +49,7 @@ baseBlock = Math.abs( AbstractDungeon.player.lastDamageTaken);
         public void upgrade() {
             if (!upgraded) {
                 upgradeName();
-                upgradeMagicNumber(MAGIC_NUMBER);
+                upgradeMagicNumber(UPGRADE_PLUS_MAGIC_NUMBER);
                 initializeDescription();
             }
         }

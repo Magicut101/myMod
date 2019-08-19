@@ -177,7 +177,8 @@
   },
   "theHeart:QuantumEntanglement": {
     "NAME": " Quantum Entanglement",
-    "DESCRIPTION": "Deal !D! Damage, damage is equal to enemy intent  ."
+    "DESCRIPTION": "Deal Damage is equal to enemy's intent.",
+    "UPGRADE_DESCRIPTION": "Retain. Deal Damage equal to enemy's intent."
   },
   "theHeart:Crumble": {
     "NAME": "Crumble",
@@ -229,7 +230,7 @@
   },
   "theHeart:Wrath": {
     "NAME": "Wrath",
-    "DESCRIPTION": "Deal damage = to damage taken this combat."
+    "DESCRIPTION": "Deal !D! damage = to damage taken in combat."
   },
   "theHeart:HyperCoagulation": {
     "NAME": "HyperCoagulation",
@@ -277,7 +278,7 @@
   },
   "theHeart:Arrhythmia": {
     "NAME": "Arrhythmia",
-    "DESCRIPTION": "Gain !B! Block this turn, gain !theHeart:SecondMagic! Block next turn."
+    "DESCRIPTION": "Gain !B! Block this turn, gain !B! Block next turn."
   },
   "theHeart:Heartbeat": {
     "NAME": "Heartbeat",
@@ -287,9 +288,9 @@
     "NAME": "FattyMembrane",
     "DESCRIPTION": "Gain !B! Block and !theHeart:SecondMagic! Block for every status card in your hand, draw, discard, and exhaust pile. You have !theHeart:StatusCardsNumber! status cards."
   },
-  "theHeart:Betablockers": {
-    "NAME": "Betablockers",
-    "DESCRIPTION": "Deal !D! damage and gain !M! artifact."
+  "theHeart:Betablocker": {
+    "NAME": "Betablocker",
+    "DESCRIPTION": "Deal !D! damage and gain !M! artifact. Exhaust."
   },
   "theHeart:Antibiotics": {
     "NAME": "Antibiotics",
@@ -301,7 +302,7 @@
   },
   "theHeart:PoisonousCyst": {
     "NAME": "PoisonousCyst",
-    "DESCRIPTION": "Apply !M! total poison, this card applys !theHeart:SecondMagic! poison for every status cards in combat. You have !theHeart:StatusCardsNumber! status cards."
+    "DESCRIPTION": "Apply !theHeart:SecondMagic!. This card gains 1 poison for every status card in combat. You have !theHeart:StatusCardsNumber! status cards."
   },
   "theHeart:SpireSpear": {
     "NAME": "SpireSpear",
@@ -310,5 +311,60 @@
   "theHeart:Hemochromatosis": {
     "NAME": "Hemochromatosis",
     "DESCRIPTION": "Add 5 random cards to your hand, they cost 0. Add one Dazed, Wound, Burn, Void and Slimed to your draw pile."
+  },
+  "theHeart:BloodRitual": {
+    "NAME": "BloodRitual",
+    "DESCRIPTION": "Lose !M! hp 5 times, The first card you play each turn is played twice."
+  },
+  "theHeart:BloodTransfusion": {
+    "NAME": "BloodTransfusion",
+    "DESCRIPTION": "Draw !M! cards each time you lose hp."
+  },
+  "theHeart:Exile": {
+    "NAME": "Exile",
+    "DESCRIPTION": "Stun an Enemy for one turn. This card is removed on use and replace with Rebellion."
+  },
+  "theHeart:Rebellion": {
+    "NAME": "Rebellion",
+    "DESCRIPTION": "Deal damage equal to floor number.This card is removed on use and replaced with Subjugation."
+  },
+  "theHeart:Subjugation": {
+    "NAME": "Subjugation",
+    "DESCRIPTION": "Apply 99 weak. This card is purged on use and replaced with Defeat.",
+    "UPGRADE_DESCRIPTION": "Apply 99 weak and vulnerable. This card is removed on use and replaced with Defeat."
+  },
+  "theHeart:Defeat": {
+    "NAME": "Defeat",
+    "DESCRIPTION": "Apply !M! Vulnerable to self and Deal !D! damage. This card is removed on use and replaced with Exile."
+  },
+  "theHeart:QuickBite": {
+  "NAME": "QuickBite",
+  "DESCRIPTION": "Gain !M! energy and add !M! Slimed to your hand."
+},
+  "theHeart:HighDecibelBeat": {
+    "NAME": "HighDecibelBeat",
+    "DESCRIPTION": "Deal !D! damage, every time you play this card modify its damage based on the number of Status Cards in hand."
+  },
+  "theHeart:Virus": {
+    "NAME": "Virus",
+    "DESCRIPTION": "Exhaust. Autoplay. Play the top card in your draw pile and make a copy of this card in your discard pile.",
+    "UPGRADE_DESCRIPTION": "Exhaust. Autoplay. Play the top card in your draw pile and make a copy of this card in your draw pile."
+  },
+  "theHeart:Respite": {
+    "NAME": "Respite",
+    "DESCRIPTION": "Exhaust, Autoplay. Gain !B! and All enemies gain !M! Block."
+  },
+  "theHeart:HeartAche": {
+    "NAME": "HeartAche",
+    "DESCRIPTION": "Deal !D! Damage to all enemies and apply !M! Vulnerable to self"
+  },
+  "theHeart:PoisonousStrike": {
+    "NAME": "PoisonousStrike",
+    "DESCRIPTION": "Deal !D! damage and apply !M! poison."
+  },
+  "theHeart:PulmonaryCirculation": {
+    "NAME": "Pulmonary Circulation",
+    "DESCRIPTION": "Deal !D! damage and draw 1 card, if you have at least one statuses in hand draw one card.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage and draw 1 card, if you have at least one statuses draw in hand draw one card, if you have more than 3 statuses in hand draw two cards."
   }
-}
+  }

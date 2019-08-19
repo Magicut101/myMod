@@ -53,7 +53,7 @@ public class Crumble extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
-    private static final int COST = 3;
+    private static final int COST = 1;
     private static final int MAGIC_NUMBER = 3;
     private static final int UPGRADE_PLUS_MAGIC_NUMBER = 1;
 
@@ -64,16 +64,17 @@ public class Crumble extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         baseMagicNumber = magicNumber = MAGIC_NUMBER;
-
+baseDamage = damage;
     }
 
     // Actions the card should do.
     @Override
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        final int b = m.currentBlock*magicNumber;
+    baseDamage = m.currentBlock*magicNumber;
+
             AbstractDungeon.actionManager.addToTop(
-                    new DamageAction(m, new DamageInfo(p, b, damageTypeForTurn),
+                    new DamageAction(m, new DamageInfo(p, baseDamage, damageTypeForTurn),
                             AbstractGameAction.AttackEffect.SLASH_HEAVY));
         }
 

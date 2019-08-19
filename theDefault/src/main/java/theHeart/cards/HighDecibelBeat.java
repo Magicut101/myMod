@@ -1,13 +1,10 @@
 package theHeart.cards;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.*;
-import com.megacrit.cardcrawl.actions.unique.DiscardPileToTopOfDeckAction;
-import com.megacrit.cardcrawl.actions.unique.VampireDamageAction;
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.FleetingField;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.ModifyDamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.status.Slimed;
-import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -18,10 +15,10 @@ import theHeart.characters.TheDefault;
 
 import static theHeart.DefaultMod.makeCardPath;
 
-public class Hypertension  extends AbstractDynamicCard {
+public class HighDecibelBeat extends AbstractDynamicCard {
 
 
-    public static final String ID = DefaultMod.makeID(Hypertension.class.getSimpleName());
+    public static final String ID = DefaultMod.makeID(HighDecibelBeat.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
 
 
@@ -36,37 +33,54 @@ public class Hypertension  extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
-    private static final int COST = 0;
+    private static final int COST = 1;
+    private static final int UPGRADE_PLUS_DAMAGE = 4;
+    private static final int DAMAGE = 6;
+    private static final int MAGIC_NUMBER = 4;
 
-    private static final int DAMAGE = 4;
-    private static final int UPGRADE_PLUS_DMG = 3 ;
 // /STAT DECLARATION/
 
 
-    public Hypertension () {
+    public HighDecibelBeat() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = DAMAGE;
-        exhaust=true;
-        this.tags.add(AbstractCard.CardTags.HEALING);
+        baseDamage = damage = DAMAGE;
+        baseMagicNumber =magicNumber= MAGIC_NUMBER;
 
 
     }
-    @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
 
-        AbstractDungeon.actionManager.addToBottom(new VampireDamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new VoidCard(), 2));
+    public int countCards() {
+
+    int count = 0;
+
+        for(
+    AbstractCard c :AbstractDungeon.player.hand.group)
+
+    {
+        if (c.type == AbstractCard.CardType.STATUS) {
+            count++;
+        }
+    }
+        return count;
+}
+
+    public void use (AbstractPlayer p, AbstractMonster m) {
+
+        for (int i = 0; i < countCards(); i++) {
+            AbstractDungeon.actionManager.addToBottom(new ModifyDamageAction(this.uuid, this.magicNumber));
+        }
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(p, new DamageInfo(p,damage,damageTypeForTurn)));
     }
 
     public AbstractDynamicCard makeCopy () {
-        return new Hypertension();
+        return new HighDecibelBeat();
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
+            upgradeDamage(UPGRADE_PLUS_DAMAGE);
             initializeDescription();
         }
     }

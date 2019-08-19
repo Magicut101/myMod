@@ -9,6 +9,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.utils.compression.lzma.Base;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
@@ -24,10 +25,7 @@ import org.apache.logging.log4j.Logger;
 import theHeart.cards.*;
 import theHeart.characters.TheDefault;
 import theHeart.events.IdentityCrisisEvent;
-import theHeart.potions.PlaceholderPotion;
 import theHeart.relics.BottledPlaceholderRelic;
-import theHeart.relics.DefaultClickableRelic;
-import theHeart.relics.PlaceholderRelic2;
 import theHeart.util.IDCheckDontTouchPls;
 import theHeart.util.TextureLoader;
 import theHeart.variables.*;
@@ -376,7 +374,7 @@ public class DefaultMod implements
       //  BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
         
         // Mark relics as seen (the others are all starters so they're marked as seen in the character file
-        UnlockTracker.markRelicAsSeen(BottledPlaceholderRelic.ID);
+       // UnlockTracker.markRelicAsSeen(BottledPlaceholderRelic.ID);
         logger.info("Done adding relics!");
     }
     
@@ -392,12 +390,13 @@ public class DefaultMod implements
         pathCheck();
         // Add the Custom Dynamic Variables
         logger.info("Add variables");
-        // Add the Custom Dynamic variabls
+        // Add the Custom Dynamic variables
         BaseMod.addDynamicVariable(new DefaultCustomVariable());
         BaseMod.addDynamicVariable(new DefaultSecondMagicNumber());
         BaseMod.addDynamicVariable(new StatusCardsNumber());
         BaseMod.addDynamicVariable(new TotalDamageFromStatusCardsNumber());
         BaseMod.addDynamicVariable(new TotalBlockFromStatusCardsNumber());
+        BaseMod.addDynamicVariable(new StatusCardsInHand());
         logger.info("Adding cards");
         // Add the cards
         // Don't comment out/delete these cards (yet). You need 1 of each type and rarity (technically) for your game not to crash
@@ -470,6 +469,16 @@ public class DefaultMod implements
         BaseMod.addCard(new PoisonousCyst());
         BaseMod.addCard(new SpireSpear());
         BaseMod.addCard(new Hemochromatosis());
+        BaseMod.addCard(new BloodRitual());
+        BaseMod.addCard(new BloodTransfusion());
+        BaseMod.addCard(new Exile());
+        BaseMod.addCard(new QuickBite());
+        BaseMod.addCard(new HighDecibelBeat());
+        BaseMod.addCard(new Virus());
+        BaseMod.addCard(new Respite());
+        BaseMod.addCard(new PoisonousStrike());
+        BaseMod.addCard(new PulmonaryCirculation());
+
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
         // This is so that they are all "seen" in the library, for people who like to look at the card list
@@ -513,7 +522,7 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(NoxiousBlood.ID);
         UnlockTracker.unlockCard(GrayPlatelets.ID);
         UnlockTracker.unlockCard(Tachycardia.ID);
-        UnlockTracker.unlockCard( Hemoblastosis.ID);
+        UnlockTracker.unlockCard(Hemoblastosis.ID);
         UnlockTracker.unlockCard(LeechSeed.ID);
         UnlockTracker.unlockCard(AntiCoagulant.ID);
         UnlockTracker.unlockCard(BloodFlow.ID);
@@ -541,6 +550,18 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(PoisonousCyst.ID);
         UnlockTracker.unlockCard(SpireSpear.ID);
         UnlockTracker.unlockCard(Hemochromatosis.ID);
+        UnlockTracker.unlockCard(BloodRitual.ID);
+        UnlockTracker.unlockCard(BloodTransfusion.ID);
+        UnlockTracker.unlockCard(Exile.ID);
+        UnlockTracker.unlockCard(Defeat.ID);
+        UnlockTracker.unlockCard(Rebellion.ID);
+        UnlockTracker.unlockCard(Subjugation.ID);
+        UnlockTracker.unlockCard(QuickBite.ID);
+        UnlockTracker.unlockCard(HighDecibelBeat.ID);
+        UnlockTracker.unlockCard(Virus.ID);
+        UnlockTracker.unlockCard(Respite.ID);
+        UnlockTracker.unlockCard(PoisonousStrike.ID);
+        UnlockTracker.unlockCard(PulmonaryCirculation.ID);
         logger.info("Done adding cards!");
     }
     

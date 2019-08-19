@@ -1,27 +1,28 @@
 package theHeart.cards;
 
-import com.badlogic.gdx.math.MathUtils;
+
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.FleetingField;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.unique.DiscardPileToTopOfDeckAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.evacipated.cardcrawl.mod.stslib.patches.FleetingPatch;
+import com.evacipated.cardcrawl.mod.stslib.powers.StunMonsterPower;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.evacipated.cardcrawl.modthespire.patcher.PrefixPatchInfo;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.unique.AddCardToDeckAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
+
 import theHeart.DefaultMod;
 import theHeart.characters.TheDefault;
 
-import static com.megacrit.cardcrawl.cards.DamageInfo.DamageType.NORMAL;
 import static theHeart.DefaultMod.makeCardPath;
 
-public class Wrath extends AbstractDynamicCard {
+public class Exile extends AbstractDynamicCard {
 
 
-    public static final String ID = DefaultMod.makeID(Wrath.class.getSimpleName());
+    public static final String ID = DefaultMod.makeID(Exile.class.getSimpleName());
     public static final String IMG = makeCardPath("Attack.png");
 
 
@@ -37,14 +38,15 @@ public class Wrath extends AbstractDynamicCard {
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
     private static final int COST = 2;
-    private static final int UPGRADE_PLUS_COST = 1;
+    private static final int UPGRADE_PLUS_COST = -1;
 
-
+//Okay card idea is this, an evolving replacing card that tells the story of how Neow was exiled and his cycle of rebellions.
+    //Exile -> Rebellion -> Subjugation -> Defeat -> Exile
 
 // /STAT DECLARATION/
 
 
-    public Wrath() {
+    public Exile() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = damage;
         purgeOnUse = true;
@@ -53,24 +55,12 @@ public class Wrath extends AbstractDynamicCard {
     }
 
 
-    @Override
-    public void tookDamage() {
-        int damageTaken =+ AbstractDungeon.player.lastDamageTaken;
-
-        damage = damageTaken;
-    }
-
-    //Get current hp at the start of combat, then make it compare that value to damage taken while in combat, by looking at Current hp - Hp in Room.
-
-
-
-
     public void use (AbstractPlayer p, AbstractMonster m){
-
-    AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p,damage )));
+AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m,p,new StunMonsterPower(m)));
+AbstractDungeon.actionManager.addToBottom(new AddCardToDeckAction(new Rebellion()));
     }
     public AbstractDynamicCard makeCopy () {
-        return new Wrath();
+        return new Exile();
     }
 
     @Override

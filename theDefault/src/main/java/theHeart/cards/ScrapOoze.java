@@ -36,10 +36,18 @@ public class ScrapOoze extends AbstractDynamicCard {
         baseMagicNumber = magicNumber = MAGIC_NUMBER;
     }
 @Override
-    public void use(AbstractPlayer p, AbstractMonster m){}
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        return false;
+    public void use(AbstractPlayer p, AbstractMonster m) {
+    /* 39 */
+    if (p.hasRelic("Medical Kit")) {
+        /* 40 */
+        useMedicalKit(p);
+        /*    */
+    } else {
+        /* 42 */
+        AbstractDungeon.actionManager.addToTop(new UseCardAction(this));
+        /*    */
     }
+}
     public void triggerOnExhaust() {
         AbstractDungeon.actionManager.addToBottom
                 (new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, this.block));

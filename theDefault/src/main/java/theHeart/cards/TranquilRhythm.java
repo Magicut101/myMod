@@ -45,7 +45,7 @@ import static theHeart.DefaultMod.makeCardPath;
 
         private static final int COST = 0;
 
-        private static final int MAGIC_NUMBER = 4;
+        private static final int MAGIC_NUMBER = 3;
         private static final int UPGRADE_PLUS_MAGIC_NUMBER = 1;
         private static final int BLOCK = 6;
         private static final int UPGRADED_PLUS_BLOCK = 2;
