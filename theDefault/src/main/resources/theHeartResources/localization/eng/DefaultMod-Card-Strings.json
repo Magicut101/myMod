@@ -17,7 +17,7 @@
     "DESCRIPTION": "Gain !B! Block, add 2 Wounds to your Hand."
   },
   "theHeart:BloodDrop": {
-    "NAME": "BloodDrop",
+    "NAME": "Blood Drop",
     "DESCRIPTION": "Deal !D! Damage. Gain !M! Vulnerable."
   },
   "theHeart:DefaultUncommonPower": {
@@ -47,7 +47,7 @@
     "DESCRIPTION": "Apply !M! vulnerable and !theHeart:SecondMagic! poison to an enemy."
   },
   "theHeart:BloodShots": {
-    "NAME": "BloodShots",
+    "NAME": "Blood Shots",
     "DESCRIPTION": "Deal !D! damage 12 times. Exhaust",
     "UPGRADE_DESCRIPTION": "Deal !D! damage, 15 times. Exhaust"
   },
@@ -68,19 +68,19 @@
     "DESCRIPTION": "Lose 20 hp, deal !D! to all enemies, Gain !M! energy, draw !M! cards."
   },
   "theHeart:BloodSpray": {
-    "NAME": "BloodSpray",
+    "NAME": "Blood Spray",
     "DESCRIPTION": "Lose 4 HP. !D! damage to all enemies."
   },
   "theHeart:TentacleWhip": {
-    "NAME": "TentacleWhip",
+    "NAME": "Tentacle Whip",
     "DESCRIPTION": "Deal !D! damage to all enemies, temporarily reduce !M! strength to all enemies."
   },
   "theHeart:SpireGrowth": {
-    "NAME": "SpireGrowth",
+    "NAME": "Spire Growth",
     "DESCRIPTION": "Gain 5 Temporary Hp, draw !M! cards."
   },
   "theHeart:HastyFortification": {
-    "NAME": "HastyFortification",
+    "NAME": "Hasty Fortification",
     "DESCRIPTION": "Gain !B! Block, lose !M! Dexterity."
   },
   "theHeart:CapillaryExchange": {
@@ -90,11 +90,11 @@
   },
   "theHeart:ChaoticEnergy": {
     "NAME": "ChaoticEnergy",
-    "DESCRIPTION": "Give !B! Block to player and enemies. "
+    "DESCRIPTION": "Player and all enemies gain !B! Block"
   },
   "theHeart:Debilitate": {
     "NAME": "Debilitate",
-    "DESCRIPTION": "Give !M! Weak, !M! Vulnerable, and Stun the enemy. Exhaust "
+    "DESCRIPTION": " Give !M! Weak, !M! Vulnerable, and Stun the enemy.Exhaust. "
   },
   "theHeart:Devour": {
     "NAME": "Devour",
@@ -123,12 +123,12 @@
   },
   "theHeart:HeartBurn": {
     "NAME": "HeartBurn",
-    "DESCRIPTION": "Apply 11 poison to enemy, apply 4 poison to self. ",
+    "DESCRIPTION": "Apply 11 poison to enemy, apply 4 poison to self.",
     "UPGRADE_DESCRIPTION": "Apply 14 poison to enemy, apply 3 poison to self."
   },
   "theHeart:Constrict": {
     "NAME": "Constrict",
-    "DESCRIPTION": "Apply !M! Constrict to an enemy. Exhaust"
+    "DESCRIPTION": "Apply !M! Constrict to an enemy. Exhaust."
   },
   "theHeart:AncientEvil": {
     "NAME": "Ancient Evil",
@@ -144,7 +144,7 @@
   },
   "theHeart:Corrupt": {
     "NAME": "Corrupt",
-    "DESCRIPTION": "Triple SOME debuffs. Exhaust"
+    "DESCRIPTION": "Triple SOME debuffs. Exhaust."
   },
   "theHeart:ArterialFlow": {
     "NAME": "ArterialFlow",
@@ -168,7 +168,7 @@
     "UPGRADE_DESCRIPTION": "Exhaust all Status Cards in your discard and draw pile. Exhaust."
   },
   "theHeart:EndlessHatred": {
-    "NAME": "EndlessHatred",
+    "NAME": "Endless Hatred",
     "DESCRIPTION": "When a status card exhausts deal !M! to all enemies."
   },
   "theHeart:CardiacRupture": {
@@ -177,7 +177,7 @@
   },
   "theHeart:QuantumEntanglement": {
     "NAME": " Quantum Entanglement",
-    "DESCRIPTION": "Deal Damage is equal to enemy's intent.",
+    "DESCRIPTION": "Deal Damage equal to enemy's intent.",
     "UPGRADE_DESCRIPTION": "Retain. Deal Damage equal to enemy's intent."
   },
   "theHeart:Crumble": {
@@ -185,7 +185,7 @@
     "DESCRIPTION": "Deal damage  = to x!M! enemy block"
   },
   "theHeart:TranquilRhythm": {
-    "NAME": "TranquilRhythm",
+    "NAME": "Tranquil Rhythm",
     "DESCRIPTION": "Gain !B! block, Apply  !M! Regen and  !theHeart:SecondMagic! Weaken."
   },
   "theHeart:NoxiousBlood": {
@@ -193,7 +193,7 @@
     "DESCRIPTION": "At the start of your turn, apply !M! poison to Self and ALL enemies."
   },
   "theHeart:GrayPlatelets": {
-    "NAME": "GrayPlatelets",
+    "NAME": "Gray Platelets",
     "DESCRIPTION": "Whenever you lose hp apply !M! poison to ALL enemies."
   },
   "theHeart:Tachycardia": {
@@ -205,11 +205,11 @@
     "DESCRIPTION": "Lose !M! Hp and deal !D! in 2 turns."
   },
   "theHeart:LeechSeed": {
-    "NAME": "LeechSeed",
+    "NAME": "Leech Seed",
     "DESCRIPTION": "Apply !M! regen to self and !M! poison to enemy. Exhaust."
   },
   "theHeart:AntiCoagulant": {
-    "NAME": "AntiCoagulant",
+    "NAME": "Anti Coagulant",
     "DESCRIPTION": "Exhaust all Non-Attack cards in your hand, draw 1 card."
   },
   "theHeart:BloodFlow": {
@@ -221,11 +221,11 @@
     "DESCRIPTION": "Heal !M! hp, and add !theHeart:SecondMagic! Slimed to your hand. Exhaust."
   },
   "theHeart:ElementalCharge": {
-    "NAME": "ElementalCharge",
+    "NAME": "Elemental Charge",
     "DESCRIPTION": "Exhaust X cards in hand, Add X burns, Deal !D! damage X times."
   },
   "theHeart:ScrapOoze": {
-    "NAME": "ScrapOoze",
+    "NAME": "Scrap Ooze",
     "DESCRIPTION": "Unplayable. Lose !M! hp when you draw this card and Gain !B! Block. When Exhausted gain !M! Block."
   },
   "theHeart:Wrath": {
@@ -233,7 +233,7 @@
     "DESCRIPTION": "Deal !D! damage = to damage taken in combat."
   },
   "theHeart:HyperCoagulation": {
-    "NAME": "HyperCoagulation",
+    "NAME": "Hyper Coagulation",
     "DESCRIPTION": "Deal !D! damage and !B! Block.This card gains !M! Block and Damage for every status card in combat. You have !theHeart:StatusCardsNumber! status cards."
   },
   "theHeart:Cyroablation": {
@@ -242,7 +242,7 @@
   },
   "theHeart:Enrage": {
     "NAME": "Enraged",
-    "DESCRIPTION": " Deal !D! damage to ALL enemies, lose !M! strength. ."
+    "DESCRIPTION": " Deal !D! damage to ALL enemies, lose !M! strength."
   },
   "theHeart:CorruptedForm": {
     "NAME": "Corrupted Form",
@@ -250,7 +250,7 @@
   },
   "theHeart:Hypertension": {
     "NAME": "Hypertension",
-    "DESCRIPTION": "Deal !D! damage and heal for damage dealt. Add 2 Void to your discard pile."
+    "DESCRIPTION": " Deal !D! damage and heal for unblocked damage dealt. Add 2 Void to your discard pile. Exhaust."
   },
   "theHeart:Crush": {
     "NAME": "Crush",
@@ -285,7 +285,7 @@
     "DESCRIPTION": "Gain 1 Rebound each turn."
   },
   "theHeart:FattyMembrane": {
-    "NAME": "FattyMembrane",
+    "NAME": "Fatty Membrane",
     "DESCRIPTION": "Gain !B! Block and !theHeart:SecondMagic! Block for every status card in your hand, draw, discard, and exhaust pile. You have !theHeart:StatusCardsNumber! status cards."
   },
   "theHeart:Betablocker": {
@@ -294,14 +294,14 @@
   },
   "theHeart:Antibiotics": {
     "NAME": "Antibiotics",
-    "DESCRIPTION": "Gain !M! temporary hp and !theHeart:StatusCardsNumber! temporary hp based on number of Status Cards."
+    "DESCRIPTION": "Gain !M! temporary hp and !theHeart:StatusCardsNumber! temporary hp based on number of Status Cards in combat."
   },
   "theHeart:OxygenRichBlood": {
-    "NAME": "OxygenRichBlood",
+    "NAME": "Oxygen Rich Blood",
     "DESCRIPTION": "Draw !M! cards and add a wound to your draw pile."
   },
   "theHeart:PoisonousCyst": {
-    "NAME": "PoisonousCyst",
+    "NAME": "Poisonous Cyst",
     "DESCRIPTION": "Apply !theHeart:SecondMagic!. This card gains 1 poison for every status card in combat. You have !theHeart:StatusCardsNumber! status cards."
   },
   "theHeart:SpireSpear": {
@@ -313,11 +313,11 @@
     "DESCRIPTION": "Add 5 random cards to your hand, they cost 0. Add one Dazed, Wound, Burn, Void and Slimed to your draw pile."
   },
   "theHeart:BloodRitual": {
-    "NAME": "BloodRitual",
-    "DESCRIPTION": "Lose !M! hp 5 times, The first card you play each turn is played twice."
+    "NAME": "Blood Ritual",
+    "DESCRIPTION": " Lose !M! hp 5 times, The first card you play each turn is played twice.Exhaust."
   },
   "theHeart:BloodTransfusion": {
-    "NAME": "BloodTransfusion",
+    "NAME": "Blood Transfusion",
     "DESCRIPTION": "Draw !M! cards each time you lose hp."
   },
   "theHeart:Exile": {
@@ -347,24 +347,28 @@
   },
   "theHeart:Virus": {
     "NAME": "Virus",
-    "DESCRIPTION": "Exhaust. Autoplay. Play the top card in your draw pile and make a copy of this card in your discard pile.",
-    "UPGRADE_DESCRIPTION": "Exhaust. Autoplay. Play the top card in your draw pile and make a copy of this card in your draw pile."
+    "DESCRIPTION": " Autoplay. Play the top card in your draw pile and make a copy of this card in your discard pile.Exhaust.",
+    "UPGRADE_DESCRIPTION": " Autoplay. Play the top card in your draw pile and make a copy of this card in your draw pile.Exhaust."
   },
   "theHeart:Respite": {
     "NAME": "Respite",
-    "DESCRIPTION": "Exhaust, Autoplay. Gain !B! and All enemies gain !M! Block."
+    "DESCRIPTION": "Autoplay. Gain !B! and All enemies gain !M! Block.Exhaust, "
   },
   "theHeart:HeartAche": {
-    "NAME": "HeartAche",
+    "NAME": "Heart Ache",
     "DESCRIPTION": "Deal !D! Damage to all enemies and apply !M! Vulnerable to self"
   },
   "theHeart:PoisonousStrike": {
-    "NAME": "PoisonousStrike",
+    "NAME": "Poisonous Strike",
     "DESCRIPTION": "Deal !D! damage and apply !M! poison."
   },
   "theHeart:PulmonaryCirculation": {
     "NAME": "Pulmonary Circulation",
     "DESCRIPTION": "Deal !D! damage and draw 1 card, if you have at least one statuses in hand draw one card.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage and draw 1 card, if you have at least one statuses draw in hand draw one card, if you have more than 3 statuses in hand draw two cards."
-  }
+  },
+  "theHeart:MyocardialRupture": {
+  "NAME": "Myocardial Rupture",
+  "DESCRIPTION": "All cards cost 0 and exhaust after use. Add a Wound whenever you exhaust a card this way."
+}
   }

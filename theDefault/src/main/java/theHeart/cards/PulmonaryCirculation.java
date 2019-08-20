@@ -69,7 +69,7 @@ public class PulmonaryCirculation extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn)));
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 1));
-        if (countCards() > 1) {
+        if (countCards() >= 1) {
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 1));
             if (upgraded || countCards() > 3) {
                 AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 1));

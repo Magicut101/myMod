@@ -31,8 +31,8 @@ public static final String NAME = powerStrings.NAME;
 public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
 
-private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
-private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
+private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("MyocardialRupture84.png"));
+private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("MyocardialRupture32.png"));
 
 public MyocardialRupturePower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
@@ -75,6 +75,14 @@ public void onInitialApplication() {
     card.exhaustOnUseOnce = true;
 AbstractDungeon.actionManager.addToBottom(new LoseHPAction(owner, source, amount));
         AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new Wound()));
+        }
+
+        public void updateDescription() {
+            if (amount == 1) {
+                description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+            } else if (amount > 1) {
+                description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
+            }
         }
         public AbstractPower makeCopy() {
             return new MyocardialRupturePower(owner, source, amount);

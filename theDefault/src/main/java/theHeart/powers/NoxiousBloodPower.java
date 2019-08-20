@@ -26,8 +26,8 @@ public class NoxiousBloodPower extends AbstractPower implements CloneablePowerIn
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
 
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("NoxiousBlood84.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("NoxiousBlood32.png"));
 
     public NoxiousBloodPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;

@@ -29,8 +29,8 @@ public class AdaptiveCellsPower extends AbstractPower implements CloneablePowerI
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
 
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("AdaptiveCells84.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("AdaptiveCells32.png"));
 
     public AdaptiveCellsPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
@@ -75,7 +75,13 @@ public class AdaptiveCellsPower extends AbstractPower implements CloneablePowerI
         }
 
 
-
+    public void updateDescription() {
+        if (amount == 1) {
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        } else if (amount > 1) {
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
+        }
+    }
 
     @Override
     public AbstractPower makeCopy() {

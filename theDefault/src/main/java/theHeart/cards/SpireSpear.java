@@ -39,8 +39,7 @@ public class SpireSpear extends AbstractDynamicCard {
     private static final int COST = 4;
     private static final int DAMAGE = 9;
     private static final int UPGRADED_PLUS_DAMAGE = 2;
-//I added code from piercing wail so this now properly reduces strength to all enemies but now it does an extra attack for every enemy?
-    // I moved some code up but that properly didn't fix the issue.
+
 
     public SpireSpear() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -70,8 +69,11 @@ defaultBaseSecondMagicNumber = defaultSecondMagicNumber;
     }
 
     @Override
-    public void triggerOnOtherCardPlayed(AbstractCard card) {
+    public void applyPowers() {
+        /* 58 */
 
+        /* 59 */
+        super.applyPowers();
         int statuscards = 4;
         for (AbstractCard c : AbstractDungeon.player.hand.group) {
             if (c.type == CardType.STATUS) {
@@ -82,18 +84,7 @@ defaultBaseSecondMagicNumber = defaultSecondMagicNumber;
         setCostForTurn(statuscards);
     }
 
-    @Override
-    public void triggerWhenDrawn() {
 
-        int statuscards = 4;
-        for (AbstractCard c : AbstractDungeon.player.hand.group) {
-            if (c.type == CardType.STATUS) {
-                --statuscards;
-            }
-        }
-
-        setCostForTurn(statuscards);
-    }
     @Override
     public void triggerOnExhaust() {
         super.triggerOnExhaust();

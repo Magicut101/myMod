@@ -51,11 +51,20 @@ public class EndlessHatredPower extends AbstractPower implements CloneablePowerI
 
 
     @Override
-    public void onExhaust(AbstractCard STATUS) {
+    public void onExhaust(AbstractCard card) {
         flash();
-        AbstractDungeon.actionManager.addToTop(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(amount, true),
-                DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE));
+        if (card.type == AbstractCard.CardType.STATUS) {
+            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(amount, true),
+                    DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE));
 
+        }
+    }
+    public void updateDescription() {
+        if (amount == 1) {
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        } else if (amount > 1) {
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
+        }
     }
         @Override
         public AbstractPower makeCopy () {

@@ -27,8 +27,8 @@ public class HemorrhagePower extends AbstractPower implements CloneablePowerInte
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
-    private static final Texture tex84 = TextureLoader.getTexture("theHeartResources/images/powers/placeholder_power84.png");
-    private static final Texture tex32 = TextureLoader.getTexture("theHeartResources/images/powers/placeholder_power32.png");
+    private static final Texture tex84 = TextureLoader.getTexture("Hemorrhage84.png");
+    private static final Texture tex32 = TextureLoader.getTexture("Hemorrhage32.png");
 
     public HemorrhagePower(final AbstractCreature owner, final int amount) {
         name = NAME;
@@ -67,6 +67,14 @@ public class HemorrhagePower extends AbstractPower implements CloneablePowerInte
         /* 42 */     this.amount += stackAmount;
         /*    */   }
     /*    */
+
+    public void updateDescription() {
+        if (amount == 1) {
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        } else if (amount > 1) {
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
+        }
+    }
     /*    */
     public AbstractPower makeCopy() {
         return new HemorrhagePower(owner, amount);

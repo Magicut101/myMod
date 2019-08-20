@@ -16,25 +16,25 @@
                 ]
         },
         "theHeart:BloodClots": {
-                "NAME": "BloodClots",
+                "NAME": "Blood Clots Power",
                 "DESCRIPTION": [
                         "Gain !B! Block each time you exhaust a Status card."
                 ]
         },
         "theHeart:HyperTrophy": {
-                "NAME": "HyperTrophy",
+                "NAME": "Hypertrophy Power",
                 "DESCRIPTION": [
                         " Take 3x more damage from attacks."
                 ]
         },
         "theHeart:Pacemaker": {
-                "NAME": "Pacemaker",
+                "NAME": "Pacemaker Power",
                 "DESCRIPTION": [
                         "Look at the first 5 cards in your draw pile, exhaust one card"
                 ]
         },
         "theHeart:Hemorrhage": {
-                "NAME": "Hemorrhage",
+                "NAME": "Hemorrhage Power",
                 "DESCRIPTION": [
                         "Draw 1 extra card, add 1 Wound to your draw pile"
                 ]
@@ -46,43 +46,43 @@
                 ]
         },
         "theHearT:EndlessHatred": {
-                "NAME": " EndlessHatred",
+                "NAME": "Endless Hatred Power",
                 "DESCRIPTION": [
                         "When a status card exhausts deal !M! damage to all enemies."
                 ]
         },
         "theHeart:MyocardialRupturePower": {
-                "NAME": "Myocardial Rupture",
+                "NAME": "Myocardial Rupture Power",
                 "DESCRIPTION": [
                         "Lose 1 hp every time you play a card, all cards cost zero, when you play a card exhaust it and add a Wound."
                 ]
         },
         "theHeart:NoxiousBloodPower": {
-                "NAME": "Noxious Blood",
+                "NAME": "Noxious Blood Power",
                 "DESCRIPTION": [
                         "At the start of your turn, Apply !M! poison to self and ALL enemies."
                 ]
         },
         "theHeart:GrayPlateletsPower": {
-                "NAME": "GrayPlateletsPower",
+                "NAME": "Gray Platelets Power",
                 "DESCRIPTION": [
                         "Whenever you lose hp from a card, apply 2 poison to all enemies."
                 ]
         },
         "theHeart:CorruptedFormPower": {
-                "NAME": "Corrupted Form",
+                "NAME": "Corrupted Form Power",
                 "DESCRIPTION": [
                         "When you draw a Wound gain !M! temporary Strength."
                 ]
         },
         "theHeart:AdaptiveCellsPower": {
-                "NAME": "Adaptive Cells",
+                "NAME": "Adaptive Cells Power",
                 "DESCRIPTION": [
                         "If you draw a Status gain block, if it exhausts draw 1 card, if it has a negative effect deal damage."
                 ]
         },
         "theHeart:Heartbeat": {
-                "NAME": "Heartbeat",
+                "NAME": "Heartbeat Power",
                 "DESCRIPTION": [
                         "The next card you play goes back to the top of your draw pile."
                 ]

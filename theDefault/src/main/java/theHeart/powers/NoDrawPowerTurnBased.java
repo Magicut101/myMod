@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.status.Wound;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -33,9 +34,9 @@ public class NoDrawPowerTurnBased  extends AbstractPower implements CloneablePow
         this.amount = amount;
 
 
-        type = PowerType.BUFF;
+        type = PowerType.DEBUFF;
         isTurnBased = true;
-
+        loadRegion("noDraw");
         // We load those textures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
@@ -49,33 +50,29 @@ public class NoDrawPowerTurnBased  extends AbstractPower implements CloneablePow
         /*    */
         /*    */
         /*    */
-        /*    */   public void atEndOfRound() {
-            /* 35 */     if (this.justApplied) {
-                /* 36 */       this.justApplied = false;
-                /*    */
-                /*    */       return;
-                /*    */     }
-            /* 40 */     AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner,"NoDrawPowerTurnBased", amount));
-            /*    */   }
+         public void atEndOfRound() {
+/* 35 */     if (this.justApplied) {
+        /* 36 */       this.justApplied = false;
         /*    */
-        /*    */
+        /*    */       return;
+        /*    */     }
+    /* 40 */     if (this.amount == 0) {
+        /* 41 */       AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, "NoDrawPowerTurnBased"));
+        /*    */     } else {
+        /* 43 */       AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, "NoDrawPowerTurnBased", 1));
+        /*    */     }
+    /*    */   }
         /*    */
         /* 45 */   public void onRemove() { AbstractDungeon.player.gameHandSize++; }
 /*
 
-
-    /*    */
-    /*    */
-    /*    */
     /*    */   public void stackPower(int stackAmount) {
         /* 41 */     this.fontScale = 8.0F;
         /* 42 */     this.amount += stackAmount;
         /*    */   }
-    /*    */
-    /*    */
+
+    @Override
     public AbstractPower makeCopy() {
-        return new HemorrhagePower(owner, amount);
-
-
+        return new theHeart.powers.NoDrawPowerTurnBased (owner, amount);
     }
-}
+   }

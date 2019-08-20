@@ -397,11 +397,12 @@ public class DefaultMod implements
         BaseMod.addDynamicVariable(new TotalDamageFromStatusCardsNumber());
         BaseMod.addDynamicVariable(new TotalBlockFromStatusCardsNumber());
         BaseMod.addDynamicVariable(new StatusCardsInHand());
+
         logger.info("Adding cards");
         // Add the cards
         // Don't comment out/delete these cards (yet). You need 1 of each type and rarity (technically) for your game not to crash
         // when generating card rewards/shop screen items.
-        
+        BaseMod.addCard(new MyocardialRupture());
         BaseMod.addCard(new BloodShots());
         BaseMod.addCard(new theHeartCommonAttack());
         BaseMod.addCard(new theHeartDefend());
@@ -562,6 +563,7 @@ public class DefaultMod implements
         UnlockTracker.unlockCard(Respite.ID);
         UnlockTracker.unlockCard(PoisonousStrike.ID);
         UnlockTracker.unlockCard(PulmonaryCirculation.ID);
+        UnlockTracker.unlockCard(MyocardialRupture.ID);
         logger.info("Done adding cards!");
     }
     

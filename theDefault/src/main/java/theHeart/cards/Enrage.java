@@ -54,7 +54,7 @@ public class Enrage extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
             AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LoseStrengthPower(p, MAGIC_NUMBER), MAGIC_NUMBER));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p ,p,new StrengthPower(p, -MAGIC_NUMBER)));
                     }
 
 

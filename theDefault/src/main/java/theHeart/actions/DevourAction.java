@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.GainStrengthPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 
 public class DevourAction
@@ -35,7 +36,7 @@ public class DevourAction
           AbstractDungeon.effectList.add(new FlashAtkImgEffect(this.target.hb.cX, this.target.hb.cY, AbstractGameAction.AttackEffect.NONE));
           this.target.damage(this.info);
            if ((((AbstractMonster)this.target).isDying || this.target.currentHealth <= 0) && !this.target.halfDead) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner ,owner,new GainStrengthPower(owner,GainStrengthInt)));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner ,owner,new StrengthPower(owner, GainStrengthInt)));
 
                 }
 

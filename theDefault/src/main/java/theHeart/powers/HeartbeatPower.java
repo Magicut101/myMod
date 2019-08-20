@@ -24,8 +24,8 @@ import static theHeart.DefaultMod.makePowerPath;
         public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
 
-        private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
-        private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
+        private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("Heartbeat84.png"));
+        private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("Heartbeat32.png"));
 
         public HeartbeatPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
             name = NAME;
@@ -46,6 +46,14 @@ import static theHeart.DefaultMod.makePowerPath;
         public void atStartOfTurn() {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner , owner, new ReboundPower(owner)));
         }
+
+    public void updateDescription() {
+        if (amount == 1) {
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        } else if (amount > 1) {
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
+        }
+    }
         public AbstractPower makeCopy() {
             return new HeartbeatPower(owner, source, amount);
         }

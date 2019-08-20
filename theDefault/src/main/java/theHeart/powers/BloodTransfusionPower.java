@@ -24,8 +24,8 @@ public class BloodTransfusionPower extends AbstractPower implements CloneablePow
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
 
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("BloodTransfusion84.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("BloodTransfusion32.png"));
 
     public BloodTransfusionPower(final AbstractCreature owner, final int amount) {
         name = NAME;
@@ -59,6 +59,13 @@ public class BloodTransfusionPower extends AbstractPower implements CloneablePow
             }
 
         }      return damageAmount;
+    }
+    public void updateDescription() {
+        if (amount == 1) {
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        } else if (amount > 1) {
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
+        }
     }
     @Override
     public AbstractPower makeCopy() {

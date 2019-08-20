@@ -56,29 +56,8 @@ public class StatusCardsNumber extends DynamicVariable {
     @Override
     public int baseValue(AbstractCard card) {
 
-        int statuscards = 0;
 
-        for (AbstractCard c : AbstractDungeon.player.hand.group) {
-            if (c.type == AbstractCard.CardType.STATUS) {
-                statuscards++;
-            }
-        }
-        for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
-            if (c.type == AbstractCard.CardType.STATUS) {
-                statuscards++;
-            }
-        }
-        for (AbstractCard c : AbstractDungeon.player.discardPile.group) {
-            if (c.type == AbstractCard.CardType.STATUS) {
-                statuscards++;
-            }
-        }
-        for (AbstractCard c : AbstractDungeon.player.exhaustPile.group) {
-            if (c.type == AbstractCard.CardType.STATUS) {
-                statuscards++;
-            }
-        }
-        return  statuscards;
+        return 0;
 
     }
 

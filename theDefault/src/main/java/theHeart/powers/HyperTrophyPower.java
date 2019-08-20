@@ -32,8 +32,8 @@ package theHeart.powers;
         public static final String NAME = powerStrings.NAME;
         public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
         int damagedInCombat;
-        private static final Texture tex84 = TextureLoader.getTexture("theHeartResources/images/powers/placeholder_power84.png");
-        private static final Texture tex32 = TextureLoader.getTexture("theHeartResources/images/powers/placeholder_power32.png");
+        private static final Texture tex84 = TextureLoader.getTexture("HyperTrophy84.png");
+        private static final Texture tex32 = TextureLoader.getTexture("HyperTrophy32.png");
 
         public HyperTrophyPower(final AbstractCreature owner, final AbstractCreature source, final int amount, int damagedInCombat) {
             name = NAME;
@@ -81,7 +81,13 @@ package theHeart.powers;
             }
             return damage * 3.00F;
         }
-
+        public void updateDescription() {
+            if (amount == 1) {
+                description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+            } else if (amount > 1) {
+                description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
+            }
+        }
 
 
         @Override

@@ -34,8 +34,8 @@ public class LoseEnergyNextTurn extends AbstractPower implements CloneablePowerI
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
 
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("Toil84.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("Toil32.png"));
 
 
     public LoseEnergyNextTurn(final AbstractCreature owner, final int amount) {
@@ -61,7 +61,13 @@ public class LoseEnergyNextTurn extends AbstractPower implements CloneablePowerI
         AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(owner,owner, LoseEnergyNextTurn.POWER_ID, amount));
    }
 
-
+    public void updateDescription() {
+        if (amount == 1) {
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        } else if (amount > 1) {
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
+        }
+    }
 
     public AbstractPower makeCopy() {
         return new LoseEnergyNextTurn(owner, amount);
